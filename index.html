@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To infinity and beyond!</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Black background for space */
+    body {
+      background-color: #000;
+      overflow: hidden;
+    }
+    
+    /* Starfield using a tiny element with a massive box-shadow */
+    .main {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      height: 1px;
+      width: 1px;
+      background-color: #fff;
+      border-radius: 50%;
+      /* Star positions generated via JS (or pre-generated) */
+      box-shadow: 
+        -42vw -4vh 0px 0px #fff,
+        25vw -41vh 0px 0px #fff,
+        -20vw 49vh 0px 1px #fff,
+        5vw 40vh 1px 1px #fff,
+        29vw 19vh 1px 0px #fff,
+        -44vw -13vh 0px 0px #fff,
+        46vw 41vh 0px 1px #fff,
+        -3vw -45vh 0px 1px #fff,
+        47vw 35vh 1px 0px #fff,
+        12vw -8vh 1px 0px #fff,
+        -34vw 48vh 1px 1px #fff,
+        32vw 26vh 1px 1px #fff,
+        32vw -41vh 1px 1px #fff,
+        0vw 37vh 1px 1px #fff,
+        34vw -26vh 1px 0px #fff,
+        -14vw -49vh 1px 0px #fff,
+        -12vw 45vh 0px 1px #fff,
+        -44vw -33vh 0px 1px #fff,
+        -13vw 41vh 0px 0px #fff,
+        -36vw -11vh 0px 1px #fff,
+        -23vw -24vh 1px 0px #fff,
+        -38vw -27vh 0px 1px #fff,
+        16vw -19vh 0px 0px #fff,
+        28vw 33vh 1px 0px #fff,
+        -49vw -4vh 0px 0px #fff,
+        16vw 32vh 0px 1px #fff,
+        36vw -18vh 1px 0px #fff,
+        -25vw -30vh 1px 0px #fff,
+        -23vw 24vh 0px 1px #fff,
+        -2vw -35vh 1px 1px #fff,
+        -25vw 9vh 0px 0px #fff,
+        -15vw -34vh 0px 0px #fff,
+        -8vw -19vh 1px 0px #fff,
+        -20vw -20vh 1px 1px #fff,
+        42vw 50vh 0px 1px #fff,
+        -32vw 10vh 1px 0px #fff,
+        -23vw -17vh 0px 0px #fff,
+        44vw 15vh 1px 0px #fff,
+        -40vw 33vh 1px 1px #fff,
+        -43vw 8vh 0px 0px #fff,
+        -48vw -15vh 1px 1px #fff,
+        -24vw 17vh 0px 0px #fff,
+        -31vw 50vh 1px 0px #fff,
+        36vw -38vh 0px 1px #fff,
+        -7vw 48vh 0px 0px #fff,
+        15vw -32vh 0px 0px #fff,
+        29vw -41vh 0px 0px #fff,
+        2vw 37vh 1px 0px #fff,
+        7vw -40vh 1px 1px #fff,
+        15vw 18vh 0px 0px #fff,
+        25vw -13vh 1px 1px #fff,
+        -46vw -12vh 1px 1px #fff,
+        -18vw 22vh 0px 0px #fff,
+        23vw -9vh 1px 0px #fff,
+        50vw 12vh 0px 1px #fff,
+        45vw 2vh 0px 0px #fff,
+        14vw -48vh 1px 0px #fff,
+        23vw 43vh 0px 1px #fff,
+        -40vw 16vh 1px 1px #fff,
+        20vw -31vh 0px 1px #fff,
+        -17vw 44vh 1px 1px #fff,
+        18vw -45vh 0px 0px #fff,
+        33vw -6vh 0px 0px #fff,
+        0vw 7vh 0px 1px #fff,
+        -10vw -18vh 0px 1px #fff,
+        -19vw 5vh 1px 0px #fff,
+        1vw 42vh 0px 0px #fff,
+        22vw 48vh 0px 1px #fff,
+        39vw -8vh 1px 1px #fff,
+        -6vw -42vh 1px 0px #fff,
+        -47vw 34vh 0px 0px #fff,
+        -46vw 19vh 0px 1px #fff,
+        -12vw -32vh 0px 0px #fff,
+        -45vw -38vh 0px 1px #fff,
+        -28vw 18vh 1px 0px #fff,
+        -38vw -46vh 1px 1px #fff,
+        49vw -6vh 1px 1px #fff,
+        -28vw 18vh 1px 1px #fff,
+        10vw -24vh 0px 1px #fff,
+        -5vw -11vh 1px 1px #fff,
+        33vw -8vh 1px 0px #fff,
+        -16vw 17vh 0px 0px #fff,
+        18vw 27vh 0px 1px #fff,
+        -8vw -10vh 1px 1px #fff;
+      
+      /* Animate movement*/
+      animation: moveStars 9s linear infinite;
+    }
+    
+    @keyframes moveStars {
+      from { transform: translate(0, 0); }
+      to   { transform: translate(-20vw, 20vh); }
+    }
+    
+    /* Rocket container*/
+    .rocket-container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    /*Rocket animation */
+    .animate-fly {
+      animation: fly 4s infinite ease-in-out;
+    }
+    @keyframes fly {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-35px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Starfield Background -->
+  <div class="main"></div>
+  
+  <!-- Rocket in the Foreground -->
+  <div class="rocket-container">
+    <!-- Inline SVG for the rocket -->
+    <svg class="w-32 animate-fly" width="227" height="234" viewBox="0 0 227 234" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M42.2568 141.676C42.2568 141.676 29.0795 148.444 18.0957 155.753C7.11514 163.057 2.27794 174.591 2.3707 176.059C2.46346 177.527 9.01081 178.396 12.6788 177.683C16.3432 176.97 23.0726 165.999 12.5032 184.717C1.93385 203.435 -2.19779 216.38 1.73193 214.902C11.6853 215.819 30.9856 193.331 28.1333 206.897C25.2771 220.459 18.0841 243.662 30.7312 228.444C43.3782 213.226 48.6231 198.33 49.0804 210.476C49.5381 222.626 45.6682 234.806 54.2132 228.096C62.7586 221.39 74.8385 191.827 79.9144 179.164C75.3152 169.989 63.6448 152.231 42.2568 141.676Z" fill="#FF4000"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M46.4039 143.895C46.4039 143.895 29.0557 149.995 24.0392 155.35C19.0225 160.701 19.7662 161.856 27.159 162.384C34.5558 162.911 41.3353 153.733 34.2724 169.043C27.2098 184.358 18.0222 197.832 29.8722 189.399C41.7183 180.967 44.5836 178.663 40.8994 189.179C37.2156 199.7 34.5025 209.721 45.7085 196.467C53.7703 186.349 57.2727 204.746 58.4775 207.888C57.9628 215.669 74.0362 173.467 73.7806 169.42C72.8324 165.03 49.1658 145.264 46.4039 143.895Z" fill="#FFFF33" fill-opacity="0.6963"/>
+        <g clip-path="url(#clip0_0_1)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M186.849 42.765C176.434 41.1127 93.0026 31.502 47.698 138.122L80.0208 173.425L80.1384 173.554C190.331 137.806 188.094 53.8598 187.362 43.3377L186.849 42.765Z" fill="#ECECEC" stroke="black" stroke-width="10"/>
+          <path d="M137.857 90.3169C131.108 82.9459 119.617 82.4457 112.246 89.1949C104.874 95.9443 104.367 107.43 111.115 114.801C117.866 122.174 129.356 122.685 136.728 115.935C144.1 109.186 144.607 97.6899 137.857 90.3169ZM136.275 91.7647C142.242 98.2818 141.797 108.388 135.28 114.354C128.764 120.32 118.663 119.87 112.697 113.353C106.732 106.838 107.177 96.7422 113.693 90.7762C120.209 84.8103 130.31 85.2496 136.275 91.7647Z" fill="black" stroke="black" stroke-width="3"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M133.33 48.3977L156.964 42.5404L181.51 42.0896L187.215 43.1055L185.537 68.1333L178.503 92.9269L175.841 96.8327L132.349 48.9289" fill="#FF0000"/>
+          <path d="M133.33 48.3977L156.964 42.5404L181.51 42.0896L187.215 43.1055L185.537 68.1333L178.503 92.9269L175.841 96.8327L132.349 48.9289" stroke="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M68.8402 98.6308C68.8402 98.6308 49.7257 77.2259 7.65052 139.24C7.65052 139.24 53.6494 99.3271 58.3507 115.578" fill="#FF0000"/>
+          <path d="M68.8402 98.6308C68.8402 98.6308 49.7257 77.2259 7.65052 139.24C7.65052 139.24 53.6494 99.3271 58.3507 115.578" stroke="black" stroke-width="10"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M121.393 156.03C121.393 156.03 141.035 176.955 75.5592 213.411C75.5592 213.411 119.365 171.102 103.59 164.989" fill="#FF0000"/>
+          <path d="M121.393 156.03C121.393 156.03 141.035 176.955 75.5592 213.411C75.5592 213.411 119.365 171.102 103.59 164.989" stroke="black" stroke-width="10"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M53.9749 122.888L47.7449 138.134L80.4863 173.493L95.1077 167.814L53.9749 122.888Z" fill="#B3B3B3" stroke="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M120.487 165.867L106.847 171.015L106.652 166.79L102.893 165.089L121.343 155.174L124.162 165.071C124.162 165.071 126.763 184.346 77.6196 212.455C124.688 179.273 120.304 165.667 120.487 165.867Z" fill="#D20000"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70107 138.093C7.70107 138.093 49.4384 96.224 62.0308 109.636C63.4204 111.118 58.5207 115.423 58.5207 115.423L52.3837 111.129L35.3667 119.002L7.70107 138.093Z" fill="#D20000"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M83.1848 154.791C81.5061 157.804 78.5704 161.36 73.5573 165.525C73.6554 165.751 73.7351 166.008 73.8103 166.281L80.4865 173.49L92.265 168.916C92.8833 168.099 93.4025 167.336 93.953 166.552L83.1848 154.791Z" fill="#999999"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M99.5532 130.346C98.4198 128.906 97.43 128.25 97.43 128.25L81.1397 141.326C81.1397 141.326 86.4917 145.267 82.0246 153.528L92.8145 165.313C107.16 145.144 102.812 134.481 99.5532 130.346Z" fill="#CCCCCC"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M53.5954 124.267L47.3316 137.269L52.0037 143.166L61.8229 131.269L53.5954 124.267Z" fill="#CCCCCC"/>
+          <path d="M186.849 42.765C176.434 41.1127 93.0026 31.502 47.698 138.122L80.0208 173.425L80.1384 173.554C190.331 137.806 188.094 53.8598 187.362 43.3377L186.849 42.765Z" stroke="black" stroke-width="10"/>
+          <path d="M132.93 48.7633L175.891 95.6856" stroke="black" stroke-width="10"/>
+          <path d="M54.3236 123.669L94.908 167.996" stroke="black" stroke-width="10"/>
+          <path d="M93.8435 125.138L97.1337 128.732L43.2219 178.092L39.9317 174.498L93.8435 125.138Z" fill="#FF0000" stroke="black" stroke-width="10" stroke-linecap="round"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_0_1">
+            <rect width="114.365" height="200" fill="white" transform="translate(149.511) rotate(47.5237)"/>
+          </clipPath>
+        </defs>
+      </svg>
+  </div>
+</body>
+</html>
