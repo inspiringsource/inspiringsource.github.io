@@ -1,4 +1,4 @@
-# Rocket Launch Animation
+# Rocket Star Cruise
 
 ## Inspiration
 
