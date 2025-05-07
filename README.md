@@ -1,9 +1,13 @@
-# Rocket Star Cruise
+# inspiringsource.github.io
 
-## Inspiration
+Minimalist website
+- GitHub avatar and name
+- Quick access links to my GitHub and LeetCode
+- Custom favicons including support for different devices and browsers
 
-The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the css code and adjusted it accordingly. Copilot of course helped me with the quick implementation of the code.
+## Rocket.html
 
+The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the css code and adjusted it accordingly.
 ## Rocket Design
 
 The rocket design is based on a public domain rocket from [Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html).
@@ -13,3 +17,4 @@ The rocket design is based on a public domain rocket from [Public Domain Vectors
 - HTML
 - CSS
 - SVG (for the rocket design)
+- PNG (logos)
