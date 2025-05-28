@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- favicon -->
-    <link rel="icon" href="favicon/favicon.ico" />
-    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
-    <!-- title -->
+  <!-- favicon -->
+  <link rel="icon" href="favicon/favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <!-- title -->
   <title>Avi</title>
   <style>
     body {
@@ -33,6 +33,7 @@
       color: #555;
     }
 
+
     .links {
       display: flex;
       justify-content: center;
@@ -49,13 +50,32 @@
     .links a:hover img {
       transform: scale(1.1);
     }
+    #language-switcher {
+      margin-bottom: 1.5em;
+      margin-top: 0.5em;
+    }
+    #language-toggle {
+      cursor: pointer;
+      padding: 0.5em 1em;
+      background-color: transparent;
+      color: black;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.8em;
+    }
+    button#language-toggle:hover {
+      transform: translateY(-4px) scale(1.20);
+    }
+    
   </style>
 </head>
 <body>
+  <!-- Languages -->
+  <button id="language-toggle"></button>
+  <br/>
   <img class="profile" src="https://avatars.githubusercontent.com/inspiringsource" alt="Profile" />
-  <h1>Avi B</h1>
-  <p>Webentwickler und Informatikstudent</p>
-
+  <h1 data-i18n="name"></h1>
+  <p data-i18n="subtitle"></p>
   <div class="links">
     <a href="https://github.com/inspiringsource" target="_blank">
       <img src="logo/github.png" alt="GitHub" />
@@ -64,11 +84,49 @@
       <img src="logo/leetcode.png" alt="LeetCode" />
     </a>
   </div>
-</body>
-<footer style="margin-top: 2.5em;">
-  <a href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/switzerland.md" target="_blank">
-    <img src="https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml/badge.svg" alt="Top GitHub Users CH" />
-  </a>
-</footer>
 
+  <footer style="margin-top: 2.5em;">
+    <a href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/switzerland.md" target="_blank">
+      <img src="https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml/badge.svg" alt="Top GitHub Users CH" />
+    </a>
+  </footer>
+
+  <script>
+    // My subtitle
+    const translations = {
+      de: {
+        name: "Avi B",
+        subtitle: "Webentwickler und Informatikstudent",
+      },
+      en: {
+        name: "Avi B",
+        subtitle: "Web Developer and CS Student",
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.textContent = translations[lang][key] || el.textContent;
+      });
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('language-toggle').textContent =
+        lang === 'de' ? '🇨🇭' : '🇬🇧';
+    }
+
+    // Default language
+    const defaultLang = 'de';
+    const savedLang = localStorage.getItem('lang') || defaultLang;
+
+    setLanguage(savedLang);
+
+    // toggle language
+    document.getElementById('language-toggle').addEventListener('click', () => {
+      const currentLang = localStorage.getItem('lang') || defaultLang;
+      const nextLang = currentLang === 'de' ? 'en' : 'de';
+      setLanguage(nextLang);
+    });
+  </script>
+</body>
 </html>
