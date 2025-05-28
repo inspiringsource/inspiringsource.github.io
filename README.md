@@ -1,7 +1,9 @@
 # inspiringsource.github.io
 
 Minimalistische persönliche Website  
-- GitHub-Avatar und Name  
+
+- GitHub-Avatar und Name
+- Sprachauswahl (Deutsch/Englisch)
 - Schnelle Links zu meinem GitHub- und LeetCode-Profil  
 - Eigene Favicons mit Unterstützung für verschiedene Geräte und Browser  
 
@@ -15,16 +17,19 @@ Ich habe den CSS-Code übernommen und für dieses Projekt angepasst.
 Das Raketen-Design basiert auf einer Public-Domain-Vektor-Grafik von  
 [Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html).
 
-**ENGLISH**
+## ENGLISH
 
 Minimalist website
+
 - GitHub avatar and name
+- Toggle Language (German/English)
 - Quick access links to my GitHub and LeetCode
 - Custom favicons including support for different devices and browsers
 
 ## Rocket.html
 
 The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the css code and adjusted it accordingly.
+
 ## Rocket Design
 
 The rocket design is based on a public domain rocket from [Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html).
@@ -33,5 +38,5 @@ The rocket design is based on a public domain rocket from [Public Domain Vectors
 
 - HTML
 - CSS
-- SVG (for the rocket design)
+- SVG (rocket and flags)
 - PNG (logos)
