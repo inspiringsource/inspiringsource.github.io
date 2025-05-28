@@ -61,7 +61,7 @@
       color: black;
       border: none;
       border-radius: 50px;
-      font-size: 1.8em;
+      font-size: 1.2em;
     }
     button#language-toggle:hover {
       transform: translateY(-4px) scale(1.20);
@@ -111,8 +111,11 @@
       });
       localStorage.setItem('lang', lang);
       document.documentElement.lang = lang;
-      document.getElementById('language-toggle').textContent =
-        lang === 'de' ? '🇨🇭' : '🇬🇧';
+      document.getElementById('language-toggle').innerHTML =
+        lang === 'de'
+          ? '<img src="flags/ch.svg" alt="Deutsch" style="width:1.6em;vertical-align:middle;margin-right:0.3em;">'
+          : '<img src="flags/gb.svg" alt="English" style="width:1.6em;vertical-align:middle;margin-right:0.3em;">';
+
     }
 
     // Default language
