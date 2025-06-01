@@ -66,7 +66,62 @@
     button#language-toggle:hover {
       transform: translateY(-4px) scale(1.20);
     }
-    
+    .testimonial-carousel {
+  max-width: 480px;
+  margin: 3em auto 2em auto;
+  padding: 2em 1.2em;
+  background: #fafbfc;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px #e1e7ee4d;
+  text-align: center;
+  position: relative;
+}
+.testimonial-carousel h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #263a55;
+}
+.testimonial-slide {
+  display: none;
+  transition: opacity 0.3s;
+}
+.testimonial-slide.active {
+  display: block;
+}
+.testimonial-quote {
+  font-size: 1.13em;
+  color: #353b47;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+.testimonial-author {
+  font-weight: 600;
+  color: #174983;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+}
+.testimonial-controls {
+  margin-top: -1.7em;
+  display: flex;
+  justify-content: center;
+  gap: 8em;
+}
+.testimonial-controls button {
+  background: #e6eef800;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.5em;
+  color: #365278;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.18s;
+}
+.testimonial-controls button:hover {
+  background: #c3e3ff;
+  transform: scale(1.13);
+}
+
   </style>
 </head>
 <body>
@@ -85,6 +140,23 @@
       <img src="logo/leetcode.png" alt="LeetCode" />
     </a>
   </div>
+
+  <div class="testimonial-carousel">
+  <h2>Testimonia</h2>
+  <div class="testimonial-slide active">
+    <div class="testimonial-quote">“Avi hat uns überzeugte durch hohe Fachkompetenz, effiziente und strukturierte Arbeitsweise sowie lösungsorientiertes Denken. Seine Arbeit war stets zuverlässig und professionell (...)”</div>
+    <div class="testimonial-author">K. Hoffmann</div>
+  </div>
+    <div class="testimonial-slide">
+      <div class="testimonial-quote">«Avi a rapidement compris mes besoins et a créé un site professionnel, efficace et parfaitement adapté. Toujours disponible, à l&apos;écoute et très réactif. Je recommande ses services sans hésitation.»</div>
+      <div class="testimonial-author">S. Lepori</div>
+    </div>
+    <div class="testimonial-controls">
+      <button onclick="showTestimonial(-1)" aria-label="Previous testimonial">&#8592;</button>
+      <button onclick="showTestimonial(1)" aria-label="Next testimonial">&#8594;</button>
+    </div>
+  </div>
+
 
   <footer style="margin-top: 2.5em;">
     <a href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/switzerland.md" target="_blank">
@@ -131,6 +203,18 @@
       const nextLang = currentLang === 'de' ? 'en' : 'de';
       setLanguage(nextLang);
     });
+    // Testimonial carousel
+      let testimonialIndex = 0;
+      const testimonials = document.querySelectorAll('.testimonial-slide');
+
+      function showTestimonial(direction) {
+        testimonials[testimonialIndex].classList.remove('active');
+        testimonialIndex = (testimonialIndex + direction + testimonials.length) % testimonials.length;
+        testimonials[testimonialIndex].classList.add('active');
+      }
+
+      // Optional: Auto-show first testimonial on page load
+      testimonials[testimonialIndex].classList.add('active');
   </script>
 </body>
 </html>
