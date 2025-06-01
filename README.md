@@ -9,8 +9,8 @@ Minimalistische persönliche Website
 
 ## 🚀 Rocket.html
 
-Der Sterne-Effekt wurde inspiriert von [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa).  
-Ich habe den CSS-Code übernommen und für dieses Projekt angepasst.
+Der Sterne-Effekt wurde inspiriert von [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). 
+Ich habe den CSS-Code übernommen und für [dieses Projekt](https://inspiringsource.github.io/Rocket) angepasst.
 
 ## 🚀 Raketen-Design
 
@@ -28,7 +28,7 @@ Minimalist website
 
 ## Rocket.html
 
-The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the css code and adjusted it accordingly.
+The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the CSS code and adapted it for [this project](https://inspiringsource.github.io/Rocket).
 
 ## Rocket Design
 
