@@ -4,7 +4,7 @@ Minimalistische persönliche Website
 
 - GitHub-Avatar und Name
 - Sprachauswahl (Deutsch/Englisch)
-- Schnelle Links zu meinem GitHub- und LeetCode-Profil  
+- Schnelle Links zu meinem GitHub und LeetCode Profil  
 - Eigene Favicons mit Unterstützung für verschiedene Geräte und Browser  
 
 ## 🚀 Rocket.html
