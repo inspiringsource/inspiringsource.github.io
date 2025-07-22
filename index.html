@@ -1,210 +1,236 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- favicon -->
-  <link rel="icon" href="favicon/favicon.ico" />
-  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-  <link rel="shortcut icon" href="favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="favicon/site.webmanifest" />
-  <!-- title -->
-  <title>Avi</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      margin: 2em;
-    }
-
-    img.profile {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-    }
-
-    h1 {
-      margin-bottom: 0.2em;
-    }
-
-    p {
-      color: #555;
-    }
-
-
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      margin-top: 1.5em;
-    }
-
-    .links a img {
-      width: 100px;
-      height: 40px;
-      transition: transform 0.2s ease;
-    }
-
-    .links a:hover img {
-      transform: scale(1.1);
-    }
-    #language-switcher {
-      margin-bottom: 1.5em;
-      margin-top: 0.5em;
-    }
-    #language-toggle {
-      cursor: pointer;
-      padding: 0.5em 1em;
-      background-color: transparent;
-      color: black;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.2em;
-    }
-    /* button#language-toggle:hover {
-      transform: translateY(-4px) scale(1.20);
-    } */
-    .testimonial-carousel {
-  max-width: 480px;
-  margin: 3em auto 2em auto;
-  padding: 2em 1.2em;
-  background: #fafbfc;
-  border-radius: 20px;
-  box-shadow: 0 2px 16px #e1e7ee4d;
-  text-align: center;
-  position: relative;
-}
-.testimonial-carousel h2 {
-  font-size: 2em;
-  margin-bottom: 1em;
-  color: #263a55;
-}
-.testimonial-slide {
-  display: none;
-  transition: opacity 0.3s;
-}
-.testimonial-slide.active {
-  display: block;
-}
-.testimonial-quote {
-  font-size: 1.13em;
-  color: #353b47;
-  font-style: italic;
-  margin-bottom: 1em;
-}
-.testimonial-author {
-  font-weight: 600;
-  color: #174983;
-  font-size: 1em;
-  letter-spacing: 0.02em;
-}
-.testimonial-controls {
-  margin-top: -1.7em;
-  display: flex;
-  justify-content: center;
-  gap: 8em;
-}
-.testimonial-controls button {
-  background: #e6eef800;
-  border: none;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  font-size: 1.5em;
-  color: #365278;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.11s;
-}
-.testimonial-controls button:hover {
-  background: #55555518;
-  transform: scale(1.13);
-}
-
-  </style>
-</head>
-<body class="container" style="max-width: 600px; margin: auto;">
-
-  <br/>
-  <img class="profile" src="https://avatars.githubusercontent.com/inspiringsource" alt="Profile" />
-  <h1 data-i18n="name"></h1>
-    <!-- Languages -->
-  <button id="language-toggle"></button>
-  <h2 data-i18n="subtitle"></h2>
-  <p data-i18n="paragraph1"></p>
-  <br/>
-  <a href="https://inspiringsource.github.io/Rocket" target="_blank"><img class="Rocket" style="width: 34px;" src="favicon/rocket.svg" alt="Rocket" /></a>
-
-  <div class="links">
-    <a href="https://github.com/inspiringsource" target="_blank">
-      <img src="logo/github.png" alt="GitHub" />
-    </a>
-    <a href="https://leetcode.com/u/inspiringsource/" target="_blank">
-      <img src="logo/leetcode.png" alt="LeetCode" />
-    </a>
-  </div>
-
-
-  <footer style="margin-top: 2.5em;">
-    <a href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/switzerland.md" target="_blank">
-      <img src="https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml/badge.svg" alt="Top GitHub Users CH" />
-    </a>
-  </footer>
-
-  <script>
-    // My subtitle
-    const translations = {
-      de: {
-        name: "Avi Bobrovsky",
-        subtitle: "Webentwickler und Informatikstudent",
-        paragraph1: "Ich bin Avi und studiere aktuell den Bachelor of Science an der FHNW in Aargau. Mein Fokus ist es, Tools zu programmieren, die kleinere Probleme lösen, damit wir uns auf die grösseren Aufgaben konzentrieren können.",
-      },
-      en: {
-        name: "Avi Bobrovsky",
-        subtitle: "Web Developer and CS Student",
-        paragraph1: "I’m Avi, currently pursuing a Bachelor of Science at FHNW in Aargau. My focus is on developing tools that solve smaller problems, so we can concentrate on tackling bigger challenges.",
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" href="favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <!-- title -->
+    <title>Avi</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin: 2em;
       }
-    };
 
-    function setLanguage(lang) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        el.textContent = translations[lang][key] || el.textContent;
-      });
-      localStorage.setItem('lang', lang);
-      document.documentElement.lang = lang;
-      document.getElementById('language-toggle').innerHTML =
-        lang === 'de'
-          ? '<img src="flags/ch.svg" alt="Deutsch" style="width:1.6em;vertical-align:middle;margin-right:0.3em;">'
-          : '<img src="flags/gb.svg" alt="English" style="width:1.6em;vertical-align:middle;margin-right:0.3em;">';
+      img.profile {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+      }
 
-    }
+      h1 {
+        margin-bottom: 0.2em;
+      }
 
-    // Default language
-    const defaultLang = 'de';
-    const savedLang = localStorage.getItem('lang') || defaultLang;
+      p {
+        color: #555;
+      }
 
-    setLanguage(savedLang);
+      .links {
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        margin-top: 1.5em;
+      }
 
-    // toggle language
-    document.getElementById('language-toggle').addEventListener('click', () => {
-      const currentLang = localStorage.getItem('lang') || defaultLang;
-      const nextLang = currentLang === 'de' ? 'en' : 'de';
-      setLanguage(nextLang);
-    });
-    // Testimonial carousel
+      .links a img {
+        width: 100px;
+        height: 40px;
+        transition: transform 0.2s ease;
+      }
+
+      .links a:hover img {
+        transform: scale(1.1);
+      }
+      #language-switcher {
+        margin-bottom: 1.5em;
+        margin-top: 0.5em;
+      }
+      #language-toggle {
+        cursor: pointer;
+        padding: 0.5em 1em;
+        background-color: transparent;
+        color: black;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2em;
+      }
+
+      /* Full black background with stars */
+      .sky {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Stars as white dots with twinkle animation */
+      .sky::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: transparent;
+        box-shadow: 10px 20px white, 50px 80px white, 100px 40px white,
+          150px 150px white, 200px 200px white, 250px 100px white,
+          300px 220px white, 350px 180px white, 400px 60px white,
+          450px 90px white, 500px 130px white, 550px 170px white,
+          600px 40px white, 650px 200px white, 700px 110px white;
+        animation: twinkle 3s infinite ease-in-out alternate;
+      }
+
+      @keyframes twinkle {
+        0% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.3;
+        }
+      }
+
+      /* Your rocket movement */
+      .Rocket {
+        transition: transform 1s ease-in-out;
+      }
+
+      .Rocket:hover {
+        animation: hoverDiagonal 1.5s ease-in-out infinite;
+      }
+
+      @keyframes hoverDiagonal {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-4px, -3px);
+        }
+      }
+    </style>
+  </head>
+  <body class="container" style="max-width: 600px; margin: auto">
+    <br />
+    <img
+      class="profile"
+      src="https://avatars.githubusercontent.com/inspiringsource"
+      alt="Profile"
+    />
+    <h1 data-i18n="name"></h1>
+    <!-- Languages -->
+    <button id="language-toggle"></button>
+    <h2 data-i18n="subtitle"></h2>
+    <p data-i18n="paragraph1"></p>
+    <br />
+    <a href="https://inspiringsource.github.io/Rocket" target="_blank"
+      ><img
+        class="Rocket"
+        style="width: 34px"
+        src="favicon/rocket.svg"
+        alt="Rocket"
+    /></a>
+
+    <div class="links">
+      <a href="https://github.com/inspiringsource" target="_blank">
+        <img src="logo/github.png" alt="GitHub" />
+      </a>
+      <a href="https://leetcode.com/u/inspiringsource/" target="_blank">
+        <img src="logo/leetcode.png" alt="LeetCode" />
+      </a>
+    </div>
+
+    <footer style="margin-top: 2.5em">
+      <a
+        href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/switzerland.md"
+        target="_blank"
+      >
+        <img
+          src="https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml/badge.svg"
+          alt="Top GitHub Users CH"
+        />
+      </a>
+    </footer>
+
+    <script>
+      // My subtitle
+      const translations = {
+        de: {
+          name: "Avi Bobrovsky",
+          subtitle: "Webentwickler und Informatikstudent",
+          paragraph1:
+            "Ich bin Avi und studiere aktuell den Bachelor of Science an der FHNW in Aargau. Mein Fokus ist es, Tools zu programmieren, die kleinere Probleme lösen, damit wir uns auf die grösseren Aufgaben konzentrieren können.",
+        },
+        en: {
+          name: "Avi Bobrovsky",
+          subtitle: "Web Developer and CS Student",
+          paragraph1:
+            "I’m Avi, currently pursuing a Bachelor of Science at FHNW in Aargau. My focus is on developing tools that solve smaller problems, so we can concentrate on tackling bigger challenges.",
+        },
+      };
+
+      function setLanguage(lang) {
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          el.textContent = translations[lang][key] || el.textContent;
+        });
+        localStorage.setItem("lang", lang);
+        document.documentElement.lang = lang;
+        document.getElementById("language-toggle").innerHTML =
+          lang === "de"
+            ? '<img src="flags/ch.svg" alt="Deutsch" style="width:1.6em;vertical-align:middle;margin-right:0.3em;">'
+            : '<img src="flags/gb.svg" alt="English" style="width:1.6em;vertical-align:middle;margin-right:0.3em;">';
+      }
+
+      // Default language
+      const defaultLang = "de";
+      const savedLang = localStorage.getItem("lang") || defaultLang;
+
+      setLanguage(savedLang);
+
+      // toggle language
+      document
+        .getElementById("language-toggle")
+        .addEventListener("click", () => {
+          const currentLang = localStorage.getItem("lang") || defaultLang;
+          const nextLang = currentLang === "de" ? "en" : "de";
+          setLanguage(nextLang);
+        });
+      // Testimonial carousel
       let testimonialIndex = 0;
-      const testimonials = document.querySelectorAll('.testimonial-slide');
+      const testimonials = document.querySelectorAll(".testimonial-slide");
 
       function showTestimonial(direction) {
-        testimonials[testimonialIndex].classList.remove('active');
-        testimonialIndex = (testimonialIndex + direction + testimonials.length) % testimonials.length;
-        testimonials[testimonialIndex].classList.add('active');
+        testimonials[testimonialIndex].classList.remove("active");
+        testimonialIndex =
+          (testimonialIndex + direction + testimonials.length) %
+          testimonials.length;
+        testimonials[testimonialIndex].classList.add("active");
       }
 
       // Optional: Auto-show first testimonial on page load
-      testimonials[testimonialIndex].classList.add('active');
-  </script>
-</body>
+      testimonials[testimonialIndex].classList.add("active");
+    </script>
+  </body>
 </html>
