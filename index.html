@@ -124,14 +124,18 @@
 
   </style>
 </head>
-<body>
+<body class="container" style="max-width: 600px; margin: auto;">
 
   <br/>
   <img class="profile" src="https://avatars.githubusercontent.com/inspiringsource" alt="Profile" />
   <h1 data-i18n="name"></h1>
     <!-- Languages -->
   <button id="language-toggle"></button>
-  <p data-i18n="subtitle"></p>
+  <h2 data-i18n="subtitle"></h2>
+  <p data-i18n="paragraph1"></p>
+  <br/>
+  <img class="Rocket" style="width: 34px;" src="favicon/rocket.svg" alt="Rocket" />
+
   <div class="links">
     <a href="https://github.com/inspiringsource" target="_blank">
       <img src="logo/github.png" alt="GitHub" />
@@ -139,25 +143,6 @@
     <a href="https://leetcode.com/u/inspiringsource/" target="_blank">
       <img src="logo/leetcode.png" alt="LeetCode" />
     </a>
-  </div>
-
-  <div class="testimonial-carousel">
-  <h2>Testimonia</h2>
-  <p style="font-size:1em;color:#555555c4;margin-top:-1.5em;margin-bottom:1.5em;">
-  References / Témoignages / Referenzen
-  </p>
-  <div class="testimonial-slide active">
-    <div class="testimonial-quote">“Avi B. hat uns überzeugt durch hohe Fachkompetenz, effiziente und strukturierte Arbeitsweise sowie lösungsorientiertes Denken. Seine Arbeit war stets zuverlässig und professionell.”</div>
-    <div class="testimonial-author">K. Hoffmann</div>
-  </div>
-    <div class="testimonial-slide">
-      <div class="testimonial-quote">"Avi B a rapidement compris mes besoins et a créé un site professionnel, efficace et parfaitement adapté. Toujours disponible, à l&apos;écoute et très réactif. Je recommande ses services sans hésitation."</div>
-      <div class="testimonial-author">S. Lepori</div>
-    </div>
-    <div class="testimonial-controls">
-      <button onclick="showTestimonial(-1)" aria-label="Previous testimonial">&#8592;</button>
-      <button onclick="showTestimonial(1)" aria-label="Next testimonial">&#8594;</button>
-    </div>
   </div>
 
 
@@ -171,12 +156,14 @@
     // My subtitle
     const translations = {
       de: {
-        name: "Avi B",
+        name: "Avi Bobrovsky",
         subtitle: "Webentwickler und Informatikstudent",
+        paragraph1: "Ich bin Avi aus der Schweiz und studiere aktuell den Bachelor of Science an der FHNW in Aargau. Mein Fokus liegt darauf, Apps zu entwickeln, die kleinere Probleme lösen, damit wir uns auf grössere Aufgaben konzentrieren können.",
       },
       en: {
-        name: "Avi B",
+        name: "Avi Bobrovsky",
         subtitle: "Web Developer and CS Student",
+        paragraph1: "I'm Avi from Switzerland, currently pursuing a Bachelor of Science at FHNW in Aargau. My focus is on developing tools that solve smaller problems, so we can concentrate on tackling bigger challenges.",
       }
     };
 
