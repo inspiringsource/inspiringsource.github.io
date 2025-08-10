@@ -272,19 +272,6 @@
         setLanguage(nextLang);
       });
 
-      // Testimonial carousel safety (if you add slides later)
-      let testimonialIndex = 0;
-      const testimonials = document.querySelectorAll(".testimonial-slide");
-      function showTestimonial(direction) {
-        if (!testimonials.length) return;
-        testimonials[testimonialIndex].classList.remove("active");
-        testimonialIndex =
-          (testimonialIndex + direction + testimonials.length) % testimonials.length;
-        testimonials[testimonialIndex].classList.add("active");
-      }
-      if (testimonials.length) {
-        testimonials[testimonialIndex].classList.add("active");
-      }
     </script>
   </body>
 </html>
