@@ -11,7 +11,7 @@ Minimalistische persönliche Website
 Das Raketen-Design basiert auf einer Public-Domain-Vektor-Grafik von  
 [Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html).
 Der Sterne-Effekt wurde inspiriert von [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). 
-Ich habe den CSS-Code übernommen und für [dieses Projekt](https://inspiringsource.github.io/Rocket) angepasst. Der Tipp-Effekt ist inspiriert vom [CodePen-Projekt](https://codepen.io/hubspot/pen/abKBJbM)
+Ich habe den CSS-Code übernommen und für [dieses Projekt](https://inspiringsource.github.io/Rocket) angepasst. Der Tipp-Effekt ist inspiriert vom [CodePen-Projekt von HubSpot](https://codepen.io/hubspot/pen/abKBJbM)
 
 ## ENGLISH
 
@@ -31,4 +31,4 @@ Minimalist website
 
 ## Resources
 
-The rocket design is based on a public domain rocket from [Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html). The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the CSS code and adapted it for [this project](https://inspiringsource.github.io/Rocket). The typing effect is inspired by this [CodePen project](https://codepen.io/hubspot/pen/abKBJbM).
+The rocket design is based on a public domain rocket from [Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html). The stars effect was inspired by [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). I used the CSS code and adapted it for [this project](https://inspiringsource.github.io/Rocket). The typing effect is inspired by this [CodePen project by HubSpot](https://codepen.io/hubspot/pen/abKBJbM).
