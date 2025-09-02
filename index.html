@@ -31,16 +31,27 @@
         border-radius: 50%;
         width: 120px;
         height: 120px;
+        margin-top: 1em;
+        margin-bottom: 1em;
       }
 
-      h1 { margin-bottom: 0.2em; }
-      p { color: #555; }
+      h1 {
+        margin-bottom: 0.5em;
+      }
+      h2 {
+        margin-bottom: 1em;
+      }
+      p {
+        color: #555;
+        margin-bottom: 1em;
+      }
 
       .links {
         display: flex;
         justify-content: center;
         gap: 2em;
         margin-top: 1.5em;
+        margin-bottom: 1.5em;
       }
 
       .links a img {
@@ -49,9 +60,35 @@
         transition: transform 0.2s ease;
       }
 
-      .links a:hover img { transform: scale(1.1); }
+      .links a:hover img {
+        transform: scale(1.1);
+      }
 
-      #language-switcher { margin-bottom: 1.5em; margin-top: 0.5em; }
+      /* Badge row styling */
+      .badge-row {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap; /* wrap on small screens */
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+      }
+      .badge-row a img {
+        height: 22px; /* uniform, slightly smaller */
+        width: auto;
+        vertical-align: middle;
+      }
+      @media (max-width: 480px) {
+        .badge-row a img {
+          height: 20px;
+        }
+      }
+
+      #language-switcher {
+        margin-bottom: 1.5em;
+        margin-top: 0.5em;
+      }
       #language-toggle {
         cursor: pointer;
         padding: 0.5em 1em;
@@ -60,6 +97,7 @@
         border: none;
         border-radius: 50px;
         font-size: 1.2em;
+        margin-bottom: 0.5em;
       }
 
       /* Full black background with stars */
@@ -89,22 +127,37 @@
       }
 
       @keyframes twinkle {
-        0% { opacity: 0.3; }
-        50% { opacity: 1; }
-        100% { opacity: 0.3; }
+        0% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.3;
+        }
       }
 
-      .Rocket { transition: transform 1s ease-in-out; }
-      .Rocket:hover { animation: hoverDiagonal 1.5s ease-in-out infinite; }
+      .Rocket {
+        transition: transform 1s ease-in-out;
+      }
+      .Rocket:hover {
+        animation: hoverDiagonal 1.5s ease-in-out infinite;
+      }
 
       @keyframes hoverDiagonal {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(-4px, -3px); }
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-4px, -3px);
+        }
       }
 
       /* Typing effect for subtitle */
       .type-container {
-        font-size: 20px;             /* subtitle size */
+        font-size: 20px; /* subtitle size */
         font-weight: 500;
         display: inline-flex;
         align-items: center;
@@ -120,13 +173,17 @@
       }
 
       @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
       }
     </style>
   </head>
   <body class="container" style="max-width: 600px; margin: auto">
-    <br />
     <img
       class="profile"
       src="https://avatars.githubusercontent.com/inspiringsource"
@@ -148,11 +205,40 @@
     <button id="language-toggle"></button>
     <p data-i18n="paragraph1"></p>
     <br />
-    <a href="https://inspiringsource.github.io/Rocket" target="_blank">
-      <img class="Rocket" style="width: 34px" src="favicon/rocket.svg" alt="Rocket" />
-    </a>
+    <div class="badge-row">
+      <a
+        href="https://pypi.org/project/shellpomodoro/"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="https://img.shields.io/pypi/v/shellpomodoro.svg?style=flat-square"
+          alt="PyPI version"
+        />
+      </a>
+      <a
+        href="https://pypi.org/project/shellpomodoro/"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="https://img.shields.io/pypi/pyversions/shellpomodoro.svg?style=flat-square"
+          alt="Python versions"
+        />
+      </a>
+      <a
+        href="https://opensource.org/licenses/MIT"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square"
+          alt="MIT License"
+        />
+      </a>
+    </div>
 
-    <div class="links">
+    <div class="links" style="margin-bottom: 1.5em">
       <a href="https://github.com/inspiringsource" target="_blank">
         <img src="logo/github.png" alt="GitHub" />
       </a>
@@ -161,18 +247,18 @@
       </a>
     </div>
 
-    <footer style="margin-top: 2.5em">
+    <footer style="margin-top: 1.5em">
       <a
         href="https://github.com/gayanvoice/top-github-users/blob/main/markdown/public_contributions/switzerland.md"
         target="_blank"
+        style="display: block; margin-bottom: 1em"
       >
         <img
           src="https://github.com/gayanvoice/top-github-users/actions/workflows/action.yml/badge.svg"
           alt="Top GitHub Users CH"
         />
       </a>
-      <br /><br /><br />
-      <p>COPYRIGHT &copy; 2025</p>
+      <p style="margin-top: 1em">COPYRIGHT &copy; 2025</p>
     </footer>
 
     <script>
@@ -266,12 +352,13 @@
       setLanguage(savedLang);
 
       // Toggle language
-      document.getElementById("language-toggle").addEventListener("click", () => {
-        const currentLang = localStorage.getItem("lang") || defaultLang;
-        const nextLang = currentLang === "de" ? "en" : "de";
-        setLanguage(nextLang);
-      });
-
+      document
+        .getElementById("language-toggle")
+        .addEventListener("click", () => {
+          const currentLang = localStorage.getItem("lang") || defaultLang;
+          const nextLang = currentLang === "de" ? "en" : "de";
+          setLanguage(nextLang);
+        });
     </script>
   </body>
 </html>
