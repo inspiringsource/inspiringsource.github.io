@@ -617,7 +617,8 @@
       const translations = {
         de: {
           name: "Avi Bobrovsky",
-          subtitle: "Informatikstudent | IT-Systeme & Cloud Support",
+          fullSubtitle: "Informatikstudent | IT-Systeme & Cloud Support",
+          mobileSubtitle: "IT-Systeme & Cloud Support",
           paragraph1:
             "Ich bin Informatikstudent an der FHNW und habe praktische Erfahrung in der Betreuung von Produktivsystemen, der Lösung von Incidents sowie im Troubleshooting von Cloud- und Benutzerumgebungen.",
           whatI_do_heading: "Was ich mache",
@@ -637,7 +638,8 @@
         },
         en: {
           name: "Avi Bobrovsky",
-          subtitle: "Computer Science Student | IT Systems & Cloud Support",
+          fullSubtitle: "Computer Science Student | IT Systems & Cloud Support",
+          mobileSubtitle: "IT Systems & Cloud Support",
           paragraph1:
             "I'm a Computer Science student at FHNW with hands-on experience supporting production systems, resolving incidents, and troubleshooting issues across cloud and user environments.",
           whatI_do_heading: "What I do",
@@ -657,6 +659,13 @@
       };
 
       let subtitleTypingTimer = null;
+      let currentSubtitleText = "";
+
+      function getSubtitleForViewport(lang) {
+        return window.innerWidth <= 640
+          ? translations[lang].mobileSubtitle
+          : translations[lang].fullSubtitle;
+      }
 
       function typeSubtitleOnce(text) {
         const el = document.querySelector(".typed-subtitle");
@@ -681,11 +690,19 @@
         })();
       }
 
+      function updateSubtitle(lang) {
+        const nextSubtitleText = getSubtitleForViewport(lang);
+        if (nextSubtitleText === currentSubtitleText) return;
+
+        currentSubtitleText = nextSubtitleText;
+        typeSubtitleOnce(nextSubtitleText);
+      }
+
       function setLanguage(lang) {
         const nameEl = document.querySelector('[data-i18n="name"]');
         if (nameEl) nameEl.textContent = translations[lang].name;
 
-        typeSubtitleOnce(translations[lang].subtitle);
+        updateSubtitle(lang);
 
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const key = el.getAttribute("data-i18n");
@@ -722,6 +739,17 @@
           const nextLang = currentLang === "de" ? "en" : "de";
           setLanguage(nextLang);
         });
+
+      let isMobileViewport = window.innerWidth <= 640;
+
+      window.addEventListener("resize", () => {
+        const nextIsMobileViewport = window.innerWidth <= 640;
+        if (nextIsMobileViewport === isMobileViewport) return;
+
+        isMobileViewport = nextIsMobileViewport;
+        const currentLang = localStorage.getItem("lang") || defaultLang;
+        updateSubtitle(currentLang);
+      });
     </script>
   </body>
 </html>
