@@ -219,6 +219,34 @@
         color: #67e8f9;
       }
 
+      .selected-work-list {
+        padding-left: 1.2em;
+      }
+
+      .selected-work-list a {
+        color: #dbe6f3;
+        text-decoration: none;
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease,
+          text-decoration-color 0.2s ease;
+      }
+
+      .selected-work-list a:hover,
+      .selected-work-list a:focus-visible {
+        color: #f8fafc;
+        text-decoration: underline;
+        text-decoration-color: rgba(248, 250, 252, 0.7);
+      }
+
+      .selected-work-list a:hover {
+        transform: translateX(2px);
+      }
+
+      .selected-work-list a:focus-visible {
+        outline: none;
+      }
+
       .links {
         display: flex;
         justify-content: center;
@@ -492,10 +520,31 @@
 
         <section class="section" aria-labelledby="selected-work-heading">
           <h3 id="selected-work-heading" data-i18n="selected_work_heading"></h3>
-          <ul>
-            <li data-i18n="selected_work_item1"></li>
-            <li data-i18n="selected_work_item2"></li>
-            <li data-i18n="selected_work_item3"></li>
+          <ul class="selected-work-list">
+            <li>
+              <a
+                href="https://github.com/pasteguard"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="selected_work_item1"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/inspiringsource/ai-context-map"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="selected_work_item2"
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/inspiringsource/aws-solutions-architect"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="selected_work_item3"
+              ></a>
+            </li>
           </ul>
         </section>
       </div>
@@ -580,11 +629,11 @@
           whatI_do_item4: "Fokus auf stabile und zuverlässige Systeme",
           selected_work_heading: "Ausgewählte Arbeiten",
           selected_work_item1:
-            "PasteGuard – Local-first Schutz vor sensiblen Copy-Paste-Leaks",
+            "PasteGuard – Local-first Tool zur Erkennung und Reduktion sensibler Daten beim Copy-Paste",
           selected_work_item2:
-            "AI Context Map – Navigations- und Kontextwerkzeug für Codebasen",
+            "AI Context Map – CLI-Tool zur Navigation in Codebasen mittels strukturierter Kontext- und Planungslogik",
           selected_work_item3:
-            "AWS Architect Prep – strukturierte Aufbereitung von Cloud-Lerninhalten",
+            "AWS Architect Prep – Strukturierte Aufbereitung von AWS-Konzepten für Zertifizierung und Praxis",
         },
         en: {
           name: "Avi Bobrovsky",
@@ -599,11 +648,11 @@
           whatI_do_item4: "Focus on stable and reliable systems",
           selected_work_heading: "Selected work",
           selected_work_item1:
-            "PasteGuard – Local-first protection against sensitive copy-paste leaks",
+            "PasteGuard – Local-first tool that detects and redacts sensitive data during copy-paste",
           selected_work_item2:
-            "AI Context Map – navigation and context tooling for codebases",
+            "AI Context Map – CLI tool that helps developers and AI agents navigate codebases using structured memory and task-aware planning",
           selected_work_item3:
-            "AWS Architect Prep – structured cloud learning resource",
+            "AWS Architect Prep – Structured guide simplifying AWS concepts for certification and real-world understanding",
         },
       };
 
