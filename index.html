@@ -46,6 +46,7 @@
         color: #f8fafc;
         position: relative;
         overflow-x: hidden;
+        isolation: isolate;
       }
 
       .starfield {
@@ -53,23 +54,13 @@
         inset: 0;
         pointer-events: none;
         z-index: 0;
+        overflow: hidden;
         background:
-          radial-gradient(1.5px 1.5px at 6% 16%, rgba(255,255,255,0.82), transparent 58%),
-          radial-gradient(1px 1px at 12% 38%, rgba(210,230,255,0.62), transparent 60%),
-          radial-gradient(1.5px 1.5px at 18% 72%, rgba(255,255,255,0.74), transparent 58%),
-          radial-gradient(1px 1px at 24% 24%, rgba(255,255,255,0.66), transparent 60%),
-          radial-gradient(1.5px 1.5px at 31% 58%, rgba(190,225,255,0.7), transparent 58%),
-          radial-gradient(1px 1px at 37% 84%, rgba(255,255,255,0.62), transparent 60%),
-          radial-gradient(1.5px 1.5px at 44% 18%, rgba(255,255,255,0.76), transparent 58%),
-          radial-gradient(1px 1px at 51% 44%, rgba(205,228,255,0.64), transparent 60%),
-          radial-gradient(1.5px 1.5px at 58% 76%, rgba(255,255,255,0.74), transparent 58%),
-          radial-gradient(1px 1px at 64% 26%, rgba(255,255,255,0.66), transparent 60%),
-          radial-gradient(1.5px 1.5px at 72% 58%, rgba(190,225,255,0.72), transparent 58%),
-          radial-gradient(1px 1px at 79% 14%, rgba(255,255,255,0.64), transparent 60%),
-          radial-gradient(1.5px 1.5px at 86% 42%, rgba(255,255,255,0.74), transparent 58%),
-          radial-gradient(1px 1px at 92% 78%, rgba(210,230,255,0.62), transparent 60%),
-          radial-gradient(1.5px 1.5px at 96% 28%, rgba(255,255,255,0.7), transparent 58%);
-        opacity: 0.88;
+          radial-gradient(circle at 18% 28%, rgba(255, 255, 255, 0.034), transparent 0.9px),
+          radial-gradient(circle at 78% 72%, rgba(205, 230, 255, 0.03), transparent 1px),
+          radial-gradient(circle at 62% 54%, rgba(255, 255, 255, 0.018), transparent 1.3px);
+        background-size: 250px 250px, 320px 320px, 440px 440px;
+        opacity: 0.78;
       }
 
       .starfield::before,
@@ -83,30 +74,25 @@
 
       .starfield::before {
         background:
-          radial-gradient(2px 2px at 10% 56%, rgba(255,255,255,0.82), transparent 58%),
-          radial-gradient(2.5px 2.5px at 18% 30%, rgba(200,230,255,0.78), transparent 58%),
-          radial-gradient(2px 2px at 28% 88%, rgba(255,255,255,0.76), transparent 58%),
-          radial-gradient(2.5px 2.5px at 39% 16%, rgba(190,225,255,0.8), transparent 58%),
-          radial-gradient(2px 2px at 47% 48%, rgba(255,255,255,0.74), transparent 58%),
-          radial-gradient(2.5px 2.5px at 57% 74%, rgba(200,230,255,0.76), transparent 58%),
-          radial-gradient(2px 2px at 68% 20%, rgba(255,255,255,0.78), transparent 58%),
-          radial-gradient(2.5px 2.5px at 78% 52%, rgba(190,225,255,0.74), transparent 58%),
-          radial-gradient(2px 2px at 88% 80%, rgba(255,255,255,0.72), transparent 58%),
-          radial-gradient(2.5px 2.5px at 94% 38%, rgba(200,230,255,0.74), transparent 58%);
-        opacity: 0.68;
-        animation: twinkleA 10s ease-in-out infinite alternate;
+          radial-gradient(circle at 24px 28px, rgba(255, 255, 255, 0.78) 0 0.9px, transparent 1.4px),
+          radial-gradient(circle at 108px 62px, rgba(220, 235, 255, 0.72) 0 1.1px, transparent 1.7px),
+          radial-gradient(circle at 182px 138px, rgba(255, 255, 255, 0.74) 0 0.95px, transparent 1.5px),
+          radial-gradient(circle at 62px 196px, rgba(205, 230, 255, 0.68) 0 1px, transparent 1.6px);
+        background-size: 240px 240px;
+        background-position: 0 0, 0 0, 0 0, 0 120px;
+        opacity: 0.58;
+        animation: twinkleA 11s ease-in-out infinite alternate;
       }
 
       .starfield::after {
         background:
-          radial-gradient(4px 4px at 14% 84%, rgba(255,255,255,0.42), transparent 62%),
-          radial-gradient(3px 3px at 36% 22%, rgba(200,230,255,0.46), transparent 62%),
-          radial-gradient(4px 4px at 58% 68%, rgba(255,255,255,0.4), transparent 62%),
-          radial-gradient(3px 3px at 80% 38%, rgba(200,230,255,0.42), transparent 62%),
-          radial-gradient(4px 4px at 90% 16%, rgba(255,255,255,0.38), transparent 62%);
-        opacity: 0.52;
-        filter: blur(0.2px);
-        animation: twinkleB 14s ease-in-out infinite alternate;
+          radial-gradient(circle at 164px 54px, rgba(255, 255, 255, 0.54) 0 1.7px, transparent 2.5px),
+          radial-gradient(circle at 96px 224px, rgba(214, 234, 255, 0.46) 0 1.45px, transparent 2.25px);
+        background-size: 340px 340px;
+        background-position: 36px 90px, 180px 160px;
+        opacity: 0.34;
+        filter: blur(0.18px);
+        animation: twinkleB 15s ease-in-out infinite alternate;
       }
 
       main,
@@ -621,15 +607,27 @@
         },
       };
 
+      let subtitleTypingTimer = null;
+
       function typeSubtitleOnce(text) {
         const el = document.querySelector(".typed-subtitle");
+        if (!el) return;
+
+        if (subtitleTypingTimer) {
+          clearTimeout(subtitleTypingTimer);
+          subtitleTypingTimer = null;
+        }
+
         el.textContent = "";
         let i = 0;
+
         (function typeChar() {
           if (i <= text.length) {
             el.textContent = text.slice(0, i);
             i++;
-            setTimeout(typeChar, 100);
+            subtitleTypingTimer = setTimeout(typeChar, 100);
+          } else {
+            subtitleTypingTimer = null;
           }
         })();
       }
