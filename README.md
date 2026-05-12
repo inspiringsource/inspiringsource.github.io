@@ -1,33 +1,34 @@
 # inspiringsource.github.io
 
-Minimalistische persönliche Website  
+Minimalist personal website — hosted on GitHub Pages.
 
-- GitHub-Avatar und Name
-- Sprachauswahl (Deutsch/Englisch)
-- Schnelle Links zu meinem GitHub und LeetCode Profil  
-- Eigene Favicons mit Unterstützung für verschiedene Geräte und Browser  
+## Project structure
 
-## 🚀 Ressourcen 
-Das Raketen-Design basiert auf einer Public-Domain-Vektor-Grafik von  
-[Public Domain Vectors](https://publicdomainvectors.org/en/free-clipart/Colorful-missle-vector-image/74243.html).
-Der Sterne-Effekt wurde inspiriert von [WheresDara's CodePen](https://codepen.io/wheresdara/pen/wvXBpwa). 
-Ich habe den CSS-Code übernommen und für [dieses Projekt](https://inspiringsource.github.io/Rocket) angepasst. Der Tipp-Effekt ist inspiriert vom [CodePen-Projekt von HubSpot](https://codepen.io/hubspot/pen/abKBJbM)
+```
+/
+├── index.html          # Main page (HTML only, no inline CSS or JS)
+├── css/
+│   └── style.css       # All styles
+├── js/
+│   └── main.js         # Language toggle, typing animation, i18n
+├── flags/
+│   ├── ch.svg          # Swiss flag (used in language toggle)
+│   └── gb.svg          # UK flag (used in language toggle)
+├── favicon/            # Favicon set (ico, png, svg, webmanifest)
+├── logo/               # GitHub and LeetCode logo images
+├── Rocket.html         # Standalone rocket animation page
+└── README.md
+```
 
-## ENGLISH
+This is a plain static site — no framework, no bundler, no npm. It deploys directly from the `main` branch via GitHub Pages.
 
-Minimalist website
+## Features
 
 - GitHub avatar and name
-- Toggle Language (German/English)
-- Quick access links to my GitHub and LeetCode
-- Custom favicons including support for different devices and browsers
-
-## Technologien / Technologies
-
-- HTML
-- CSS
-- SVG (rocket and flags)
-- PNG (logos)
+- Language toggle (German / English) with flag icons
+- Typing animation for the subtitle
+- Mobile-responsive layout
+- Custom favicons for all devices and browsers
 
 ## Resources
 
