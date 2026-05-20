@@ -1,3 +1,23 @@
+// Theme
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  const isLight = theme === "light";
+  btn.setAttribute("aria-pressed", String(isLight));
+  btn.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+  btn.querySelector(".theme-icon").textContent = isLight ? "☀️" : "🌙";
+}
+
+const savedTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+
 const chFlag = '<img src="flags/ch.svg" alt="" aria-hidden="true">';
 const gbFlag = '<img src="flags/gb.svg" alt="" aria-hidden="true">';
 
