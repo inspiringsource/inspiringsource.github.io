@@ -109,7 +109,10 @@ html[data-theme="light"] body {
     radial-gradient(circle at 62% 54%, rgba(255, 255, 255, 0.018), transparent 1.3px);
   background-size: 250px 250px, 320px 320px, 440px 440px;
   opacity: var(--starfield-opacity);
+  transform: translate3d(var(--star-x, 0px), var(--star-y, 0px), 0);
+  transform-origin: center;
   transition: opacity 0.3s ease;
+  will-change: transform;
 }
 
 .starfield::before,
@@ -531,6 +534,13 @@ footer {
   }
   50% {
     opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfield {
+    transform: none;
+    will-change: auto;
   }
 }
 

@@ -16,7 +16,73 @@ setTheme(savedTheme || (prefersDark ? "dark" : "light"));
 
 document.getElementById("theme-toggle").addEventListener("click", () => {
   setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+  requestStarfieldPerspectiveUpdate();
 });
+
+// Starfield perspective
+const starfield = document.querySelector(".starfield");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+let starfieldTicking = false;
+let starfieldPerspectiveActive = false;
+
+function resetStarfieldPerspective() {
+  if (!starfield || !starfieldPerspectiveActive) return;
+
+  starfield.style.removeProperty("--star-x");
+  starfield.style.removeProperty("--star-y");
+  starfield.style.removeProperty("--star-tilt-x");
+  starfield.style.removeProperty("--star-tilt-y");
+  starfieldPerspectiveActive = false;
+}
+
+function shouldAnimateStarfield() {
+  return (
+    starfield &&
+    document.documentElement.dataset.theme === "dark" &&
+    !reducedMotionQuery.matches
+  );
+}
+
+function updateStarfieldPerspective() {
+  if (!shouldAnimateStarfield()) {
+    resetStarfieldPerspective();
+    starfieldTicking = false;
+    return;
+  }
+
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollY = Math.max(0, Math.min(window.scrollY, maxScroll));
+  const progress = maxScroll > 0 ? scrollY / maxScroll : 0;
+
+  const tiltX = 0;
+  const tiltY = 0;
+  const starY = progress * -18;
+  const starX = 0;
+
+  starfieldPerspectiveActive = true;
+  starfield.style.setProperty("--star-x", `${starX}px`);
+  starfield.style.setProperty("--star-y", `${starY}px`);
+  starfield.style.setProperty("--star-tilt-x", `${tiltX}deg`);
+  starfield.style.setProperty("--star-tilt-y", `${tiltY}deg`);
+
+  starfieldTicking = false;
+}
+
+function requestStarfieldPerspectiveUpdate() {
+  if (!starfield || starfieldTicking) return;
+
+  starfieldTicking = true;
+  requestAnimationFrame(updateStarfieldPerspective);
+}
+
+window.addEventListener("scroll", requestStarfieldPerspectiveUpdate, { passive: true });
+window.addEventListener("resize", requestStarfieldPerspectiveUpdate);
+if (reducedMotionQuery.addEventListener) {
+  reducedMotionQuery.addEventListener("change", requestStarfieldPerspectiveUpdate);
+} else {
+  reducedMotionQuery.addListener(requestStarfieldPerspectiveUpdate);
+}
+requestStarfieldPerspectiveUpdate();
 
 const chFlag = '<img src="flags/ch.svg" alt="" aria-hidden="true">';
 const gbFlag = '<img src="flags/gb.svg" alt="" aria-hidden="true">';
