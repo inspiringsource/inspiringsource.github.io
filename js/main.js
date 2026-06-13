@@ -93,41 +93,44 @@ const translations = {
     fullSubtitle: "Informatikstudent | IT-Systeme & Cloud Support",
     mobileSubtitle: "IT-Systeme & Cloud Support",
     paragraph1:
-      "Ich bin Informatikstudent an der FHNW und habe praktische Erfahrung in der Betreuung von Produktivsystemen, der Lösung von Incidents sowie im Troubleshooting von Cloud- und Benutzerumgebungen.",
+      "Ich bin Informatikstudent an der FHNW mit praktischer Erfahrung im Betrieb von IT-Systemen, der Fehleranalyse sowie der Unterstützung von Anwendern in Cloud- und Benutzerumgebungen.",
     whatI_do_heading: "Was ich mache",
-    whatI_do_item1: "Betreuung und Betrieb von Cloud-Systemen",
+    whatI_do_item1: "Betrieb und Wartung cloudbasierter Systeme",
     whatI_do_item2:
-      "Troubleshooting von Deployment-, Infrastruktur- und Benutzerproblemen",
-    whatI_do_item3:
-      "Analyse von Ursachen und strukturierte Problemlösung",
-    whatI_do_item4: "Fokus auf stabile und zuverlässige Systeme",
+      "Analyse und Behebung von Infrastruktur-, Deployment- und Benutzerproblemen",
+    whatI_do_item3: "Root-Cause-Analyse und strukturierte Problemlösung",
+    whatI_do_item4:
+      "Technische Dokumentation, Betriebsprozesse und Incident Management",
+    whatI_do_item5: "Fokus auf stabile, sichere und zuverlässige Systeme",
     selected_work_heading: "Ausgewählte Arbeiten",
     selected_work_item1:
       "PasteGuard – Local-first Tool zur Erkennung und Reduktion sensibler Daten beim Copy-Paste",
     selected_work_item2:
       "AI Context Map – CLI-Tool zur Navigation in Codebasen mittels strukturierter Kontext- und Planungslogik",
     selected_work_item3:
-      "Azure DevOps Service Starter – Wiederverwendbares Service-Template für CI/CD, Docker und Azure-Infrastruktur (Bicep)",
+      "Azure DevOps Service Starter – Wiederverwendbare Vorlage für CI/CD, Docker, Azure-Infrastruktur (Bicep), Betriebsdokumentation, Incident Management und IT-Operations-Workflows",
   },
   en: {
     name: "Avi Bobrovsky",
     fullSubtitle: "Computer Science Student | IT Systems & Cloud Support",
     mobileSubtitle: "IT Systems & Cloud Support",
     paragraph1:
-      "I'm a Computer Science student at FHNW with hands-on experience supporting production systems, resolving incidents, and troubleshooting issues across cloud and user environments.",
+      "I'm a Computer Science student at FHNW with hands-on experience supporting IT systems, troubleshooting cloud and user environments, and documenting operational processes.",
     whatI_do_heading: "What I do",
     whatI_do_item1: "Support and maintenance of cloud-based systems",
     whatI_do_item2:
       "Troubleshooting deployment, infrastructure, and user issues",
     whatI_do_item3: "Root-cause analysis and structured problem solving",
-    whatI_do_item4: "Focus on stable and reliable systems",
+    whatI_do_item4:
+      "Technical documentation, operational procedures, and incident response",
+    whatI_do_item5: "Focus on stable, secure, and reliable systems",
     selected_work_heading: "Selected work",
     selected_work_item1:
       "PasteGuard – Local-first tool that detects and redacts sensitive data during copy-paste",
     selected_work_item2:
       "AI Context Map – CLI tool that helps developers and AI agents navigate codebases using structured memory and task-aware planning",
     selected_work_item3:
-      "Azure DevOps Service Starter – Reusable template for CI/CD, Docker, and Azure infrastructure (Bicep)",
+      "Azure DevOps Service Starter – Reusable template for CI/CD, Docker, Azure infrastructure (Bicep), operational runbooks, incident management, and IT operations workflows",
   },
 };
 
