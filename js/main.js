@@ -95,13 +95,15 @@ const translations = {
     paragraph1:
       "Ich bin Informatikstudent an der FHNW mit praktischer Erfahrung im Betrieb von IT-Systemen, der Fehleranalyse sowie der Unterstützung von Anwendern in Cloud- und Benutzerumgebungen.",
     whatI_do_heading: "Was ich mache",
-    whatI_do_item1: "Betrieb und Wartung cloudbasierter Systeme",
+    whatI_do_item1: "Support und Wartung cloudbasierter Systeme",
     whatI_do_item2:
-      "Analyse und Behebung von Infrastruktur-, Deployment- und Benutzerproblemen",
-    whatI_do_item3: "Root-Cause-Analyse und strukturierte Problemlösung",
+      "Fehleranalyse bei Deployment-, Infrastruktur- und Benutzerproblemen",
+    whatI_do_item3: "Ursachenanalyse und strukturiertes Problemlösen",
     whatI_do_item4:
-      "Technische Dokumentation, Betriebsprozesse und Incident Management",
-    whatI_do_item5: "Fokus auf stabile, sichere und zuverlässige Systeme",
+      "Technische Dokumentation, Betriebsabläufe und Incident Response",
+    whatI_do_item5: "Website- und Full-Stack-Anwendungsentwicklung",
+    whatI_do_item6: "Hosting, DNS, Domains und E-Mail-Konfiguration",
+    whatI_do_item7: "Fokus auf stabile, sichere und zuverlässige Systeme",
     selected_work_heading: "Ausgewählte Arbeiten",
     selected_work_item1:
       "PasteGuard – Local-first Tool zur Erkennung und Reduktion sensibler Daten beim Copy-Paste",
@@ -109,6 +111,9 @@ const translations = {
       "AI Context Map – CLI-Tool zur Navigation in Codebasen mittels strukturierter Kontext- und Planungslogik",
     selected_work_item3:
       "Azure DevOps Service Starter – Wiederverwendbare Vorlage für CI/CD, Docker, Azure-Infrastruktur (Bicep), Betriebsdokumentation, Incident Management und IT-Operations-Workflows",
+    selected_work_item4:
+      "AviCloud – Kundenportal für Anfrageverfolgung, Projektdokumentation und laufenden IT-/Web-Support",
+    client_portal: "AviCloud Portal",
   },
   en: {
     name: "Avi Bobrovsky",
@@ -123,7 +128,9 @@ const translations = {
     whatI_do_item3: "Root-cause analysis and structured problem solving",
     whatI_do_item4:
       "Technical documentation, operational procedures, and incident response",
-    whatI_do_item5: "Focus on stable, secure, and reliable systems",
+    whatI_do_item5: "Website and full-stack application development",
+    whatI_do_item6: "Hosting, DNS, domains, and email configuration",
+    whatI_do_item7: "Focus on stable, secure, and reliable systems",
     selected_work_heading: "Selected work",
     selected_work_item1:
       "PasteGuard – Local-first tool that detects and redacts sensitive data during copy-paste",
@@ -131,6 +138,9 @@ const translations = {
       "AI Context Map – CLI tool that helps developers and AI agents navigate codebases using structured memory and task-aware planning",
     selected_work_item3:
       "Azure DevOps Service Starter – Reusable template for CI/CD, Docker, Azure infrastructure (Bicep), operational runbooks, incident management, and IT operations workflows",
+    selected_work_item4:
+      "AviCloud – Client portal for request tracking, project documentation and ongoing IT/web support",
+    client_portal: "AviCloud Portal",
   },
 };
 

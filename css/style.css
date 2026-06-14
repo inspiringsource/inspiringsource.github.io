@@ -368,6 +368,27 @@ html[data-theme="light"] .links a:hover {
   display: block;
 }
 
+.links .client-portal-link {
+  gap: 10px;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.links .client-portal-link:focus-visible {
+  outline: 2px solid var(--color-logo-hover-border);
+  outline-offset: 3px;
+}
+
+.client-portal-icon {
+  width: 24px;
+  height: 36px;
+  color: var(--color-link);
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .top-controls {
   display: inline-flex;
   align-items: center;
