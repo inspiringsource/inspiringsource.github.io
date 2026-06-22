@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>pwdnote - Encrypted Project Notes for Developers</title>
+    <title>pwdNote - Encrypted Project Notes and .pwdnote.enc Files</title>
     <meta
       name="description"
-      content="pwdnote is a lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code."
+      content="Learn what a .pwdnote.enc file is and how pwdnote helps developers store encrypted project-local notes alongside their code."
     />
     <link rel="canonical" href="https://inspiringsource.github.io/pwdnote/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="pwdnote - Encrypted Project Notes for Developers" />
+    <meta property="og:title" content="pwdNote - Encrypted Project Notes" />
     <meta
       property="og:description"
-      content="pwdnote is a lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code."
+      content="pwdnote is a lightweight CLI note-taking app for encrypted project-local notes. Learn how .pwdnote.enc files work."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://inspiringsource.github.io/pwdnote/" />
@@ -24,10 +24,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="pwdnote - Encrypted Project Notes for Developers" />
+    <meta name="twitter:title" content="pwdNote - Encrypted Project Notes" />
     <meta
       name="twitter:description"
-      content="pwdnote is a lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code."
+      content="A lightweight CLI note-taking app for encrypted project-local notes stored alongside your code."
     />
     <meta name="twitter:image" content="https://inspiringsource.github.io/pwdnote/assets/shortDemo.gif" />
 
@@ -372,6 +372,29 @@
         </figure>
       </section>
 
+      <!-- What is a .pwdnote.enc file -->
+      <section class="pwd-section" aria-labelledby="pwdnote-enc-heading">
+        <h2 id="pwdnote-enc-heading">What is a <code class="inline">.pwdnote.enc</code> file?</h2>
+        <p>
+          A <code class="inline">.pwdnote.enc</code> file is the encrypted project note file created by
+          pwdnote. It stores ciphertext, not readable plaintext, so it contains no human-readable
+          content on its own.
+        </p>
+        <p>
+          The <code class="inline">pwdnote.enc</code> file is designed to live next to your code. Because it
+          cannot be read without the local key, you can commit it to Git safely — these are
+          Git-friendly encrypted notes that travel with your repository.
+        </p>
+        <p>To open or edit it, install pwdnote and run commands like:</p>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote
+<span class="prompt">$ </span>pwdnote edit
+<span class="prompt">$ </span>pwdnote read</code></pre>
+        <p>
+          That is all you need to know about how to open a <code class="inline">.pwdnote.enc</code> file:
+          the pwdnote CLI handles decryption locally with your key.
+        </p>
+      </section>
+
       <!-- Motivation -->
       <section class="pwd-section" aria-labelledby="motivation-heading">
         <h2 id="motivation-heading">Motivation</h2>
@@ -422,13 +445,43 @@
       <!-- Configuration -->
       <section class="pwd-section" aria-labelledby="config-heading">
         <h2 id="config-heading">Configuration</h2>
-        <p>As of <code class="inline">v0.2.0</code>, pwdnote supports:</p>
+        <p>As of <code class="inline">v0.3.0</code>, pwdnote supports:</p>
         <ul class="config-list">
           <li>Lightweight TOML configuration.</li>
           <li>Custom initial note template.</li>
           <li>Editor override.</li>
           <li>Optional auto-gitignore behavior.</li>
           <li>Future key backends may be added.</li>
+        </ul>
+      </section>
+
+      <!-- VS Code extension -->
+      <section class="pwd-section" aria-labelledby="vscode-heading">
+        <h2 id="vscode-heading">VS Code extension</h2>
+        <p>
+          A VS Code extension for pwdnote is currently in progress. The goal is to make
+          <code class="inline">.pwdnote.enc</code> files open as readable encrypted project notes directly
+          inside VS Code, while the pwdnote CLI remains the encryption engine.
+        </p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="pwd-section" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <ul class="security-list">
+          <li>
+            <strong>Can I commit <code class="inline">.pwdnote.enc</code>?</strong> Yes. It holds only
+            ciphertext, so committing it to Git is safe.
+          </li>
+          <li>
+            <strong>How do I open a <code class="inline">.pwdnote.enc</code> file?</strong> Install pwdnote
+            and run <code class="inline">pwdnote</code>, <code class="inline">pwdnote edit</code>, or
+            <code class="inline">pwdnote read</code>.
+          </li>
+          <li>
+            <strong>Is pwdnote a password manager?</strong> No. It keeps your project notes private, not
+            your credentials.
+          </li>
         </ul>
       </section>
 
