@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://inspiringsource.github.io/sitemap.xml
