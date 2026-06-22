@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>pwdnote - Encrypted Project Notes for Developers</title>
+    <meta
+      name="description"
+      content="pwdnote is a lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code."
+    />
+    <link rel="canonical" href="https://inspiringsource.github.io/pwdnote/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="pwdnote - Encrypted Project Notes for Developers" />
+    <meta
+      property="og:description"
+      content="pwdnote is a lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://inspiringsource.github.io/pwdnote/" />
+    <meta property="og:image" content="https://inspiringsource.github.io/pwdnote/assets/shortDemo.gif" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="pwdnote - Encrypted Project Notes for Developers" />
+    <meta
+      name="twitter:description"
+      content="pwdnote is a lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code."
+    />
+    <meta name="twitter:image" content="https://inspiringsource.github.io/pwdnote/assets/shortDemo.gif" />
+
+    <!-- Favicons (shared with the site root) -->
+    <link rel="icon" href="../favicon/favicon.ico" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+
+    <!-- Shared base styling (theme variables, starfield, cards) -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Page-specific styling -->
+    <style>
+      .pwd-container {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 64px 24px 36px;
+        text-align: left;
+        animation: pageFade 0.7s ease-out;
+        position: relative;
+        z-index: 1;
+      }
+
+      .pwd-hero {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+
+      .pwd-hero h1 {
+        font-size: clamp(2.8rem, 8vw, 4.5rem);
+        margin-bottom: 14px;
+      }
+
+      .pwd-hero .subtitle {
+        font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+        color: var(--color-h2);
+        font-weight: 500;
+        margin: 0 auto;
+        max-width: 620px;
+      }
+
+      .pwd-hero .lede {
+        max-width: 620px;
+        margin: 18px auto 0;
+        font-size: 1.05rem;
+        color: var(--color-intro);
+      }
+
+      /* Code blocks reuse the dark card look */
+      pre.code,
+      code.inline {
+        font-family: "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+      }
+
+      pre.code {
+        margin: 0;
+        padding: 18px 20px;
+        border-radius: 14px;
+        border: 1px solid var(--color-section-border);
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(8, 12, 20, 0.9));
+        color: var(--color-list);
+        overflow-x: auto;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      }
+
+      html[data-theme="light"] pre.code {
+        background: rgba(15, 23, 42, 0.04);
+        color: #1e293b;
+      }
+
+      pre.code .prompt {
+        color: var(--color-list-marker);
+        user-select: none;
+      }
+
+      code.inline {
+        padding: 2px 7px;
+        border-radius: 6px;
+        border: 1px solid var(--color-section-border);
+        background: rgba(148, 163, 184, 0.12);
+        font-size: 0.92em;
+      }
+
+      .install-block {
+        max-width: 480px;
+        margin: 30px auto 26px;
+      }
+
+      .install-block .label {
+        display: block;
+        text-align: center;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-copyright);
+        margin-bottom: 10px;
+      }
+
+      .cta {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-width: 150px;
+        padding: 12px 22px;
+        border-radius: 12px;
+        font-size: 0.98rem;
+        font-weight: 700;
+        text-decoration: none;
+        border: 1px solid var(--color-logo-border);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--color-list-marker);
+        color: #03060d;
+        border-color: transparent;
+      }
+
+      .btn-secondary {
+        background: var(--color-lang-switch-bg);
+        color: var(--color-link);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--color-section-hover-border);
+        outline-offset: 3px;
+      }
+
+      .pwd-section {
+        margin-top: 48px;
+      }
+
+      .pwd-section > h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-h1);
+        margin: 0 0 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .pwd-section > p {
+        color: var(--color-intro);
+        font-size: 1.02rem;
+        max-width: 70ch;
+      }
+
+      .demo figure {
+        margin: 0;
+      }
+
+      .demo img {
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        border: 1px solid var(--color-section-border);
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
+        display: block;
+      }
+
+      .demo figcaption {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: var(--color-copyright);
+        text-align: center;
+      }
+
+      .feature-grid {
+        list-style: none;
+        margin: 18px 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+
+      .feature-grid li {
+        padding: 16px 18px;
+        border-radius: 14px;
+        border: 1px solid var(--color-section-border);
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.6), rgba(8, 12, 20, 0.78));
+        color: var(--color-list);
+        font-weight: 600;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      }
+
+      html[data-theme="light"] .feature-grid li {
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      }
+
+      .feature-grid li::before {
+        content: "→ ";
+        color: var(--color-list-marker);
+        font-weight: 700;
+      }
+
+      .security-list {
+        margin: 14px 0 0;
+        padding-left: 1.2em;
+        color: var(--color-list);
+      }
+
+      .security-list li {
+        margin-bottom: 0.6em;
+        line-height: 1.65;
+      }
+
+      .security-list li::marker {
+        color: var(--color-list-marker);
+      }
+
+      .note {
+        margin-top: 16px;
+        padding: 14px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--color-section-hover-border);
+        background: var(--color-section-hover-glow);
+        color: var(--color-intro);
+        font-size: 0.98rem;
+      }
+
+      .config-list {
+        margin: 14px 0 0;
+        padding-left: 1.2em;
+        color: var(--color-list);
+      }
+
+      .config-list li {
+        margin-bottom: 0.55em;
+        line-height: 1.6;
+      }
+
+      .config-list li::marker {
+        color: var(--color-list-marker);
+      }
+
+      .pwd-footer {
+        margin-top: 64px;
+        padding-top: 22px;
+        border-top: 1px solid var(--color-section-border);
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--color-copyright);
+      }
+
+      .pwd-footer a {
+        color: var(--color-link);
+        text-decoration: none;
+      }
+
+      .pwd-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .page-theme-toggle {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 2;
+      }
+
+      @media (max-width: 640px) {
+        .pwd-container {
+          padding: 40px 18px 24px;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 320px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <button
+      id="theme-toggle"
+      class="theme-toggle page-theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+      aria-pressed="false"
+    >
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+
+    <main class="pwd-container">
+      <!-- Hero -->
+      <header class="pwd-hero">
+        <h1>pwdNote</h1>
+        <p class="subtitle">A lightweight CLI note-taking app for developers.</p>
+        <p class="lede">Encrypted project-local notes stored alongside your code.</p>
+
+        <div class="install-block">
+          <span class="label">Install</span>
+          <pre class="code"><code><span class="prompt">$ </span>uv tool install pwdnote</code></pre>
+        </div>
+
+        <div class="cta">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/inspiringsource/pwdnote"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://pypi.org/project/pwdnote/"
+            target="_blank"
+            rel="noopener"
+            >PyPI</a
+          >
+        </div>
+      </header>
+
+      <!-- Demo -->
+      <section class="pwd-section demo" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">Demo</h2>
+        <figure>
+          <!-- GIF copied from the pwdnote repo (demo/shortDemo.gif) into assets/ -->
+          <img src="assets/shortDemo.gif" alt="pwdnote terminal demo" loading="lazy" width="800" height="298" />
+          <figcaption>pwdnote terminal demo</figcaption>
+        </figure>
+      </section>
+
+      <!-- Motivation -->
+      <section class="pwd-section" aria-labelledby="motivation-heading">
+        <h2 id="motivation-heading">Motivation</h2>
+        <p>
+          pwdnote started as a simple way to keep personal project notes close to my code,
+          without worrying about accidentally committing plaintext secrets or overcomplicating
+          the workflow.
+        </p>
+      </section>
+
+      <!-- Features -->
+      <section class="pwd-section" aria-labelledby="features-heading">
+        <h2 id="features-heading">Features</h2>
+        <ul class="feature-grid">
+          <li>CLI note-taking</li>
+          <li>Encrypted by default</li>
+          <li>Project-local notes</li>
+          <li>Git-friendly</li>
+          <li>Works from nested directories</li>
+          <li>Lightweight</li>
+          <li>Local-first</li>
+        </ul>
+      </section>
+
+      <!-- Example -->
+      <section class="pwd-section" aria-labelledby="example-heading">
+        <h2 id="example-heading">Example</h2>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote init
+<span class="prompt">$ </span>pwdnote edit
+<span class="prompt">$ </span>pwdnote
+<span class="prompt">$ </span>pwdnote add "Remember to rotate AWS credentials"</code></pre>
+      </section>
+
+      <!-- Security -->
+      <section class="pwd-section" aria-labelledby="security-heading">
+        <h2 id="security-heading">Security</h2>
+        <ul class="security-list">
+          <li>Notes are encrypted on disk.</li>
+          <li>Git stores ciphertext, not readable plaintext.</li>
+          <li>The encryption key stays local.</li>
+        </ul>
+        <p class="note">
+          <strong>Note:</strong> pwdnote is not a password manager. It keeps your project notes
+          private, not your credentials.
+        </p>
+      </section>
+
+      <!-- Configuration -->
+      <section class="pwd-section" aria-labelledby="config-heading">
+        <h2 id="config-heading">Configuration</h2>
+        <p>As of <code class="inline">v0.2.0</code>, pwdnote supports:</p>
+        <ul class="config-list">
+          <li>Lightweight TOML configuration.</li>
+          <li>Custom initial note template.</li>
+          <li>Editor override.</li>
+          <li>Optional auto-gitignore behavior.</li>
+          <li>Future key backends may be added.</li>
+        </ul>
+      </section>
+
+      <footer class="pwd-footer">
+        Built by Avi ·
+        <a href="https://github.com/inspiringsource/pwdnote" target="_blank" rel="noopener">GitHub</a>
+        ·
+        <a href="https://pypi.org/project/pwdnote/" target="_blank" rel="noopener">PyPI</a>
+      </footer>
+    </main>
+
+    <!-- Structured data for richer search results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "pwdnote",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS, Windows",
+        "description": "A lightweight CLI note-taking app for developers. Store encrypted project-local notes alongside your code.",
+        "url": "https://inspiringsource.github.io/pwdnote/",
+        "downloadUrl": "https://pypi.org/project/pwdnote/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
+
+    <!-- Minimal theme toggle (mirrors the site's light/dark behavior) -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-toggle");
+        function setTheme(theme) {
+          root.dataset.theme = theme;
+          try {
+            localStorage.setItem("theme", theme);
+          } catch (e) {}
+          var isLight = theme === "light";
+          btn.setAttribute("aria-pressed", String(isLight));
+          btn.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+          btn.querySelector(".theme-icon").textContent = isLight ? "☀️" : "🌙";
+        }
+        var saved;
+        try {
+          saved = localStorage.getItem("theme");
+        } catch (e) {}
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(saved || (prefersDark ? "dark" : "light"));
+        btn.addEventListener("click", function () {
+          setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>
