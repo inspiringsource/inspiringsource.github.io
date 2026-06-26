@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>PWD Note | Encrypted Notes for VS Code Developers</title>
+    <title>pwdNote | Encrypted Project Notes — CLI &amp; VS Code Extension</title>
     <meta
       name="description"
-      content="PWD Note is a VS Code extension for local encrypted project notes using .pwdnote.enc files. Built by Avi Bobrovsky."
+      content="pwdNote is a developer note-taking tool for encrypted project notes: a CLI plus an official VS Code extension, storing project-local notes in Git-friendly .pwdnote.enc files."
     />
     <meta
       name="keywords"
-      content="VS Code encrypted notes, encrypted notes extension, password protected notes, local encrypted notes, encrypted markdown notes, secure project notes, .pwdnote.enc files, developer notes encryption, PWD Note, Avi Bobrovsky, Inspiring Source"
+      content="VS Code encrypted notes, VS Code project notes, encrypted project notes, project-local notes, .pwdnote.enc, developer note taking, Git-friendly notes, pwdnote CLI, VS Code extension, local encrypted notes, secure project notes, pwdNote, Avi Bobrovsky, Inspiring Source"
     />
     <meta name="author" content="Abraham (Avi) Bobrovsky" />
     <link rel="canonical" href="https://inspiringsource.github.io/pwdnote/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="PWD Note | Encrypted Notes for VS Code Developers" />
+    <meta property="og:title" content="pwdNote | Encrypted Project Notes — CLI &amp; VS Code Extension" />
     <meta
       property="og:description"
-      content="Local encrypted project notes for VS Code using .pwdnote.enc files."
+      content="Encrypted project notes for developers — a CLI and an official VS Code extension using Git-friendly .pwdnote.enc files."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://inspiringsource.github.io/pwdnote/" />
@@ -30,10 +30,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PWD Note | Encrypted Notes for VS Code Developers" />
+    <meta name="twitter:title" content="pwdNote | Encrypted Project Notes — CLI &amp; VS Code Extension" />
     <meta
       name="twitter:description"
-      content="Local encrypted project notes for VS Code using .pwdnote.enc files."
+      content="Encrypted project notes for developers — a CLI and an official VS Code extension using Git-friendly .pwdnote.enc files."
     />
     <meta name="twitter:image" content="https://inspiringsource.github.io/pwdnote/assets/shortDemo.gif" />
 
@@ -365,6 +365,13 @@
             rel="noopener"
             >PyPI</a
           >
+          <a
+            class="btn btn-secondary"
+            href="https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
+            target="_blank"
+            rel="noopener"
+            >VS Code Extension</a
+          >
         </div>
       </header>
 
@@ -422,6 +429,7 @@
           <li>Works from nested directories</li>
           <li>Lightweight</li>
           <li>Local-first</li>
+          <li>Official VS Code integration</li>
         </ul>
       </section>
 
@@ -464,11 +472,33 @@
       <!-- VS Code extension -->
       <section class="pwd-section" aria-labelledby="vscode-heading">
         <h2 id="vscode-heading">VS Code extension</h2>
-        <p>
-          A VS Code extension for pwdnote is currently in progress. The goal is to make
-          <code class="inline">.pwdnote.enc</code> files open as readable encrypted project notes directly
-          inside VS Code, while the pwdnote CLI remains the encryption engine.
+        <p>The official VS Code extension is now available. It lets you:</p>
+        <ul class="security-list">
+          <li>open encrypted project notes directly inside VS Code</li>
+          <li>edit notes without leaving the editor</li>
+          <li>initialize project notes</li>
+          <li>add quick notes</li>
+          <li>keep using the same encrypted <code class="inline">.pwdnote.enc</code> format as the CLI</li>
+        </ul>
+        <p class="note">
+          All encryption and decryption continues to be handled by the pwdnote CLI.
         </p>
+        <div class="cta" style="justify-content: flex-start; margin-top: 22px;">
+          <a
+            class="btn btn-primary"
+            href="https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
+            target="_blank"
+            rel="noopener"
+            >Marketplace</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/inspiringsource/pwdnote-vscode"
+            target="_blank"
+            rel="noopener"
+            >Extension GitHub</a
+          >
+        </div>
       </section>
 
       <!-- FAQ -->
@@ -488,6 +518,12 @@
             <strong>Is pwdnote a password manager?</strong> No. It keeps your project notes private, not
             your credentials.
           </li>
+          <li>
+            <strong>Do I need both the CLI and the VS Code extension?</strong> Yes. The VS Code extension
+            is a graphical frontend for the pwdnote CLI. Install the CLI first with
+            <code class="inline">uv tool install pwdnote</code>, then install the official VS Code extension
+            from the Marketplace. The extension automatically detects and uses the CLI.
+          </li>
         </ul>
       </section>
 
@@ -496,6 +532,13 @@
         <a href="https://github.com/inspiringsource/pwdnote" target="_blank" rel="noopener">GitHub</a>
         ·
         <a href="https://pypi.org/project/pwdnote/" target="_blank" rel="noopener">PyPI</a>
+        ·
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
+          target="_blank"
+          rel="noopener"
+          >Marketplace</a
+        >
       </footer>
     </main>
 
@@ -504,13 +547,20 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "PWD Note",
+        "name": "pwdNote",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Windows, macOS, Linux",
-        "description": "A VS Code extension for local encrypted project notes using .pwdnote.enc files.",
+        "description": "Developer note-taking for encrypted project notes: a CLI plus an official VS Code extension, storing project-local notes in Git-friendly .pwdnote.enc files.",
         "url": "https://inspiringsource.github.io/pwdnote/",
         "downloadUrl": "https://pypi.org/project/pwdnote/",
+        "installUrl": "https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "sameAs": [
+          "https://github.com/inspiringsource/pwdnote",
+          "https://pypi.org/project/pwdnote/",
+          "https://github.com/inspiringsource/pwdnote-vscode",
+          "https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
+        ],
         "author": {
           "@type": "Person",
           "name": "Abraham Bobrovsky",
@@ -527,9 +577,9 @@
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "PWD Note",
+        "name": "pwdNote",
         "url": "https://inspiringsource.github.io/pwdnote/",
-        "description": "Local encrypted notes for VS Code developers.",
+        "description": "Encrypted project notes for developers — the pwdnote CLI and the official VS Code extension.",
         "isPartOf": {
           "@type": "WebSite",
           "name": "Inspiring Source",
