@@ -345,7 +345,7 @@
         <p class="subtitle">A lightweight CLI note-taking app for developers.</p>
         <p class="lede">
           <!-- PWDNOTE_VERSION_START -->
-          Latest CLI release: v0.3.1
+          Latest CLI release: v0.3.2
           <!-- PWDNOTE_VERSION_END -->
           for encrypted project notes, project-local notes, and Git-friendly encrypted notes stored alongside your code.
         </p>
@@ -388,17 +388,15 @@
       <!-- What's new -->
       <!-- PWDNOTE_WHATS_NEW_START -->
       <section class="pwd-section" aria-labelledby="whats-new-heading">
-        <h2 id="whats-new-heading">What’s new in v0.3.1</h2>
+        <h2 id="whats-new-heading">What’s new in v0.3.2</h2>
         <ul class="security-list">
-          <li>New key management commands.</li>
-          <li>Export your encryption key for backups.</li>
-          <li>Import your key on another trusted device.</li>
-          <li>Show the current key path.</li>
-          <li>Improved documentation.</li>
+          <li>Added pwdnote head and pwdnote tail.</li>
+          <li>Preview the beginning or end of a project note.</li>
+          <li>Supports -n / --lines for custom line counts.</li>
         </ul>
-        <pre class="code"><code><span class="prompt">$ </span>pwdnote key path
-<span class="prompt">$ </span>pwdnote key export
-<span class="prompt">$ </span>cat pwdnote-key.backup | pwdnote key import</code></pre>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote head
+<span class="prompt">$ </span>pwdnote head -n 5
+<span class="prompt">$ </span>pwdnote tail --lines 5</code></pre>
       </section>
       <!-- PWDNOTE_WHATS_NEW_END -->
 
