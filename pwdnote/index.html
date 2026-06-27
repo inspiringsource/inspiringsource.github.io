@@ -343,11 +343,20 @@
       <header class="pwd-hero">
         <h1>pwdNote</h1>
         <p class="subtitle">A lightweight CLI note-taking app for developers.</p>
-        <p class="lede">Encrypted project-local notes stored alongside your code.</p>
+        <p class="lede">
+          CLI v0.3.1 for encrypted project notes, project-local notes, and Git-friendly encrypted notes
+          stored alongside your code.
+        </p>
 
         <div class="install-block">
           <span class="label">Install</span>
           <pre class="code"><code><span class="prompt">$ </span>uv tool install pwdnote</code></pre>
+          <span class="label">Updating</span>
+          <pre class="code"><code><span class="prompt">$ </span>uv tool upgrade pwdnote</code></pre>
+          <p>
+            Existing users can upgrade to the latest version using
+            <code class="inline">uv tool upgrade pwdnote</code>.
+          </p>
         </div>
 
         <div class="cta">
@@ -370,10 +379,25 @@
             href="https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
             target="_blank"
             rel="noopener"
-            >VS Code Extension</a
+            >VS Code Marketplace</a
           >
         </div>
       </header>
+
+      <!-- What's new -->
+      <section class="pwd-section" aria-labelledby="whats-new-heading">
+        <h2 id="whats-new-heading">What’s new in v0.3.1</h2>
+        <ul class="security-list">
+          <li>New key management commands.</li>
+          <li>Export your encryption key for backups.</li>
+          <li>Import your key on another trusted device.</li>
+          <li>Show the current key path.</li>
+          <li>Improved documentation.</li>
+        </ul>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote key path
+<span class="prompt">$ </span>pwdnote key export
+<span class="prompt">$ </span>cat pwdnote-key.backup | pwdnote key import</code></pre>
+      </section>
 
       <!-- Demo -->
       <section class="pwd-section demo" aria-labelledby="demo-heading">
@@ -449,6 +473,10 @@
           <li>Notes are encrypted on disk.</li>
           <li>Git stores ciphertext, not readable plaintext.</li>
           <li>The encryption key stays local.</li>
+          <li>
+            You can now export and import your key to securely move your encrypted notes between
+            trusted devices.
+          </li>
         </ul>
         <p class="note">
           <strong>Note:</strong> pwdnote is not a password manager. It keeps your project notes
@@ -459,7 +487,7 @@
       <!-- Configuration -->
       <section class="pwd-section" aria-labelledby="config-heading">
         <h2 id="config-heading">Configuration</h2>
-        <p>As of <code class="inline">v0.3.0</code>, pwdnote supports:</p>
+        <p>pwdnote supports:</p>
         <ul class="config-list">
           <li>Lightweight TOML configuration.</li>
           <li>Custom initial note template.</li>
@@ -472,16 +500,15 @@
       <!-- VS Code extension -->
       <section class="pwd-section" aria-labelledby="vscode-heading">
         <h2 id="vscode-heading">VS Code extension</h2>
-        <p>The official VS Code extension is now available. It lets you:</p>
+        <p>The official VS Code extension is now available. It provides:</p>
         <ul class="security-list">
-          <li>open encrypted project notes directly inside VS Code</li>
-          <li>edit notes without leaving the editor</li>
-          <li>initialize project notes</li>
-          <li>add quick notes</li>
-          <li>keep using the same encrypted <code class="inline">.pwdnote.enc</code> format as the CLI</li>
+          <li>Open encrypted notes directly inside VS Code.</li>
+          <li>Edit and save notes without leaving the editor.</li>
+          <li>Uses the same encrypted <code class="inline">.pwdnote.enc</code> format as the CLI.</li>
         </ul>
         <p class="note">
-          All encryption and decryption continues to be handled by the pwdnote CLI.
+          All encryption and decryption continues to be handled by the pwdnote CLI for VS Code encrypted
+          notes.
         </p>
         <div class="cta" style="justify-content: flex-start; margin-top: 22px;">
           <a
@@ -489,14 +516,14 @@
             href="https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
             target="_blank"
             rel="noopener"
-            >Marketplace</a
+            >VS Code Marketplace</a
           >
           <a
             class="btn btn-secondary"
             href="https://github.com/inspiringsource/pwdnote-vscode"
             target="_blank"
             rel="noopener"
-            >Extension GitHub</a
+            >GitHub repository</a
           >
         </div>
       </section>
@@ -513,6 +540,24 @@
             <strong>How do I open a <code class="inline">.pwdnote.enc</code> file?</strong> Install pwdnote
             and run <code class="inline">pwdnote</code>, <code class="inline">pwdnote edit</code>, or
             <code class="inline">pwdnote read</code>.
+          </li>
+          <li>
+            <strong>How do I update pwdnote?</strong>
+            <pre class="code"><code><span class="prompt">$ </span>uv tool upgrade pwdnote</code></pre>
+          </li>
+          <li>
+            <strong>How do I move my notes to another computer?</strong>
+            <ol>
+              <li>
+                Export your key.
+                <pre class="code"><code><span class="prompt">$ </span>pwdnote key export &gt; pwdnote-key.backup</code></pre>
+              </li>
+              <li>Copy the backup securely to your new trusted device.</li>
+              <li>
+                Import it.
+                <pre class="code"><code><span class="prompt">$ </span>cat pwdnote-key.backup | pwdnote key import</code></pre>
+              </li>
+            </ol>
           </li>
           <li>
             <strong>Is pwdnote a password manager?</strong> No. It keeps your project notes private, not
@@ -537,7 +582,7 @@
           href="https://marketplace.visualstudio.com/items?itemName=inspiringsource.pwdnote-vscode"
           target="_blank"
           rel="noopener"
-          >Marketplace</a
+          >VS Code Marketplace</a
         >
       </footer>
     </main>
