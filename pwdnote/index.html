@@ -345,7 +345,7 @@
         <p class="subtitle">A lightweight CLI note-taking app for developers.</p>
         <p class="lede">
           <!-- PWDNOTE_VERSION_START -->
-          Latest CLI release: v0.3.3
+          Latest CLI release: v0.3.4
           <!-- PWDNOTE_VERSION_END -->
           for encrypted project notes, project-local notes, and Git-friendly encrypted notes stored alongside your code.
         </p>
@@ -388,15 +388,13 @@
       <!-- What's new -->
       <!-- PWDNOTE_WHATS_NEW_START -->
       <section class="pwd-section" aria-labelledby="whats-new-heading">
-        <h2 id="whats-new-heading">What’s new in v0.3.3</h2>
+        <h2 id="whats-new-heading">What’s new in v0.3.4</h2>
         <ul class="security-list">
-          <li>Added readable Git history for encrypted notes.</li>
-          <li>Added pwdnote log, pwdnote show &lt;rev&gt;, and pwdnote diff.</li>
-          <li>Compare encrypted note changes locally as readable plaintext.</li>
+          <li>Added pwdnote stats.</li>
+          <li>Shows note size, line/word/character counts, key and encryption backends.</li>
+          <li>Includes readable Git history statistics when available.</li>
         </ul>
-        <pre class="code"><code><span class="prompt">$ </span>pwdnote log
-<span class="prompt">$ </span>pwdnote show HEAD~1
-<span class="prompt">$ </span>pwdnote diff HEAD~1 HEAD</code></pre>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote stats</code></pre>
       </section>
       <!-- PWDNOTE_WHATS_NEW_END -->
 
