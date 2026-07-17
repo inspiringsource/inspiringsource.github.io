@@ -68,27 +68,18 @@
     });
   }
 
-  function makePlatformCard(name, status) {
+  function makePlatformRow(name, status) {
     var article = document.createElement("article");
-    article.className = "platform-card";
+    article.className = "platform-row";
 
     var label = document.createElement("span");
     label.className = "status-label status-" + status.toLowerCase();
     label.textContent = status;
 
-    var row = document.createElement("div");
-    row.className = "platform-mark";
-
     var heading = document.createElement("h3");
     heading.textContent = name;
 
-    var initial = document.createElement("span");
-    initial.className = "platform-initial";
-    initial.textContent = name.charAt(0);
-    initial.setAttribute("aria-hidden", "true");
-
-    row.append(heading, initial);
-    article.append(label, row);
+    article.append(heading, label);
     return article;
   }
 
@@ -98,10 +89,10 @@
 
     var fragment = document.createDocumentFragment();
     config.supportedPlatforms.forEach(function (name) {
-      fragment.appendChild(makePlatformCard(name, "Supported"));
+      fragment.appendChild(makePlatformRow(name, "Supported"));
     });
     config.plannedPlatforms.forEach(function (name) {
-      fragment.appendChild(makePlatformCard(name, "Planned"));
+      fragment.appendChild(makePlatformRow(name, "Planned"));
     });
     grid.replaceChildren(fragment);
   }
@@ -133,7 +124,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 820) setOpen(false);
+      if (window.innerWidth > 880) setOpen(false);
     });
   }
 
@@ -157,6 +148,8 @@
       description:
         "ReadBooster transforms ChatGPT and Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes.",
       url: "https://inspiringsource.github.io/ReadBooster/",
+      image:
+        "https://inspiringsource.github.io/ReadBooster/assets/favicon/web-app-manifest-512x512.png",
       browserRequirements: "Requires Google Chrome",
       featureList: [
         "Continuous Document Mode",

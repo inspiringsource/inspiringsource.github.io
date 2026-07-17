@@ -10,7 +10,7 @@
       content="ReadBooster transforms ChatGPT and Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes."
     />
     <meta name="author" content="Abraham (Avi) Bobrovsky" />
-    <meta name="theme-color" content="#173f3a" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://inspiringsource.github.io/ReadBooster/" />
 
     <meta property="og:type" content="website" />
@@ -21,6 +21,13 @@
       property="og:description"
       content="Turn long ChatGPT and Gemini conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
     />
+    <meta
+      property="og:image"
+      content="https://inspiringsource.github.io/ReadBooster/assets/favicon/web-app-manifest-512x512.png"
+    />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="ReadBooster document and reading arrow icon" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="ReadBooster – Turn AI Conversations into Readable Documents" />
@@ -28,8 +35,17 @@
       name="twitter:description"
       content="Turn long ChatGPT and Gemini conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
     />
+    <meta
+      name="twitter:image"
+      content="https://inspiringsource.github.io/ReadBooster/assets/favicon/web-app-manifest-512x512.png"
+    />
+    <meta name="twitter:image:alt" content="ReadBooster document and reading arrow icon" />
 
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="icon" href="./assets/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="./assets/config.js"></script>
     <script src="./assets/site.js" defer></script>
@@ -53,11 +69,19 @@
   <body data-page="home">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="./" aria-label="ReadBooster home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name" data-config-name>ReadBooster</span>
+    <header class="product-header">
+      <div class="page-width header-row">
+        <a class="product-brand" href="./" aria-label="ReadBooster home">
+          <img
+            src="./assets/icons/readbooster-32.png"
+            width="32"
+            height="32"
+            alt=""
+          />
+          <span>
+            <strong data-config-name>ReadBooster</strong>
+            <small>AI document reader</small>
+          </span>
         </a>
 
         <button
@@ -68,16 +92,16 @@
           aria-label="Open navigation"
           data-nav-toggle
         >
-          <span class="nav-toggle-lines" aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
 
-        <nav id="site-navigation" class="site-nav" aria-label="Primary navigation" data-site-nav>
+        <nav id="site-navigation" class="product-nav" aria-label="Primary navigation" data-site-nav>
           <a href="#features">Features</a>
           <a href="#how-it-works">How it works</a>
           <a href="#supported-ai">Supported AI</a>
           <a href="./privacy/">Privacy</a>
           <a href="#faq">FAQ</a>
-          <span data-install-container data-compact>
+          <span class="header-release" data-install-container data-compact>
             <span class="button-pending button-small" role="status">
               <span class="pending-dot" aria-hidden="true"></span>
               Chrome release pending
@@ -88,258 +112,274 @@
     </header>
 
     <main id="main-content">
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">A document view for AI conversations</p>
-            <h1 id="hero-heading">Turn AI conversations into readable documents.</h1>
-            <p class="hero-lede">
-              ReadBooster transforms long ChatGPT and Gemini conversations into structured,
-              continuous documents with clear navigation, better tables, and adaptable reading
-              controls.
-            </p>
-            <div class="hero-actions">
-              <span data-install-container>
-                <span class="button-pending" role="status">
-                  <span class="pending-dot" aria-hidden="true"></span>
-                  Chrome release pending
+      <section class="product-hero" aria-labelledby="hero-heading">
+        <div class="page-width">
+          <div class="hero-intro">
+            <div class="hero-copy">
+              <div class="product-signature">
+                <img
+                  src="./assets/icons/readbooster-128.png"
+                  width="128"
+                  height="128"
+                  alt="ReadBooster app icon"
+                />
+                <p>Browser extension · Document workspace</p>
+              </div>
+              <h1 id="hero-heading">Turn AI conversations into readable documents.</h1>
+              <p class="hero-summary">
+                ReadBooster transforms long ChatGPT and Gemini conversations into structured,
+                continuous documents with clear navigation, better tables, and adaptable reading
+                controls.
+              </p>
+              <div class="hero-actions">
+                <span data-install-container>
+                  <span class="button-pending" role="status">
+                    <span class="pending-dot" aria-hidden="true"></span>
+                    Chrome release pending
+                  </span>
                 </span>
-              </span>
-              <a class="button button-secondary" href="#features">Explore features</a>
+                <a class="text-action" href="#transformation">See the transformation <span aria-hidden="true">↓</span></a>
+              </div>
             </div>
-            <p class="release-note">
-              Initial testing release <span aria-label="version">v<span data-current-version>0.5.1</span></span>
-              · Built for Chrome
-            </p>
+
+            <aside class="product-index" aria-label="Current ReadBooster release information">
+              <p class="index-label">Release note</p>
+              <dl>
+                <dt>Version</dt><dd>v<span data-current-version>0.5.1</span></dd>
+                <dt>Platforms</dt><dd data-supported-list>ChatGPT and Gemini</dd>
+                <dt>Processing</dt><dd>Local in your browser</dd>
+                <dt>Reading modes</dt><dd>Document + Focus</dd>
+              </dl>
+              <p class="index-footnote">Initial testing release. Built for Chrome.</p>
+            </aside>
           </div>
 
           <div
-            class="product-preview"
+            class="workspace-demo"
             role="img"
-            aria-label="Illustration of a ReadBooster document with an outline, continuous response sections, and a formatted table"
+            aria-label="ReadBooster interface showing a grouped outline, continuous document, reading controls, and a formatted comparison table"
           >
-            <div aria-hidden="true">
-              <div class="preview-toolbar">
-                <span>Continuous document</span>
-                <span class="preview-dots"><span></span><span></span><span></span></span>
+            <div class="workspace-topbar" aria-hidden="true">
+              <div class="workspace-product">
+                <img src="./assets/icons/readbooster-48.png" width="24" height="24" alt="" />
+                <span>ReadBooster</span>
+                <b>Continuous Document Mode</b>
               </div>
-              <div class="preview-frame">
-                <aside class="preview-outline">
-                  <span class="outline-label">Outline</span>
-                  <p class="outline-item">Research question</p>
-                  <p class="outline-item active">Key findings</p>
-                  <p class="outline-item">Comparison</p>
-                  <p class="outline-item">Next steps</p>
-                </aside>
-                <article class="preview-document">
-                  <span class="preview-kicker">Response 04</span>
-                  <h2>Key findings and considerations</h2>
-                  <div class="text-line"></div>
-                  <div class="text-line"></div>
-                  <div class="text-line short"></div>
-                  <div class="prompt-note">Prompt preserved for context</div>
-                  <table class="mock-table">
-                    <thead><tr><th>Option</th><th>Strength</th><th>Trade-off</th></tr></thead>
-                    <tbody>
-                      <tr><td>Alpha</td><td>Clear structure</td><td>More setup</td></tr>
-                      <tr><td>Beta</td><td>Fast review</td><td>Less detail</td></tr>
-                    </tbody>
-                  </table>
-                </article>
-              </div>
-              <div class="preview-mode">
-                <span>Fit</span><span class="active">Wide</span><span>Full</span><span>Compact</span>
-              </div>
+              <div class="workspace-actions"><span>Copy</span><span>Print</span><span>Close</span></div>
+            </div>
+            <div class="workspace-body" aria-hidden="true">
+              <aside class="workspace-outline">
+                <div class="outline-heading"><span>Document outline</span><b>12</b></div>
+                <p class="outline-group">Research brief</p>
+                <a class="active"><span>01</span>Context and goals</a>
+                <a><span>02</span>Key findings</a>
+                <a><span>03</span>Market comparison</a>
+                <p class="outline-group">Recommendations</p>
+                <a><span>04</span>Options</a>
+                <a><span>05</span>Next steps</a>
+              </aside>
+
+              <article class="workspace-document">
+                <div class="document-meta"><span>Conversation document</span><span>Response 3 of 12</span></div>
+                <div class="document-title-row">
+                  <div><small>Section 03</small><h2>Market comparison</h2></div>
+                  <span class="rename-control">Rename section</span>
+                </div>
+                <div class="preserved-prompt"><b>Prompt</b><span>Compare the strongest options and explain the trade-offs.</span></div>
+                <p>
+                  The comparison becomes easier to review when the criteria stay visible and the
+                  table can use the full reading width.
+                </p>
+                <h3>Comparison at a glance</h3>
+                <table>
+                  <thead><tr><th>Option</th><th>Best for</th><th>Strength</th><th>Trade-off</th></tr></thead>
+                  <tbody>
+                    <tr><td>Alpha</td><td>Deep research</td><td>Clear evidence</td><td>More setup</td></tr>
+                    <tr><td>Beta</td><td>Fast review</td><td>Concise output</td><td>Less detail</td></tr>
+                    <tr><td>Gamma</td><td>Team sharing</td><td>Good structure</td><td>More context</td></tr>
+                  </tbody>
+                </table>
+              </article>
+
+              <aside class="workspace-controls">
+                <p>Reading</p>
+                <span class="control-active">Document</span><span>Focus</span>
+                <p>Text</p>
+                <span>A−</span><span>A+</span>
+                <p>Theme</p>
+                <span>System</span>
+              </aside>
+            </div>
+            <div class="workspace-tablebar" aria-hidden="true">
+              <span>Table width</span><span>Fit</span><span class="selected">Wide</span><span>Fullscreen</span><span>Compact</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="problem-heading">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">The reading problem</p>
-            <h2 id="problem-heading">AI chats are built for turns, not for long-form reading.</h2>
-            <p>
-              A useful conversation can become a substantial body of work. The chat interface still
-              leaves it split across prompts and responses.
-            </p>
-          </div>
+      <section id="transformation" class="transformation" aria-labelledby="transformation-heading">
+        <div class="page-width">
+          <header class="editorial-heading">
+            <p>Conversation → document</p>
+            <h2 id="transformation-heading">The same information, finally shaped for reading.</h2>
+          </header>
 
-          <div class="problem-grid">
-            <article class="problem-card">
-              <span class="card-number">01</span>
-              <h3>Fragmented context</h3>
-              <p>Important information is spread across many prompts and responses.</p>
+          <div class="comparison-spread">
+            <article class="before-pane">
+              <header><span>Before</span><h3>Fragmented chat</h3></header>
+              <div class="chat-scroll" aria-hidden="true">
+                <p class="chat-label">You</p>
+                <div class="chat-bubble prompt-bubble">Compare the options and include a detailed table.</div>
+                <p class="chat-label">AI response</p>
+                <div class="chat-bubble response-bubble">
+                  <b>Here is a comparison…</b><i></i><i></i><i class="short"></i>
+                  <div class="overflow-table"><span>Option</span><span>Criteria</span><span>Strength</span><span>Risk</span><span>Notes →</span></div>
+                </div>
+                <p class="chat-label">You</p>
+                <div class="chat-bubble prompt-bubble short-bubble">Now summarize the recommendation.</div>
+                <p class="scroll-note">More scrolling · context split across turns</p>
+              </div>
+              <ul>
+                <li>Responses remain disconnected</li>
+                <li>Tables overflow a narrow chat column</li>
+                <li>Important sections are difficult to revisit</li>
+              </ul>
             </article>
-            <article class="problem-card">
-              <span class="card-number">02</span>
-              <h3>Difficult revisiting</h3>
-              <p>Long answers, research discussions, and tables are awkward to find again.</p>
-            </article>
-            <article class="problem-card">
-              <span class="card-number">03</span>
-              <h3>Limited overview</h3>
-              <p>Scrolling through separate chat turns makes the document structure hard to see.</p>
-            </article>
-            <article class="problem-card">
-              <span class="card-number">04</span>
-              <h3>Copying friction</h3>
-              <p>Moving everything into Word, Notion, or another editor interrupts the work.</p>
+
+            <div class="comparison-arrow" aria-hidden="true"><span>→</span></div>
+
+            <article class="after-pane">
+              <header><span>After</span><h3>ReadBooster document</h3></header>
+              <div class="after-document" aria-hidden="true">
+                <aside><b>Outline</b><span>Brief</span><span class="active">Comparison</span><span>Recommendation</span></aside>
+                <div>
+                  <small>Renamed section</small>
+                  <h4>Options and recommendation</h4>
+                  <p>One connected reading flow keeps the argument, evidence, and conclusion together.</p>
+                  <table>
+                    <thead><tr><th>Option</th><th>Strength</th><th>Risk</th></tr></thead>
+                    <tbody><tr><td>Alpha</td><td>Evidence</td><td>Setup</td></tr><tr><td>Beta</td><td>Speed</td><td>Detail</td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+              <ul>
+                <li>One continuous document</li>
+                <li>Grouped outline and renamed sections</li>
+                <li>Readable typography and table controls</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-dark" aria-labelledby="continuous-heading">
-        <div class="section-inner continuous-grid">
-          <div class="split-copy">
-            <p class="eyebrow">Continuous Document Mode</p>
+      <section class="continuous-story" aria-labelledby="continuous-heading">
+        <div class="page-width continuous-layout">
+          <div class="story-copy">
+            <p class="margin-label">Primary mode</p>
             <h2 id="continuous-heading">See the document hidden inside the conversation.</h2>
             <p>
-              ReadBooster brings the full exchange into one continuous document, so ideas stay
-              connected and the conversation becomes easier to review as a whole.
+              Continuous Document Mode combines the full exchange into one readable flow without
+              discarding the prompts that give each response its meaning.
             </p>
-            <ul class="check-list">
-              <li>Combines the full conversation into a continuous reading flow.</li>
-              <li>Preserves prompts so every response keeps its context.</li>
-              <li>Creates clear response sections and grouped outline navigation.</li>
-              <li>Moves beyond disconnected response-by-response reading.</li>
-            </ul>
+            <ol class="story-notes">
+              <li><span>01</span><div><b>Preserved context</b><p>Prompts remain attached to the responses they shaped.</p></div></li>
+              <li><span>02</span><div><b>Visible structure</b><p>Responses become named sections inside a grouped outline.</p></div></li>
+              <li><span>03</span><div><b>Connected reading</b><p>Navigate headings without returning to disconnected chat turns.</p></div></li>
+            </ol>
           </div>
 
-          <div class="document-stack" aria-hidden="true">
-            <div class="stack-sheet"></div>
-            <div class="stack-document">
-              <div class="stack-header"><span>Project research</span><span>12 sections</span></div>
-              <div class="stack-body">
-                <div class="stack-outline">
-                  <span>Introduction</span>
-                  <span>Market context</span>
-                  <span>Competitors</span>
-                  <span>Recommendations</span>
-                </div>
-                <div class="stack-content">
-                  <h3>A single, connected reading flow</h3>
-                  <div class="text-line"></div>
-                  <div class="text-line"></div>
-                  <div class="text-line short"></div>
-                  <div class="response-block">
-                    <strong>Next response</strong>
-                    <div class="text-line"></div>
-                    <div class="text-line short"></div>
-                  </div>
-                </div>
-              </div>
+          <div class="reader-spread" aria-label="Continuous document example">
+            <nav class="margin-outline" aria-label="Example document outline">
+              <span>01 — Brief</span><span>02 — Evidence</span><span class="active">03 — Comparison</span><span>04 — Decision</span>
+            </nav>
+            <article class="document-leaf">
+              <div class="leaf-running-head"><span>Continuous conversation</span><span>03 / 04</span></div>
+              <section><small>Prompt</small><p>Which option best fits the original goal, and why?</p></section>
+              <section><small>Response</small><h3>A recommendation grounded in the full discussion</h3><p>Because the earlier constraints remain visible, the recommendation can be reviewed as part of one coherent document rather than as an isolated answer.</p></section>
+              <blockquote>Focus Mode can narrow the view to this response when a closer reading is needed.</blockquote>
+              <footer><span>Previous section</span><span>Next section →</span></footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="feature-workbench" aria-labelledby="features-heading">
+        <div class="page-width">
+          <div class="workbench-heading">
+            <div><p>Reader workbench</p><h2 id="features-heading">Controls that stay close to the document.</h2></div>
+            <p>ReadBooster’s tools change how the conversation is presented, without changing the original AI conversation.</p>
+          </div>
+
+          <div class="control-ribbon" role="img" aria-label="ReadBooster controls for reading mode, table width, typography, theme, copy, and print">
+            <div aria-hidden="true">
+              <span class="ribbon-label">Mode</span><b class="ribbon-active">Document</b><b>Focus</b>
+              <i></i><span class="ribbon-label">Table</span><b>Fit</b><b class="ribbon-active">Wide</b><b>Fullscreen</b><b>Compact</b>
+              <i></i><span class="ribbon-label">Type</span><b>A−</b><b>A+</b>
+              <i></i><span class="ribbon-label">Theme</span><b>System</b>
+              <i></i><b>Copy</b><b>Print / PDF</b>
             </div>
           </div>
+
+          <ol class="feature-ledger">
+            <li><span>01</span><div><h3>Continuous Document Mode</h3><p>Read the complete conversation as one structured document.</p></div></li>
+            <li><span>02</span><div><h3>Focus Mode</h3><p>Concentrate on a single response when the full document is too broad.</p></div></li>
+            <li><span>03</span><div><h3>Grouped document outline</h3><p>Move between conversation sections and detected headings.</p></div></li>
+            <li><span>04</span><div><h3>Section renaming</h3><p>Give response sections clearer labels inside the reader view.</p></div></li>
+            <li><span>05</span><div><h3>Better tables</h3><p>Use Fit, Wide, Fullscreen, and Compact modes for demanding data.</p></div></li>
+            <li><span>06</span><div><h3>Typography and spacing</h3><p>Use a calmer hierarchy and dyslexia-friendly reading settings.</p></div></li>
+            <li><span>07</span><div><h3>Light, dark, and system themes</h3><p>Match the reader to your environment and preference.</p></div></li>
+            <li><span>08</span><div><h3>Copy and Print</h3><p>Copy content or print the document and save it as a PDF.</p></div></li>
+          </ol>
         </div>
       </section>
 
-      <section id="features" class="section section-tinted" aria-labelledby="features-heading">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Current capabilities</p>
-            <h2 id="features-heading">A calmer workspace for serious AI conversations.</h2>
-            <p>
-              ReadBooster is more than a typography layer. It provides document structure,
-              navigation, table controls, and adaptable reading modes around the conversation.
-            </p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card"><span class="feature-icon">01</span><h3>Continuous Document Mode</h3><p>Read the complete conversation as one structured document.</p></article>
-            <article class="feature-card"><span class="feature-icon">02</span><h3>Focus Mode</h3><p>Concentrate on one response when a narrower reading view is useful.</p></article>
-            <article class="feature-card"><span class="feature-icon">03</span><h3>Document outline</h3><p>Navigate grouped conversation sections and detected headings.</p></article>
-            <article class="feature-card"><span class="feature-icon">04</span><h3>Section renaming</h3><p>Give response sections clearer labels inside the ReadBooster view.</p></article>
-            <article class="feature-card"><span class="feature-icon">05</span><h3>Better tables</h3><p>Use Fit, Wide, Fullscreen, and Compact modes for demanding tables.</p></article>
-            <article class="feature-card"><span class="feature-icon">06</span><h3>Dyslexia-friendly settings</h3><p>Adapt font, spacing, and reading presentation to personal needs.</p></article>
-            <article class="feature-card"><span class="feature-icon">07</span><h3>Flexible themes</h3><p>Choose light, dark, or system appearance in the reader.</p></article>
-            <article class="feature-card"><span class="feature-icon">08</span><h3>Copy and Print</h3><p>Copy content or print the document and save it as a PDF.</p></article>
-            <article class="feature-card"><span class="feature-icon">09</span><h3>Local-first processing</h3><p>Format page content locally without automatic chat-content transmission.</p></article>
-            <article class="feature-card"><span class="feature-icon">10</span><h3>ChatGPT and Gemini</h3><p>Use the current release on both supported AI conversation platforms.</p></article>
-            <article class="feature-card"><span class="feature-icon">11</span><h3>Improved typography and spacing</h3><p>Give long responses a clear, readable hierarchy with calmer document spacing.</p></article>
-          </div>
-
-          <div class="planned-row">
-            <span class="status-label status-planned">Planned</span>
-            <p>
-              Support for <span data-planned-list>Mistral and Claude</span>, plus deeper document
-              workflows. These are future directions, not current capabilities.
-            </p>
-          </div>
+      <section id="how-it-works" class="workflow" aria-labelledby="workflow-heading">
+        <div class="page-width workflow-grid">
+          <header><p>How it works</p><h2 id="workflow-heading">Three steps from chat to document.</h2></header>
+          <ol>
+            <li><span>1</span><div><h3>Open a supported conversation.</h3><p>Start with a ChatGPT or Gemini conversation you want to review.</p></div></li>
+            <li><span>2</span><div><h3>Activate ReadBooster.</h3><p>Choose the document or focus view for the reading task.</p></div></li>
+            <li><span>3</span><div><h3>Read by structure.</h3><p>Use sections, headings, table modes, and the outline to navigate.</p></div></li>
+          </ol>
         </div>
       </section>
 
-      <section id="how-it-works" class="section section-dark" aria-labelledby="steps-heading">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">How it works</p>
-            <h2 id="steps-heading">From conversation to document in three steps.</h2>
+      <section id="supported-ai" class="platform-section" aria-labelledby="platform-heading">
+        <div class="page-width platform-layout">
+          <header><p>Platform index</p><h2 id="platform-heading">Supported AI conversations.</h2><span>Availability is stated directly. Planned platforms are not presented as current.</span></header>
+          <div class="platform-list" data-platform-grid aria-live="polite">
+            <article class="platform-row"><h3>ChatGPT</h3><span class="status-label status-supported">Supported</span></article>
+            <article class="platform-row"><h3>Gemini</h3><span class="status-label status-supported">Supported</span></article>
+            <article class="platform-row"><h3>Mistral</h3><span class="status-label status-planned">Planned</span></article>
+            <article class="platform-row"><h3>Claude</h3><span class="status-label status-planned">Planned</span></article>
           </div>
-          <div class="steps">
-            <article class="step"><span class="step-number">1</span><h3>Open a supported AI conversation.</h3><p>Start with a ChatGPT or Gemini conversation you want to read or review.</p></article>
-            <article class="step"><span class="step-number">2</span><h3>Activate ReadBooster.</h3><p>Open the extension and choose the reading mode that fits your task.</p></article>
-            <article class="step"><span class="step-number">3</span><h3>Read it as a structured document.</h3><p>Use sections, headings, the outline, and table controls to move through the work.</p></article>
-          </div>
+        </div>
+        <div class="page-width planned-note">
+          <b>Later</b><span>Support for <span data-planned-list>Mistral and Claude</span>, plus deeper document workflows. These are future directions, not current capabilities.</span>
         </div>
       </section>
 
-      <section id="supported-ai" class="section" aria-labelledby="platforms-heading">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">Supported AI</p>
-            <h2 id="platforms-heading">Built for the AI conversations you already use.</h2>
-            <p>
-              Platform status is stated explicitly. Planned support is not presented as available.
-            </p>
-          </div>
-          <div class="platform-grid" data-platform-grid aria-live="polite">
-            <article class="platform-card"><span class="status-label status-supported">Supported</span><div class="platform-mark"><h3>ChatGPT</h3><span class="platform-initial" aria-hidden="true">C</span></div></article>
-            <article class="platform-card"><span class="status-label status-supported">Supported</span><div class="platform-mark"><h3>Gemini</h3><span class="platform-initial" aria-hidden="true">G</span></div></article>
-            <article class="platform-card"><span class="status-label status-planned">Planned</span><div class="platform-mark"><h3>Mistral</h3><span class="platform-initial" aria-hidden="true">M</span></div></article>
-            <article class="platform-card"><span class="status-label status-planned">Planned</span><div class="platform-mark"><h3>Claude</h3><span class="platform-initial" aria-hidden="true">C</span></div></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="privacy" class="section section-tinted" aria-labelledby="privacy-heading">
-        <div class="section-inner privacy-grid">
-          <div class="split-copy">
-            <p class="eyebrow">Privacy by design</p>
-            <h2 id="privacy-heading">Your conversation stays in your browser.</h2>
-            <p>
-              ReadBooster accesses page content locally to build the document view. It does not
-              automatically send your chat content to a ReadBooster server.
-            </p>
-            <ul class="check-list">
+      <section id="privacy" class="local-section" aria-labelledby="local-heading">
+        <div class="page-width local-layout">
+          <div class="local-stamp" aria-hidden="true"><span>LOCAL</span><b>Browser processing</b><small>No automatic chat-content transmission</small></div>
+          <div class="local-copy">
+            <p>Privacy by design</p>
+            <h2 id="local-heading">The document is built where the conversation already is.</h2>
+            <p>ReadBooster accesses page content locally to render the document view. It does not automatically send your chat content to a ReadBooster server.</p>
+            <ul>
               <li>Conversation formatting happens locally in the browser.</li>
               <li>Reading preferences may be stored locally on your device.</li>
               <li>Feedback is sent only when you deliberately submit the Tally form.</li>
-              <li>You choose what text or screenshots you include with feedback.</li>
+              <li>You decide what text or screenshots you include.</li>
             </ul>
-            <div class="privacy-actions">
-              <a class="button button-primary" href="./privacy/">Read the privacy policy</a>
-              <a class="button button-secondary" data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Open the feedback form</a>
-            </div>
-          </div>
-
-          <div class="privacy-panel">
-            <article class="privacy-card"><strong>Local</strong><h3>Page processing</h3><p>Chat content is read and formatted on the device where the extension runs.</p></article>
-            <article class="privacy-card"><strong>Your choice</strong><h3>Feedback content</h3><p>The Tally form opens only when requested and sends only what you submit.</p></article>
-            <article class="privacy-card"><strong>Local</strong><h3>Preferences</h3><p>Reader settings may be retained in browser storage for later use.</p></article>
-            <article class="privacy-card"><strong>No auto-send</strong><h3>Conversation content</h3><p>ReadBooster does not automatically transmit chats to a server.</p></article>
+            <div class="local-actions"><a href="./privacy/">Read the privacy policy</a><a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Open the feedback form</a></div>
           </div>
         </div>
       </section>
 
-      <section id="faq" class="section" aria-labelledby="faq-heading">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow">FAQ</p>
-            <h2 id="faq-heading">Questions about ReadBooster.</h2>
-          </div>
-
+      <section id="faq" class="faq-section" aria-labelledby="faq-heading">
+        <div class="page-width faq-layout">
+          <header><p>Reference</p><h2 id="faq-heading">ReadBooster FAQ</h2></header>
           <div class="faq-list">
             <details class="faq-item"><summary>What does ReadBooster do?</summary><div class="faq-answer"><p>ReadBooster transforms AI conversations into structured documents that are easier to read, navigate, review, and keep. It provides continuous and focused reading modes, an outline, clearer sections, table controls, and adaptable reading settings.</p></div></details>
             <details class="faq-item"><summary>Which AI platforms are supported?</summary><div class="faq-answer"><p><span data-supported-list>ChatGPT and Gemini</span> are supported in the current release.</p></div></details>
@@ -353,26 +393,11 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-top">
-          <div>
-            <p class="eyebrow" data-config-name>ReadBooster</p>
-            <h2>Make long AI conversations easier to understand and revisit.</h2>
-          </div>
-          <span data-install-container>
-            <span class="button-pending" role="status"><span class="pending-dot" aria-hidden="true"></span>Chrome release pending</span>
-          </span>
-        </div>
-        <div class="footer-bottom">
-          <span>© <span data-copyright-year>2026</span> <span data-config-name>ReadBooster</span></span>
-          <nav class="footer-links" aria-label="Footer navigation">
-            <a href="./privacy/">Privacy</a>
-            <a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Feedback</a>
-            <a data-config-link="portfolioUrl">Portfolio</a>
-            <a data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-          </nav>
-        </div>
+    <footer class="product-footer">
+      <div class="page-width footer-row">
+        <a class="footer-brand" href="./"><img src="./assets/icons/readbooster-32.png" width="32" height="32" alt="" /><span data-config-name>ReadBooster</span></a>
+        <nav aria-label="Footer navigation"><a href="./privacy/">Privacy</a><a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Feedback</a><a data-config-link="portfolioUrl">Portfolio</a><a data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer">GitHub</a></nav>
+        <p>© <span data-copyright-year>2026</span> ReadBooster</p>
       </div>
     </footer>
   </body>
