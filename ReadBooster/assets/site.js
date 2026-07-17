@@ -149,7 +149,7 @@
         "ReadBooster transforms ChatGPT and Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
-        "https://inspiringsource.github.io/ReadBooster/assets/favicon/web-app-manifest-512x512.png",
+        "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
       browserRequirements: "Requires Google Chrome",
       featureList: [
         "Continuous Document Mode",

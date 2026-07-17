@@ -154,66 +154,20 @@
             </aside>
           </div>
 
-          <div
-            class="workspace-demo"
-            role="img"
-            aria-label="ReadBooster interface showing a grouped outline, continuous document, reading controls, and a formatted comparison table"
-          >
-            <div class="workspace-topbar" aria-hidden="true">
-              <div class="workspace-product">
-                <img src="./assets/icons/readbooster-48.png" width="24" height="24" alt="" />
-                <span>ReadBooster</span>
-                <b>Continuous Document Mode</b>
-              </div>
-              <div class="workspace-actions"><span>Copy</span><span>Print</span><span>Close</span></div>
-            </div>
-            <div class="workspace-body" aria-hidden="true">
-              <aside class="workspace-outline">
-                <div class="outline-heading"><span>Document outline</span><b>12</b></div>
-                <p class="outline-group">Research brief</p>
-                <a class="active"><span>01</span>Context and goals</a>
-                <a><span>02</span>Key findings</a>
-                <a><span>03</span>Market comparison</a>
-                <p class="outline-group">Recommendations</p>
-                <a><span>04</span>Options</a>
-                <a><span>05</span>Next steps</a>
-              </aside>
-
-              <article class="workspace-document">
-                <div class="document-meta"><span>Conversation document</span><span>Response 3 of 12</span></div>
-                <div class="document-title-row">
-                  <div><small>Section 03</small><h2>Market comparison</h2></div>
-                  <span class="rename-control">Rename section</span>
-                </div>
-                <div class="preserved-prompt"><b>Prompt</b><span>Compare the strongest options and explain the trade-offs.</span></div>
-                <p>
-                  The comparison becomes easier to review when the criteria stay visible and the
-                  table can use the full reading width.
-                </p>
-                <h3>Comparison at a glance</h3>
-                <table>
-                  <thead><tr><th>Option</th><th>Best for</th><th>Strength</th><th>Trade-off</th></tr></thead>
-                  <tbody>
-                    <tr><td>Alpha</td><td>Deep research</td><td>Clear evidence</td><td>More setup</td></tr>
-                    <tr><td>Beta</td><td>Fast review</td><td>Concise output</td><td>Less detail</td></tr>
-                    <tr><td>Gamma</td><td>Team sharing</td><td>Good structure</td><td>More context</td></tr>
-                  </tbody>
-                </table>
-              </article>
-
-              <aside class="workspace-controls">
-                <p>Reading</p>
-                <span class="control-active">Document</span><span>Focus</span>
-                <p>Text</p>
-                <span>A−</span><span>A+</span>
-                <p>Theme</p>
-                <span>System</span>
-              </aside>
-            </div>
-            <div class="workspace-tablebar" aria-hidden="true">
-              <span>Table width</span><span>Fit</span><span class="selected">Wide</span><span>Fullscreen</span><span>Compact</span>
-            </div>
-          </div>
+          <figure class="product-shot product-shot-hero">
+            <img
+              src="/ReadBooster/Screenshots/Screenshot1.jpg"
+              width="1455"
+              height="842"
+              alt="ReadBooster Continuous Document Mode showing a grouped conversation outline and a chart about Napoleon’s 1812 campaign"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <figcaption>
+              Continuous Document Mode brings the full conversation into one structured reading
+              experience.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -221,59 +175,68 @@
         <div class="page-width">
           <header class="editorial-heading">
             <p>Conversation → document</p>
-            <h2 id="transformation-heading">The same information, finally shaped for reading.</h2>
+            <div>
+              <h2 id="transformation-heading">From chat history to structured document.</h2>
+              <p class="section-intro">
+                ReadBooster integrates directly into supported AI platforms. Click Optimize Reading
+                to transform the current conversation into a structured document.
+              </p>
+            </div>
           </header>
 
           <div class="comparison-spread">
             <article class="before-pane">
-              <header><span>Before</span><h3>Fragmented chat</h3></header>
-              <div class="chat-scroll" aria-hidden="true">
-                <p class="chat-label">You</p>
-                <div class="chat-bubble prompt-bubble">Compare the options and include a detailed table.</div>
-                <p class="chat-label">AI response</p>
-                <div class="chat-bubble response-bubble">
-                  <b>Here is a comparison…</b><i></i><i></i><i class="short"></i>
-                  <div class="overflow-table"><span>Option</span><span>Criteria</span><span>Strength</span><span>Risk</span><span>Notes →</span></div>
-                </div>
-                <p class="chat-label">You</p>
-                <div class="chat-bubble prompt-bubble short-bubble">Now summarize the recommendation.</div>
-                <p class="scroll-note">More scrolling · context split across turns</p>
-              </div>
-              <ul>
-                <li>Responses remain disconnected</li>
-                <li>Tables overflow a narrow chat column</li>
-                <li>Important sections are difficult to revisit</li>
-              </ul>
+              <header><span>Before</span><h3>Ready inside ChatGPT</h3></header>
+              <figure class="product-shot comparison-shot">
+                <img
+                  src="/ReadBooster/Screenshots/Screenshot4.jpg"
+                  width="1271"
+                  height="823"
+                  alt="ChatGPT conversation with the ReadBooster Optimize Reading button beside the message input"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>Activate ReadBooster directly from the AI conversation.</figcaption>
+              </figure>
+              <p class="comparison-caption">Start inside ChatGPT and activate ReadBooster with one click.</p>
             </article>
 
             <div class="comparison-arrow" aria-hidden="true"><span>→</span></div>
 
             <article class="after-pane">
               <header><span>After</span><h3>ReadBooster document</h3></header>
-              <div class="after-document" aria-hidden="true">
-                <aside><b>Outline</b><span>Brief</span><span class="active">Comparison</span><span>Recommendation</span></aside>
-                <div>
-                  <small>Renamed section</small>
-                  <h4>Options and recommendation</h4>
-                  <p>One connected reading flow keeps the argument, evidence, and conclusion together.</p>
-                  <table>
-                    <thead><tr><th>Option</th><th>Strength</th><th>Risk</th></tr></thead>
-                    <tbody><tr><td>Alpha</td><td>Evidence</td><td>Setup</td></tr><tr><td>Beta</td><td>Speed</td><td>Detail</td></tr></tbody>
-                  </table>
-                </div>
-              </div>
-              <ul>
-                <li>One continuous document</li>
-                <li>Grouped outline and renamed sections</li>
-                <li>Readable typography and table controls</li>
-              </ul>
+              <figure class="product-shot comparison-shot">
+                <img
+                  src="/ReadBooster/Screenshots/Screenshot1.jpg"
+                  width="1455"
+                  height="842"
+                  alt="ReadBooster Continuous Document Mode showing a grouped conversation outline and a chart about Napoleon’s 1812 campaign"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>
+                  Continuous Document Mode brings the full conversation into one structured reading
+                  experience.
+                </figcaption>
+              </figure>
+              <p class="comparison-caption">
+                Read the conversation as one structured document with grouped navigation and clearer
+                presentation.
+              </p>
             </article>
           </div>
+
+          <ol id="how-it-works" class="workflow-steps" aria-label="ReadBooster workflow">
+            <li><span>1</span><div><h3>Open a conversation.</h3><p>Use ChatGPT or Gemini as normal.</p></div></li>
+            <li><span>2</span><div><h3>Click Optimize Reading.</h3><p>Launch the document experience from the current conversation.</p></div></li>
+            <li><span>3</span><div><h3>Navigate the document.</h3><p>Move through grouped conversation sections and headings.</p></div></li>
+            <li><span>4</span><div><h3>Adapt the view.</h3><p>Adjust tables, reading settings, and section names as needed.</p></div></li>
+          </ol>
         </div>
       </section>
 
       <section class="continuous-story" aria-labelledby="continuous-heading">
-        <div class="page-width continuous-layout">
+        <div class="page-width continuous-layout text-only-layout">
           <div class="story-copy">
             <p class="margin-label">Primary mode</p>
             <h2 id="continuous-heading">See the document hidden inside the conversation.</h2>
@@ -287,60 +250,74 @@
               <li><span>03</span><div><b>Connected reading</b><p>Navigate headings without returning to disconnected chat turns.</p></div></li>
             </ol>
           </div>
-
-          <div class="reader-spread" aria-label="Continuous document example">
-            <nav class="margin-outline" aria-label="Example document outline">
-              <span>01 — Brief</span><span>02 — Evidence</span><span class="active">03 — Comparison</span><span>04 — Decision</span>
-            </nav>
-            <article class="document-leaf">
-              <div class="leaf-running-head"><span>Continuous conversation</span><span>03 / 04</span></div>
-              <section><small>Prompt</small><p>Which option best fits the original goal, and why?</p></section>
-              <section><small>Response</small><h3>A recommendation grounded in the full discussion</h3><p>Because the earlier constraints remain visible, the recommendation can be reviewed as part of one coherent document rather than as an isolated answer.</p></section>
-              <blockquote>Focus Mode can narrow the view to this response when a closer reading is needed.</blockquote>
-              <footer><span>Previous section</span><span>Next section →</span></footer>
-            </article>
-          </div>
+          <aside class="document-principle">
+            <p>Conversation structure</p>
+            <blockquote>
+              Responses appear in one continuous reading flow, while prompts remain available for
+              context and the outline groups conversation sections and headings.
+            </blockquote>
+            <a href="#hero-heading">See the complete document workspace above <span aria-hidden="true">↑</span></a>
+          </aside>
         </div>
       </section>
 
-      <section id="features" class="feature-workbench" aria-labelledby="features-heading">
+      <section id="features" class="product-features" aria-labelledby="features-heading">
         <div class="page-width">
-          <div class="workbench-heading">
-            <div><p>Reader workbench</p><h2 id="features-heading">Controls that stay close to the document.</h2></div>
-            <p>ReadBooster’s tools change how the conversation is presented, without changing the original AI conversation.</p>
-          </div>
+          <header class="feature-sequence-heading">
+            <p>Product details</p>
+            <h2 id="features-heading">Real controls, shown in the document.</h2>
+          </header>
 
-          <div class="control-ribbon" role="img" aria-label="ReadBooster controls for reading mode, table width, typography, theme, copy, and print">
-            <div aria-hidden="true">
-              <span class="ribbon-label">Mode</span><b class="ribbon-active">Document</b><b>Focus</b>
-              <i></i><span class="ribbon-label">Table</span><b>Fit</b><b class="ribbon-active">Wide</b><b>Fullscreen</b><b>Compact</b>
-              <i></i><span class="ribbon-label">Type</span><b>A−</b><b>A+</b>
-              <i></i><span class="ribbon-label">Theme</span><b>System</b>
-              <i></i><b>Copy</b><b>Print / PDF</b>
+          <article id="tables" class="feature-editorial">
+            <div class="feature-copy">
+              <p class="feature-number">03 / Tables</p>
+              <h3>Tables that adapt to the document.</h3>
+              <p>
+                Switch between fitted, wide, fullscreen, and compact layouts so large AI-generated
+                tables remain readable instead of being squeezed into a narrow chat column.
+              </p>
             </div>
-          </div>
+            <figure class="product-shot feature-shot">
+              <img
+                src="/ReadBooster/Screenshots/Screenshot2.jpg"
+                width="1447"
+                height="806"
+                alt="ReadBooster displaying an AI-generated table with Fit, Wide, Fullscreen, Compact text, and Reset controls"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Adapt wide AI-generated tables to the available reading space.</figcaption>
+            </figure>
+          </article>
 
-          <ol class="feature-ledger">
-            <li><span>01</span><div><h3>Continuous Document Mode</h3><p>Read the complete conversation as one structured document.</p></div></li>
-            <li><span>02</span><div><h3>Focus Mode</h3><p>Concentrate on a single response when the full document is too broad.</p></div></li>
-            <li><span>03</span><div><h3>Grouped document outline</h3><p>Move between conversation sections and detected headings.</p></div></li>
-            <li><span>04</span><div><h3>Section renaming</h3><p>Give response sections clearer labels inside the reader view.</p></div></li>
-            <li><span>05</span><div><h3>Better tables</h3><p>Use Fit, Wide, Fullscreen, and Compact modes for demanding data.</p></div></li>
-            <li><span>06</span><div><h3>Typography and spacing</h3><p>Use a calmer hierarchy and dyslexia-friendly reading settings.</p></div></li>
-            <li><span>07</span><div><h3>Light, dark, and system themes</h3><p>Match the reader to your environment and preference.</p></div></li>
-            <li><span>08</span><div><h3>Copy and Print</h3><p>Copy content or print the document and save it as a PDF.</p></div></li>
-          </ol>
-        </div>
-      </section>
+          <article id="reading-settings" class="feature-editorial feature-editorial-reverse">
+            <div class="feature-copy">
+              <p class="feature-number">04 / Reading settings</p>
+              <h3>Reading settings that adapt to you.</h3>
+              <p>
+                Adjust text size, spacing, appearance, code presentation, and reading presets—including
+                a dyslexia-friendly option—without changing the original conversation.
+              </p>
+            </div>
+            <figure class="product-shot feature-shot">
+              <img
+                src="/ReadBooster/Screenshots/Screenshot3.jpg"
+                width="1448"
+                height="706"
+                alt="ReadBooster reading settings showing Comfortable and Dyslexia-friendly presets, text size, spacing, appearance, and code appearance controls"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Customize text size, spacing, appearance, and reading presets.</figcaption>
+            </figure>
+          </article>
 
-      <section id="how-it-works" class="workflow" aria-labelledby="workflow-heading">
-        <div class="page-width workflow-grid">
-          <header><p>How it works</p><h2 id="workflow-heading">Three steps from chat to document.</h2></header>
-          <ol>
-            <li><span>1</span><div><h3>Open a supported conversation.</h3><p>Start with a ChatGPT or Gemini conversation you want to review.</p></div></li>
-            <li><span>2</span><div><h3>Activate ReadBooster.</h3><p>Choose the document or focus view for the reading task.</p></div></li>
-            <li><span>3</span><div><h3>Read by structure.</h3><p>Use sections, headings, table modes, and the outline to navigate.</p></div></li>
-          </ol>
+          <nav class="product-sequence" aria-label="ReadBooster screenshot sequence">
+            <a href="#transformation"><span>01</span><b>Activate ReadBooster</b><small>Begin in ChatGPT with Optimize Reading ready.</small></a>
+            <a href="#hero-heading"><span>02</span><b>Continuous Document Mode</b><small>Open the complete structured reading workspace.</small></a>
+            <a href="#tables"><span>03</span><b>Adaptable tables</b><small>Fit wide information to the reading task.</small></a>
+            <a href="#reading-settings"><span>04</span><b>Reading settings</b><small>Adjust type, spacing, appearance, and presets.</small></a>
+          </nav>
         </div>
       </section>
 
