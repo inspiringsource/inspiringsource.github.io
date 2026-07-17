@@ -16,11 +16,33 @@ Minimalist personal website — hosted on GitHub Pages.
 │   └── gb.svg          # UK flag (used in language toggle)
 ├── favicon/            # Favicon set (ico, png, svg, webmanifest)
 ├── logo/               # GitHub and LeetCode logo images
+├── pwdnote/             # pwdNote static product page
+├── ReadBooster/         # ReadBooster product and privacy pages
 ├── Rocket.html         # Standalone rocket animation page
+├── sitemap.xml          # Public route discovery
+├── robots.txt           # Search crawler policy
 └── README.md
 ```
 
 This is a plain static site — no framework, no bundler, no npm. It deploys directly from the `main` branch via GitHub Pages.
+
+## Local preview
+
+Run a static server from the repository root so project subpaths behave like GitHub Pages:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+- `http://localhost:8000/`
+- `http://localhost:8000/pwdnote/`
+- `http://localhost:8000/ReadBooster/`
+- `http://localhost:8000/ReadBooster/privacy/`
+
+ReadBooster release metadata and future cross-repository automation are documented in
+[`ReadBooster/AUTOMATION.md`](ReadBooster/AUTOMATION.md).
 
 ## Features
 

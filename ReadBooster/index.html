@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ReadBooster – Turn AI Conversations into Readable Documents</title>
+    <meta
+      name="description"
+      content="ReadBooster transforms ChatGPT and Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes."
+    />
+    <meta name="author" content="Abraham (Avi) Bobrovsky" />
+    <meta name="theme-color" content="#173f3a" />
+    <link rel="canonical" href="https://inspiringsource.github.io/ReadBooster/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ReadBooster" />
+    <meta property="og:url" content="https://inspiringsource.github.io/ReadBooster/" />
+    <meta property="og:title" content="ReadBooster – Turn AI Conversations into Readable Documents" />
+    <meta
+      property="og:description"
+      content="Turn long ChatGPT and Gemini conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ReadBooster – Turn AI Conversations into Readable Documents" />
+    <meta
+      name="twitter:description"
+      content="Turn long ChatGPT and Gemini conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <script src="./assets/config.js"></script>
+    <script src="./assets/site.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ReadBooster",
+        "url": "https://inspiringsource.github.io/ReadBooster/",
+        "description": "A browser extension that turns AI conversations into structured, readable documents.",
+        "publisher": {
+          "@type": "Person",
+          "name": "Abraham Bobrovsky",
+          "alternateName": "Avi Bobrovsky",
+          "url": "https://inspiringsource.github.io/"
+        }
+      }
+    </script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="ReadBooster home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name" data-config-name>ReadBooster</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation"
+          data-nav-toggle
+        >
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="Primary navigation" data-site-nav>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#supported-ai">Supported AI</a>
+          <a href="./privacy/">Privacy</a>
+          <a href="#faq">FAQ</a>
+          <span data-install-container data-compact>
+            <span class="button-pending button-small" role="status">
+              <span class="pending-dot" aria-hidden="true"></span>
+              Chrome release pending
+            </span>
+          </span>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">A document view for AI conversations</p>
+            <h1 id="hero-heading">Turn AI conversations into readable documents.</h1>
+            <p class="hero-lede">
+              ReadBooster transforms long ChatGPT and Gemini conversations into structured,
+              continuous documents with clear navigation, better tables, and adaptable reading
+              controls.
+            </p>
+            <div class="hero-actions">
+              <span data-install-container>
+                <span class="button-pending" role="status">
+                  <span class="pending-dot" aria-hidden="true"></span>
+                  Chrome release pending
+                </span>
+              </span>
+              <a class="button button-secondary" href="#features">Explore features</a>
+            </div>
+            <p class="release-note">
+              Initial testing release <span aria-label="version">v<span data-current-version>0.5.1</span></span>
+              · Built for Chrome
+            </p>
+          </div>
+
+          <div
+            class="product-preview"
+            role="img"
+            aria-label="Illustration of a ReadBooster document with an outline, continuous response sections, and a formatted table"
+          >
+            <div aria-hidden="true">
+              <div class="preview-toolbar">
+                <span>Continuous document</span>
+                <span class="preview-dots"><span></span><span></span><span></span></span>
+              </div>
+              <div class="preview-frame">
+                <aside class="preview-outline">
+                  <span class="outline-label">Outline</span>
+                  <p class="outline-item">Research question</p>
+                  <p class="outline-item active">Key findings</p>
+                  <p class="outline-item">Comparison</p>
+                  <p class="outline-item">Next steps</p>
+                </aside>
+                <article class="preview-document">
+                  <span class="preview-kicker">Response 04</span>
+                  <h2>Key findings and considerations</h2>
+                  <div class="text-line"></div>
+                  <div class="text-line"></div>
+                  <div class="text-line short"></div>
+                  <div class="prompt-note">Prompt preserved for context</div>
+                  <table class="mock-table">
+                    <thead><tr><th>Option</th><th>Strength</th><th>Trade-off</th></tr></thead>
+                    <tbody>
+                      <tr><td>Alpha</td><td>Clear structure</td><td>More setup</td></tr>
+                      <tr><td>Beta</td><td>Fast review</td><td>Less detail</td></tr>
+                    </tbody>
+                  </table>
+                </article>
+              </div>
+              <div class="preview-mode">
+                <span>Fit</span><span class="active">Wide</span><span>Full</span><span>Compact</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="problem-heading">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">The reading problem</p>
+            <h2 id="problem-heading">AI chats are built for turns, not for long-form reading.</h2>
+            <p>
+              A useful conversation can become a substantial body of work. The chat interface still
+              leaves it split across prompts and responses.
+            </p>
+          </div>
+
+          <div class="problem-grid">
+            <article class="problem-card">
+              <span class="card-number">01</span>
+              <h3>Fragmented context</h3>
+              <p>Important information is spread across many prompts and responses.</p>
+            </article>
+            <article class="problem-card">
+              <span class="card-number">02</span>
+              <h3>Difficult revisiting</h3>
+              <p>Long answers, research discussions, and tables are awkward to find again.</p>
+            </article>
+            <article class="problem-card">
+              <span class="card-number">03</span>
+              <h3>Limited overview</h3>
+              <p>Scrolling through separate chat turns makes the document structure hard to see.</p>
+            </article>
+            <article class="problem-card">
+              <span class="card-number">04</span>
+              <h3>Copying friction</h3>
+              <p>Moving everything into Word, Notion, or another editor interrupts the work.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" aria-labelledby="continuous-heading">
+        <div class="section-inner continuous-grid">
+          <div class="split-copy">
+            <p class="eyebrow">Continuous Document Mode</p>
+            <h2 id="continuous-heading">See the document hidden inside the conversation.</h2>
+            <p>
+              ReadBooster brings the full exchange into one continuous document, so ideas stay
+              connected and the conversation becomes easier to review as a whole.
+            </p>
+            <ul class="check-list">
+              <li>Combines the full conversation into a continuous reading flow.</li>
+              <li>Preserves prompts so every response keeps its context.</li>
+              <li>Creates clear response sections and grouped outline navigation.</li>
+              <li>Moves beyond disconnected response-by-response reading.</li>
+            </ul>
+          </div>
+
+          <div class="document-stack" aria-hidden="true">
+            <div class="stack-sheet"></div>
+            <div class="stack-document">
+              <div class="stack-header"><span>Project research</span><span>12 sections</span></div>
+              <div class="stack-body">
+                <div class="stack-outline">
+                  <span>Introduction</span>
+                  <span>Market context</span>
+                  <span>Competitors</span>
+                  <span>Recommendations</span>
+                </div>
+                <div class="stack-content">
+                  <h3>A single, connected reading flow</h3>
+                  <div class="text-line"></div>
+                  <div class="text-line"></div>
+                  <div class="text-line short"></div>
+                  <div class="response-block">
+                    <strong>Next response</strong>
+                    <div class="text-line"></div>
+                    <div class="text-line short"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section section-tinted" aria-labelledby="features-heading">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Current capabilities</p>
+            <h2 id="features-heading">A calmer workspace for serious AI conversations.</h2>
+            <p>
+              ReadBooster is more than a typography layer. It provides document structure,
+              navigation, table controls, and adaptable reading modes around the conversation.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card"><span class="feature-icon">01</span><h3>Continuous Document Mode</h3><p>Read the complete conversation as one structured document.</p></article>
+            <article class="feature-card"><span class="feature-icon">02</span><h3>Focus Mode</h3><p>Concentrate on one response when a narrower reading view is useful.</p></article>
+            <article class="feature-card"><span class="feature-icon">03</span><h3>Document outline</h3><p>Navigate grouped conversation sections and detected headings.</p></article>
+            <article class="feature-card"><span class="feature-icon">04</span><h3>Section renaming</h3><p>Give response sections clearer labels inside the ReadBooster view.</p></article>
+            <article class="feature-card"><span class="feature-icon">05</span><h3>Better tables</h3><p>Use Fit, Wide, Fullscreen, and Compact modes for demanding tables.</p></article>
+            <article class="feature-card"><span class="feature-icon">06</span><h3>Dyslexia-friendly settings</h3><p>Adapt font, spacing, and reading presentation to personal needs.</p></article>
+            <article class="feature-card"><span class="feature-icon">07</span><h3>Flexible themes</h3><p>Choose light, dark, or system appearance in the reader.</p></article>
+            <article class="feature-card"><span class="feature-icon">08</span><h3>Copy and Print</h3><p>Copy content or print the document and save it as a PDF.</p></article>
+            <article class="feature-card"><span class="feature-icon">09</span><h3>Local-first processing</h3><p>Format page content locally without automatic chat-content transmission.</p></article>
+            <article class="feature-card"><span class="feature-icon">10</span><h3>ChatGPT and Gemini</h3><p>Use the current release on both supported AI conversation platforms.</p></article>
+            <article class="feature-card"><span class="feature-icon">11</span><h3>Improved typography and spacing</h3><p>Give long responses a clear, readable hierarchy with calmer document spacing.</p></article>
+          </div>
+
+          <div class="planned-row">
+            <span class="status-label status-planned">Planned</span>
+            <p>
+              Support for <span data-planned-list>Mistral and Claude</span>, plus deeper document
+              workflows. These are future directions, not current capabilities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="section section-dark" aria-labelledby="steps-heading">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2 id="steps-heading">From conversation to document in three steps.</h2>
+          </div>
+          <div class="steps">
+            <article class="step"><span class="step-number">1</span><h3>Open a supported AI conversation.</h3><p>Start with a ChatGPT or Gemini conversation you want to read or review.</p></article>
+            <article class="step"><span class="step-number">2</span><h3>Activate ReadBooster.</h3><p>Open the extension and choose the reading mode that fits your task.</p></article>
+            <article class="step"><span class="step-number">3</span><h3>Read it as a structured document.</h3><p>Use sections, headings, the outline, and table controls to move through the work.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="supported-ai" class="section" aria-labelledby="platforms-heading">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Supported AI</p>
+            <h2 id="platforms-heading">Built for the AI conversations you already use.</h2>
+            <p>
+              Platform status is stated explicitly. Planned support is not presented as available.
+            </p>
+          </div>
+          <div class="platform-grid" data-platform-grid aria-live="polite">
+            <article class="platform-card"><span class="status-label status-supported">Supported</span><div class="platform-mark"><h3>ChatGPT</h3><span class="platform-initial" aria-hidden="true">C</span></div></article>
+            <article class="platform-card"><span class="status-label status-supported">Supported</span><div class="platform-mark"><h3>Gemini</h3><span class="platform-initial" aria-hidden="true">G</span></div></article>
+            <article class="platform-card"><span class="status-label status-planned">Planned</span><div class="platform-mark"><h3>Mistral</h3><span class="platform-initial" aria-hidden="true">M</span></div></article>
+            <article class="platform-card"><span class="status-label status-planned">Planned</span><div class="platform-mark"><h3>Claude</h3><span class="platform-initial" aria-hidden="true">C</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="section section-tinted" aria-labelledby="privacy-heading">
+        <div class="section-inner privacy-grid">
+          <div class="split-copy">
+            <p class="eyebrow">Privacy by design</p>
+            <h2 id="privacy-heading">Your conversation stays in your browser.</h2>
+            <p>
+              ReadBooster accesses page content locally to build the document view. It does not
+              automatically send your chat content to a ReadBooster server.
+            </p>
+            <ul class="check-list">
+              <li>Conversation formatting happens locally in the browser.</li>
+              <li>Reading preferences may be stored locally on your device.</li>
+              <li>Feedback is sent only when you deliberately submit the Tally form.</li>
+              <li>You choose what text or screenshots you include with feedback.</li>
+            </ul>
+            <div class="privacy-actions">
+              <a class="button button-primary" href="./privacy/">Read the privacy policy</a>
+              <a class="button button-secondary" data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Open the feedback form</a>
+            </div>
+          </div>
+
+          <div class="privacy-panel">
+            <article class="privacy-card"><strong>Local</strong><h3>Page processing</h3><p>Chat content is read and formatted on the device where the extension runs.</p></article>
+            <article class="privacy-card"><strong>Your choice</strong><h3>Feedback content</h3><p>The Tally form opens only when requested and sends only what you submit.</p></article>
+            <article class="privacy-card"><strong>Local</strong><h3>Preferences</h3><p>Reader settings may be retained in browser storage for later use.</p></article>
+            <article class="privacy-card"><strong>No auto-send</strong><h3>Conversation content</h3><p>ReadBooster does not automatically transmit chats to a server.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section" aria-labelledby="faq-heading">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-heading">Questions about ReadBooster.</h2>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item"><summary>What does ReadBooster do?</summary><div class="faq-answer"><p>ReadBooster transforms AI conversations into structured documents that are easier to read, navigate, review, and keep. It provides continuous and focused reading modes, an outline, clearer sections, table controls, and adaptable reading settings.</p></div></details>
+            <details class="faq-item"><summary>Which AI platforms are supported?</summary><div class="faq-answer"><p><span data-supported-list>ChatGPT and Gemini</span> are supported in the current release.</p></div></details>
+            <details class="faq-item"><summary>Does it send conversations to a server?</summary><div class="faq-answer"><p>ReadBooster accesses the conversation page locally to render its document view. It does not automatically send chat content to a ReadBooster server. Feedback is separate and is submitted only when you choose to complete the Tally form.</p></div></details>
+            <details class="faq-item"><summary>Is it free?</summary><div class="faq-answer"><p>The initial testing release is free. This is not a permanent pricing commitment, and later availability may change.</p></div></details>
+            <details class="faq-item"><summary>Does it modify the original AI conversation?</summary><div class="faq-answer"><p>No. ReadBooster creates a separate reading presentation in the browser. Display choices such as section renaming apply to the ReadBooster view, not to the source conversation.</p></div></details>
+            <details class="faq-item"><summary>Can I print or save the document?</summary><div class="faq-answer"><p>Yes. ReadBooster includes Print support, which can also be used with the browser’s Save as PDF option.</p></div></details>
+            <details class="faq-item"><summary>Are Mistral and Claude supported?</summary><div class="faq-answer"><p>No, not in the current release. <span data-planned-list>Mistral and Claude</span> support is planned for later.</p></div></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <p class="eyebrow" data-config-name>ReadBooster</p>
+            <h2>Make long AI conversations easier to understand and revisit.</h2>
+          </div>
+          <span data-install-container>
+            <span class="button-pending" role="status"><span class="pending-dot" aria-hidden="true"></span>Chrome release pending</span>
+          </span>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-copyright-year>2026</span> <span data-config-name>ReadBooster</span></span>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="./privacy/">Privacy</a>
+            <a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Feedback</a>
+            <a data-config-link="portfolioUrl">Portfolio</a>
+            <a data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
