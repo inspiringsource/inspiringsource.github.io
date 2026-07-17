@@ -68,13 +68,13 @@
     });
   }
 
-  function makePlatformRow(name, status) {
+  function makePlatformRow(name, status, milestone) {
     var article = document.createElement("article");
     article.className = "platform-row";
 
     var label = document.createElement("span");
     label.className = "status-label status-" + status.toLowerCase();
-    label.textContent = status;
+    label.textContent = milestone ? status + " · " + milestone : status;
 
     var heading = document.createElement("h3");
     heading.textContent = name;
@@ -92,7 +92,9 @@
       fragment.appendChild(makePlatformRow(name, "Supported"));
     });
     config.plannedPlatforms.forEach(function (name) {
-      fragment.appendChild(makePlatformRow(name, "Planned"));
+      fragment.appendChild(
+        makePlatformRow(name, "Planned", config.plannedPlatformMilestones[name]),
+      );
     });
     grid.replaceChildren(fragment);
   }
@@ -146,7 +148,7 @@
       operatingSystem: "Chrome",
       softwareVersion: config.currentVersion,
       description:
-        "ReadBooster transforms ChatGPT and Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes.",
+        "ReadBooster transforms ChatGPT and Google Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
@@ -162,7 +164,6 @@
       ],
     };
 
-    if (isSafeHttpUrl(config.repositoryUrl)) application.sameAs = [config.repositoryUrl];
     if (isSafeHttpUrl(config.chromeWebStoreUrl)) application.installUrl = config.chromeWebStoreUrl;
     appendStructuredData(application);
 

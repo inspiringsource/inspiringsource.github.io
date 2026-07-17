@@ -956,37 +956,60 @@ h1 {
   gap: clamp(65px, 10vw, 145px);
 }
 
-.local-stamp {
+.local-trust-card {
   display: grid;
-  min-height: 310px;
-  padding: 34px;
-  align-content: space-between;
+  min-height: 320px;
+  padding: 32px;
+  align-content: start;
   border: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(8, 59, 108, 0.12);
   box-shadow: 9px 9px 0 rgba(8, 59, 108, 0.34);
 }
 
-.local-stamp span {
+.local-trust-card header {
+  display: grid;
+  gap: 15px;
+}
+
+.local-trust-card header span {
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-size: clamp(3.4rem, 6vw, 5.8rem);
   font-weight: 800;
   letter-spacing: -0.08em;
   line-height: 0.85;
 }
 
-.local-stamp b {
-  align-self: end;
+.local-trust-card header b {
   font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
 }
 
-.local-stamp small {
-  padding-top: 13px;
+.local-trust-card ul {
+  margin: 24px 0 0;
+  padding: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.55);
+  list-style: none;
+}
+
+.local-trust-card li {
+  position: relative;
+  padding: 10px 0 10px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  color: #f2f8ff;
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.65rem;
+  line-height: 1.45;
+}
+
+.local-trust-card li::before {
+  position: absolute;
+  top: 1.05em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  content: "";
 }
 
 .local-copy > p:first-child {
@@ -1430,7 +1453,7 @@ h1 {
     gap: 45px;
   }
 
-  .local-stamp {
+  .local-trust-card {
     min-height: 240px;
   }
 
@@ -1542,8 +1565,8 @@ h1 {
     font-size: clamp(2.5rem, 12vw, 3.8rem);
   }
 
-  .local-stamp {
-    min-height: 210px;
+  .local-trust-card {
+    min-height: 0;
     padding: 26px;
   }
 
