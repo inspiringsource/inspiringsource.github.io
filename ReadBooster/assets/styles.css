@@ -403,6 +403,19 @@ h1 {
   font-size: 0.74rem;
 }
 
+.index-release-detail {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.index-release-detail + .index-footnote {
+  margin-top: 8px;
+}
+
 /* Authentic product screenshots */
 .product-shot {
   margin: 0;
@@ -417,6 +430,10 @@ h1 {
   border: 1px solid var(--rule-strong);
   background: #fff;
   box-shadow: 7px 8px 0 var(--blue-soft);
+}
+
+.product-shot-link {
+  display: block;
 }
 
 .product-shot figcaption {
@@ -603,12 +620,54 @@ h1 {
   line-height: 1.03;
 }
 
-.feature-copy > p:last-child {
+.feature-description {
   margin: 25px 0 0;
   color: #b9c7d6;
   font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.reading-style-list {
+  display: flex;
+  margin: 24px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.reading-style-list li {
+  padding: 5px 9px;
+  border: 1px solid #506176;
+  color: #c7d3df;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.62rem;
+  line-height: 1.35;
+}
+
+.reading-style-list .reading-style-featured {
+  border-color: #73afe9;
+  background: rgba(115, 175, 233, 0.1);
+  color: #e2f0fd;
+}
+
+.fast-reading-explanation {
+  margin: 18px 0 0;
+  color: #d8e3ee;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.fast-font-credit {
+  margin: 10px 0 0;
+  color: #94a8bc;
+  font-size: 0.68rem;
+  line-height: 1.55;
+}
+
+.fast-font-credit a {
+  color: #b9d9f7;
 }
 
 .feature-shot img {

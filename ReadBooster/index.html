@@ -145,11 +145,12 @@
             <aside class="product-index" aria-label="Current ReadBooster release information">
               <p class="index-label">Release note</p>
               <dl>
-                <dt>Version</dt><dd>v<span data-current-version>0.5.2</span></dd>
+                <dt>Version</dt><dd>v<span data-current-version>0.5.3</span></dd>
                 <dt>Platforms</dt><dd data-supported-list>ChatGPT and Google Gemini</dd>
                 <dt>Processing</dt><dd>Local in your browser</dd>
                 <dt>Reading modes</dt><dd>Document + Focus</dd>
               </dl>
+              <p class="index-release-detail">Adds Fast Reading and improved reading-style controls.</p>
               <p class="index-footnote">Initial testing release. Built for Chrome.</p>
             </aside>
           </div>
@@ -272,7 +273,7 @@
             <div class="feature-copy">
               <p class="feature-number">03 / Tables</p>
               <h3>Tables that adapt to the document.</h3>
-              <p>
+              <p class="feature-description">
                 Switch between fitted, wide, fullscreen, and compact layouts so large AI-generated
                 tables remain readable instead of being squeezed into a narrow chat column.
               </p>
@@ -294,21 +295,52 @@
             <div class="feature-copy">
               <p class="feature-number">04 / Reading settings</p>
               <h3>Reading settings that adapt to you.</h3>
-              <p>
-                Adjust text size, spacing, appearance, code presentation, and reading presets—including
-                a dyslexia-friendly option—without changing the original conversation.
+              <p class="feature-description">
+                Adjust text size, spacing, appearance, code presentation, and reading style—including
+                dyslexia-friendly and fixation-guided Fast Reading options—without changing the
+                original conversation.
+              </p>
+              <ul class="reading-style-list" aria-label="Available reading styles">
+                <li>Default</li>
+                <li>Serif</li>
+                <li class="reading-style-featured">Dyslexia-friendly</li>
+                <li class="reading-style-featured">Fast Reading</li>
+              </ul>
+              <p class="fast-reading-explanation">
+                Fast Reading uses fixation-guided letter emphasis to support faster scanning.
+              </p>
+              <p class="fast-font-credit">
+                Fast Reading uses the open-source
+                <a
+                  href="https://github.com/Born2Root/Fast-Font"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Fast Font project</a
+                >
+                by Born2Root, available under the MIT License.
               </p>
             </div>
             <figure class="product-shot feature-shot">
-              <img
-                src="/ReadBooster/Screenshots/Screenshot3.jpg"
-                width="1448"
-                height="706"
-                alt="ReadBooster reading settings showing Comfortable and Dyslexia-friendly presets, text size, spacing, appearance, and code appearance controls"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>Customize text size, spacing, appearance, and reading presets.</figcaption>
+              <a
+                class="product-shot-link"
+                href="/ReadBooster/Screenshots/readbooster-fast-reading-settings.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open the Fast Reading settings screenshot at full size"
+              >
+                <img
+                  src="/ReadBooster/Screenshots/readbooster-fast-reading-settings.jpg"
+                  width="2806"
+                  height="1272"
+                  alt="ReadBooster document view with Fast Reading selected in the Reading Settings panel, showing fixation-guided text and controls for text size, spacing, appearance, and code presentation."
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>
+                Choose Default, Serif, Dyslexia-friendly, or Fast Reading while independently
+                adjusting text size, spacing, appearance, and code presentation.
+              </figcaption>
             </figure>
           </article>
 
@@ -316,7 +348,7 @@
             <a href="#transformation"><span>01</span><b>Activate ReadBooster</b><small>Begin in ChatGPT with Optimize Reading ready.</small></a>
             <a href="#hero-heading"><span>02</span><b>Continuous Document Mode</b><small>Open the complete structured reading workspace.</small></a>
             <a href="#tables"><span>03</span><b>Adaptable tables</b><small>Fit wide information to the reading task.</small></a>
-            <a href="#reading-settings"><span>04</span><b>Reading settings</b><small>Adjust type, spacing, appearance, and presets.</small></a>
+            <a href="#reading-settings"><span>04</span><b>Reading settings</b><small>Adjust reading style, text size, spacing, and appearance.</small></a>
           </nav>
         </div>
       </section>
@@ -356,6 +388,7 @@
             <p>ReadBooster accesses page content locally to render the document view. It does not automatically send your chat content to a ReadBooster server.</p>
             <ul>
               <li>Conversation formatting happens locally in the browser.</li>
+              <li>Reading fonts, including Fast Reading, are bundled locally with the extension.</li>
               <li>Reading preferences may be stored locally on your device.</li>
               <li>Feedback is sent only when you deliberately submit the Tally form.</li>
               <li>You decide what text or screenshots you include.</li>
@@ -371,6 +404,7 @@
           <div class="faq-list">
             <details class="faq-item"><summary>What does ReadBooster do?</summary><div class="faq-answer"><p>ReadBooster transforms AI conversations into structured documents that are easier to read, navigate, review, and keep. It provides continuous and focused reading modes, an outline, clearer sections, table controls, and adaptable reading settings.</p></div></details>
             <details class="faq-item"><summary>Which AI platforms are supported?</summary><div class="faq-answer"><p><span data-supported-list>ChatGPT and Google Gemini</span> are supported in the current release.</p></div></details>
+            <details class="faq-item"><summary>What reading styles does ReadBooster offer?</summary><div class="faq-answer"><p>ReadBooster offers Default, Serif, Dyslexia-friendly, and Fast Reading styles. Fast Reading uses fixation-guided letter emphasis, while text size and spacing can be adjusted independently. These settings change only the local document view and do not modify the original conversation.</p></div></details>
             <details class="faq-item"><summary>Does it send conversations to a server?</summary><div class="faq-answer"><p>ReadBooster accesses the conversation page locally to render its document view. It does not automatically send chat content to a ReadBooster server. Feedback is separate and is submitted only when you choose to complete the Tally form.</p></div></details>
             <details class="faq-item"><summary>Is it free?</summary><div class="faq-answer"><p>The initial testing release is free. This is not a permanent pricing commitment, and later availability may change.</p></div></details>
             <details class="faq-item"><summary>Does it modify the original AI conversation?</summary><div class="faq-answer"><p>No. ReadBooster creates a separate reading presentation in the browser. Display choices such as section renaming apply to the ReadBooster view, not to the source conversation.</p></div></details>

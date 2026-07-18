@@ -148,7 +148,7 @@
       operatingSystem: "Chrome",
       softwareVersion: config.currentVersion,
       description:
-        "ReadBooster transforms ChatGPT and Google Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes.",
+        "ReadBooster transforms ChatGPT and Google Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading controls.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
@@ -158,7 +158,7 @@
         "Focus Mode",
         "Grouped document outline",
         "Improved table modes",
-        "Dyslexia-friendly reading options",
+        "Default, Serif, Dyslexia-friendly, and Fast Reading styles",
         "Copy and Print / Save as PDF",
         "Local-first conversation formatting",
       ],

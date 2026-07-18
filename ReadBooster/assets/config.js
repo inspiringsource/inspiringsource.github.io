@@ -6,7 +6,7 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.5.2",
+  currentVersion: "0.5.3",
   chromeWebStoreUrl: null,
   chromePendingLabel: "Chrome release pending",
   feedbackUrl: "https://tally.so/r/QKWqjp",
