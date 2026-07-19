@@ -345,7 +345,7 @@
         <p class="subtitle">A lightweight CLI note-taking app for developers.</p>
         <p class="lede">
           <!-- PWDNOTE_VERSION_START -->
-          Latest CLI release: v0.3.6
+          Latest CLI release: v0.3.7
           <!-- PWDNOTE_VERSION_END -->
           for encrypted project notes, project-local notes, and Git-friendly encrypted notes stored alongside your code.
         </p>
@@ -388,14 +388,16 @@
       <!-- What's new -->
       <!-- PWDNOTE_WHATS_NEW_START -->
       <section class="pwd-section" aria-labelledby="whats-new-heading">
-        <h2 id="whats-new-heading">What’s new in v0.3.6</h2>
+        <h2 id="whats-new-heading">What’s new in v0.3.7</h2>
         <ul class="security-list">
-          <li>Added pwdnote cat &lt;item&gt; for terminal previews.</li>
-          <li>pwdnote paste &lt;item&gt; now copies to the system clipboard.</li>
-          <li>List items are never executed or written as plaintext to disk.</li>
+          <li>Added pwdnote copy &lt;item&gt; for clipboard copying.</li>
+          <li>pwdnote paste &lt;item&gt; now inserts into the next Zsh prompt.</li>
+          <li>Added optional Zsh integration management and short aliases.</li>
         </ul>
-        <pre class="code"><code><span class="prompt">$ </span>pwdnote cat 1
-<span class="prompt">$ </span>pwdnote paste one</code></pre>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote cat 2
+<span class="prompt">$ </span>pwdnote copy 2
+<span class="prompt">$ </span>pwdnote shell install
+<span class="prompt">$ </span>pwdnote paste 2</code></pre>
       </section>
       <!-- PWDNOTE_WHATS_NEW_END -->
 
