@@ -192,6 +192,13 @@
         letter-spacing: -0.01em;
       }
 
+      .pwd-section > h3 {
+        margin: 32px 0 8px;
+        color: var(--color-h2);
+        font-size: 1.1rem;
+        line-height: 1.4;
+      }
+
       .pwd-section > p {
         color: var(--color-intro);
         font-size: 1.02rem;
@@ -400,6 +407,50 @@
 <span class="prompt">$ </span>pwdnote paste 2</code></pre>
       </section>
       <!-- PWDNOTE_WHATS_NEW_END -->
+
+      <!-- Direct paste -->
+      <section class="pwd-section" aria-labelledby="direct-paste-heading">
+        <h2 id="direct-paste-heading">Direct paste in Zsh</h2>
+        <p>
+          Direct paste requires Zsh and works on macOS and Linux systems running Zsh. Install the
+          integration first:
+        </p>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote shell install zsh</code></pre>
+        <p class="note">
+          <strong>Important:</strong> The integration is not active in an already-open terminal until
+          you run <code class="inline">source ~/.zshrc</code> or restart the terminal.
+        </p>
+        <p>Activate the integration immediately by reloading your Zsh configuration:</p>
+        <pre class="code"><code><span class="prompt">$ </span>source ~/.zshrc</code></pre>
+        <p>
+          Alternatively, close and reopen the terminal; the new Zsh session will load the integration.
+          You only need to do this after installation or after changing the shell integration.
+        </p>
+        <p>Then insert an item directly into your prompt:</p>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote paste 2</code></pre>
+        <p>
+          The selected list item is inserted into the next Zsh command line, ready to edit or execute.
+          It is not executed automatically. <code class="inline">pwdnote cat</code> and
+          <code class="inline">pwdnote copy</code> do not require the Zsh integration.
+        </p>
+
+        <h3><code class="inline">pwdnote paste</code> still says the Zsh integration is required</h3>
+        <p>
+          Reload the configuration, then verify that <code class="inline">pwdnote</code> is a shell
+          function:
+        </p>
+        <pre class="code"><code><span class="prompt">$ </span>source ~/.zshrc
+<span class="prompt">$ </span>type pwdnote</code></pre>
+        <p>Expected output should indicate:</p>
+        <pre class="code"><code>pwdnote is a shell function</code></pre>
+        <p>Then retry direct paste:</p>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote paste 2</code></pre>
+        <p>
+          To check whether the integration file and the <code class="inline">.zshrc</code> source block
+          are installed, run:
+        </p>
+        <pre class="code"><code><span class="prompt">$ </span>pwdnote shell status zsh</code></pre>
+      </section>
 
       <!-- Demo -->
       <section class="pwd-section demo" aria-labelledby="demo-heading">
