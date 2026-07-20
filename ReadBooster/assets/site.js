@@ -25,6 +25,12 @@
     });
   }
 
+  function formatList(values) {
+    if (values.length < 2) return values.join("");
+    if (values.length === 2) return values.join(" and ");
+    return values.slice(0, -1).join(", ") + ", and " + values[values.length - 1];
+  }
+
   function setConfiguredLinks() {
     document.querySelectorAll("[data-config-link]").forEach(function (link) {
       var key = link.getAttribute("data-config-link");
@@ -61,7 +67,7 @@
         dot.className = "pending-dot";
         dot.setAttribute("aria-hidden", "true");
         element.appendChild(dot);
-        element.appendChild(document.createTextNode(config.chromePendingLabel));
+        element.appendChild(document.createTextNode(config.pendingReleaseLabel));
       }
 
       container.replaceChildren(element);
@@ -89,7 +95,9 @@
 
     var fragment = document.createDocumentFragment();
     config.supportedPlatforms.forEach(function (name) {
-      fragment.appendChild(makePlatformRow(name, "Supported"));
+      fragment.appendChild(
+        makePlatformRow(name, "Supported", config.supportedPlatformMilestones[name]),
+      );
     });
     config.plannedPlatforms.forEach(function (name) {
       fragment.appendChild(
@@ -145,14 +153,14 @@
       "@type": "SoftwareApplication",
       name: config.name,
       applicationCategory: "BrowserApplication",
-      operatingSystem: "Chrome",
+      operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
       description:
-        "ReadBooster transforms ChatGPT and Google Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading controls.",
+        "ReadBooster transforms ChatGPT, Google Gemini, and Mistral AI conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading controls.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
-      browserRequirements: "Requires Google Chrome",
+      browserRequirements: "Requires Google Chrome or Mozilla Firefox",
       featureList: [
         "Continuous Document Mode",
         "Focus Mode",
@@ -192,8 +200,8 @@
 
   setText("[data-config-name]", config.name);
   setText("[data-current-version]", config.currentVersion);
-  setText("[data-supported-list]", config.supportedPlatforms.join(" and "));
-  setText("[data-planned-list]", config.plannedPlatforms.join(" and "));
+  setText("[data-supported-list]", formatList(config.supportedPlatforms));
+  setText("[data-planned-list]", formatList(config.plannedPlatforms));
   setText("[data-copyright-year]", String(new Date().getFullYear()));
   setConfiguredLinks();
   renderInstallActions();

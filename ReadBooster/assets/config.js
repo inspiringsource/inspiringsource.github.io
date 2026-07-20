@@ -6,15 +6,18 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.5.3",
+  currentVersion: "0.6.2",
   chromeWebStoreUrl: null,
-  chromePendingLabel: "Chrome release pending",
+  pendingReleaseLabel: "Chrome release pending · Firefox release pending",
   feedbackUrl: "https://tally.so/r/QKWqjp",
   portfolioUrl: "https://inspiringsource.github.io/",
-  supportedPlatforms: Object.freeze(["ChatGPT", "Google Gemini"]),
-  plannedPlatforms: Object.freeze(["Mistral AI", "Claude"]),
-  plannedPlatformMilestones: Object.freeze({
+  supportedPlatforms: Object.freeze(["ChatGPT", "Google Gemini", "Mistral AI"]),
+  supportedPlatformMilestones: Object.freeze({
     "Mistral AI": "0.6 milestone",
+  }),
+  plannedPlatforms: Object.freeze(["Claude", "Perplexity"]),
+  plannedPlatformMilestones: Object.freeze({
     Claude: "0.7 milestone",
+    Perplexity: "0.8 milestone",
   }),
 });

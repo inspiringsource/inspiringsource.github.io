@@ -7,7 +7,7 @@
     <title>ReadBooster – Turn AI Conversations into Readable Documents</title>
     <meta
       name="description"
-      content="ReadBooster transforms ChatGPT and Google Gemini conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes."
+      content="ReadBooster transforms ChatGPT, Google Gemini, and Mistral AI conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading modes."
     />
     <meta name="author" content="Abraham (Avi) Bobrovsky" />
     <meta name="theme-color" content="#ffffff" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="ReadBooster – Turn AI Conversations into Readable Documents" />
     <meta
       property="og:description"
-      content="Turn long ChatGPT and Google Gemini conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
+      content="Turn long ChatGPT, Google Gemini, and Mistral AI conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
     />
     <meta
       property="og:image"
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="ReadBooster – Turn AI Conversations into Readable Documents" />
     <meta
       name="twitter:description"
-      content="Turn long ChatGPT and Google Gemini conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
+      content="Turn long ChatGPT, Google Gemini, and Mistral AI conversations into structured documents with clear navigation, improved tables, and adaptable reading controls."
     />
     <meta
       name="twitter:image"
@@ -104,7 +104,7 @@
           <span class="header-release" data-install-container data-compact>
             <span class="button-pending button-small" role="status">
               <span class="pending-dot" aria-hidden="true"></span>
-              Chrome release pending
+              Chrome release pending · Firefox release pending
             </span>
           </span>
         </nav>
@@ -127,15 +127,15 @@
               </div>
               <h1 id="hero-heading">Turn AI conversations into readable documents.</h1>
               <p class="hero-summary">
-                ReadBooster transforms long ChatGPT and Google Gemini conversations into structured,
-                continuous documents with clear navigation, better tables, and adaptable reading
-                controls.
+                ReadBooster transforms long ChatGPT, Google Gemini, and Mistral AI conversations into
+                structured, continuous documents with clear navigation, better tables, and adaptable
+                reading controls.
               </p>
               <div class="hero-actions">
                 <span data-install-container>
                   <span class="button-pending" role="status">
                     <span class="pending-dot" aria-hidden="true"></span>
-                    Chrome release pending
+                    Chrome release pending · Firefox release pending
                   </span>
                 </span>
                 <a class="text-action" href="#transformation">See the transformation <span aria-hidden="true">↓</span></a>
@@ -145,13 +145,13 @@
             <aside class="product-index" aria-label="Current ReadBooster release information">
               <p class="index-label">Release note</p>
               <dl>
-                <dt>Version</dt><dd>v<span data-current-version>0.5.3</span></dd>
-                <dt>Platforms</dt><dd data-supported-list>ChatGPT and Google Gemini</dd>
+                <dt>Version</dt><dd>v<span data-current-version>0.6.2</span></dd>
+                <dt>Platforms</dt><dd data-supported-list>ChatGPT, Google Gemini, and Mistral AI</dd>
                 <dt>Processing</dt><dd>Local in your browser</dd>
                 <dt>Reading modes</dt><dd>Document + Focus</dd>
               </dl>
-              <p class="index-release-detail">Adds Fast Reading and improved reading-style controls.</p>
-              <p class="index-footnote">Initial testing release. Built for Chrome.</p>
+              <p class="index-release-detail">Adds Mistral AI support, Canvas document extraction, improved table handling, and continued reading improvements.</p>
+              <p class="index-footnote">Testing release. Chrome and Firefox submissions pending review.</p>
             </aside>
           </div>
 
@@ -357,12 +357,13 @@
           <div class="platform-list" data-platform-grid aria-live="polite">
             <article class="platform-row"><h3>ChatGPT</h3><span class="status-label status-supported">Supported</span></article>
             <article class="platform-row"><h3>Google Gemini</h3><span class="status-label status-supported">Supported</span></article>
-            <article class="platform-row"><h3>Mistral AI</h3><span class="status-label status-planned">Planned · 0.6 milestone</span></article>
+            <article class="platform-row"><h3>Mistral AI</h3><span class="status-label status-supported">Supported · 0.6 milestone</span></article>
             <article class="platform-row"><h3>Claude</h3><span class="status-label status-planned">Planned · 0.7 milestone</span></article>
+            <article class="platform-row"><h3>Perplexity</h3><span class="status-label status-planned">Planned · 0.8 milestone</span></article>
           </div>
         </div>
         <div class="page-width planned-note">
-          <b>Roadmap</b><span>Mistral AI is planned for the 0.6 milestone, and Claude is planned for the 0.7 milestone. These are future directions, not current capabilities.</span>
+          <b>Roadmap</b><span>Mistral AI is supported from the 0.6 milestone. Claude is planned for the 0.7 milestone, followed by Perplexity in the 0.8 milestone. Planned platforms are future directions and are not presented as current capabilities.</span>
         </div>
       </section>
 
@@ -401,13 +402,13 @@
           <header><p>Reference</p><h2 id="faq-heading">ReadBooster FAQ</h2></header>
           <div class="faq-list">
             <details class="faq-item"><summary>What does ReadBooster do?</summary><div class="faq-answer"><p>ReadBooster transforms AI conversations into structured documents that are easier to read, navigate, review, and keep. It provides continuous and focused reading modes, an outline, clearer sections, table controls, and adaptable reading settings.</p></div></details>
-            <details class="faq-item"><summary>Which AI platforms are supported?</summary><div class="faq-answer"><p><span data-supported-list>ChatGPT and Google Gemini</span> are supported in the current release.</p></div></details>
+            <details class="faq-item"><summary>Which AI platforms are supported?</summary><div class="faq-answer"><p><span data-supported-list>ChatGPT, Google Gemini, and Mistral AI</span> are supported in the current release.</p></div></details>
             <details class="faq-item"><summary>What reading styles does ReadBooster offer?</summary><div class="faq-answer"><p>ReadBooster offers Default, Serif, Dyslexia-friendly, and Fast Reading styles. Fast Reading uses fixation-guided letter emphasis, while text size and spacing can be adjusted independently. These settings change only the local document view and do not modify the original conversation.</p></div></details>
             <details class="faq-item"><summary>Does it send conversations to a server?</summary><div class="faq-answer"><p>ReadBooster accesses the conversation page locally to render its document view. It does not automatically send chat content to a ReadBooster server. Feedback is separate and is submitted only when you choose to complete the Tally form.</p></div></details>
-            <details class="faq-item"><summary>Is it free?</summary><div class="faq-answer"><p>The initial testing release is free. This is not a permanent pricing commitment, and later availability may change.</p></div></details>
+            <details class="faq-item"><summary>Is it free?</summary><div class="faq-answer"><p>The current testing release is free. This is not a permanent pricing commitment, and later availability may change.</p></div></details>
             <details class="faq-item"><summary>Does it modify the original AI conversation?</summary><div class="faq-answer"><p>No. ReadBooster creates a separate reading presentation in the browser. Display choices such as section renaming apply to the ReadBooster view, not to the source conversation.</p></div></details>
             <details class="faq-item"><summary>Can I print or save the document?</summary><div class="faq-answer"><p>Yes. ReadBooster includes Print support, which can also be used with the browser’s Save as PDF option.</p></div></details>
-            <details class="faq-item"><summary>Are Mistral AI and Claude supported?</summary><div class="faq-answer"><p>No, not in the current release. Mistral AI is planned for the 0.6 milestone, and Claude is planned for the 0.7 milestone.</p></div></details>
+            <details class="faq-item"><summary>Are Mistral AI, Claude, and Perplexity supported?</summary><div class="faq-answer"><p>ReadBooster currently supports ChatGPT, Google Gemini, and Mistral AI.</p><p>Claude is planned for the 0.7 milestone, and Perplexity is planned for the 0.8 milestone.</p></div></details>
           </div>
         </div>
       </section>

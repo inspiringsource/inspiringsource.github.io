@@ -12,8 +12,9 @@ Mutable public values live in one file:
 ReadBooster/assets/config.js
 ```
 
-The current Chrome Web Store value is deliberately `null`. The site converts that value into a
-non-clickable “Chrome release pending” status, so no invalid store URL can be published.
+The Chrome Web Store value remains deliberately `null`, and no public Firefox Add-ons URL is
+configured. The site converts that state into a non-clickable “Chrome release pending · Firefox
+release pending” status, so no invalid store URL can be published.
 
 ## Existing PWD Note pattern
 
@@ -48,7 +49,7 @@ The planned source metadata should contain only controlled public values such as
 - version;
 - release notes;
 - supported and planned platform status;
-- Chrome Web Store URL, which may remain null; and
+- Chrome Web Store and Firefox Add-ons URLs, which may remain null; and
 - other reviewed public release metadata.
 
 The updater should reject missing fields, unexpected types, unsupported platform states, non-HTTPS
@@ -79,7 +80,7 @@ Prefer an explicit release tag or manual trigger over every push.
 ## Still manual
 
 - ReadBooster release metadata is not yet copied from the extension repository.
-- The Chrome Web Store URL must be added only after the real public URL exists.
+- The Chrome Web Store and Firefox Add-ons URLs must be added only after the real public URLs exist.
 - Platform-status and release-note changes require a reviewed website update.
 - The source-repository updater and release workflow must be implemented in the ReadBooster
   repository when its public metadata contract is finalized.
