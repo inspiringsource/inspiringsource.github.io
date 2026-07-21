@@ -247,6 +247,35 @@ svg {
   color: #fff;
 }
 
+.button-publication-pending {
+  border-style: dashed;
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+  flex-direction: column;
+  gap: 2px;
+}
+
+.button-publication-pending:hover {
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+}
+
+.button-status {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.6rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  opacity: 0.82;
+  text-transform: uppercase;
+}
+
+.install-actions {
+  display: inline-flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .button-pending {
   border-style: dashed;
   background: var(--blue-pale);
@@ -260,6 +289,10 @@ svg {
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
   font-size: 0.67rem;
   letter-spacing: 0.02em;
+}
+
+.button-small .button-status {
+  font-size: 0.5rem;
 }
 
 .pending-dot {
@@ -1399,6 +1432,11 @@ h1 {
     gap: 14px;
   }
 
+  .header-release {
+    flex-direction: column;
+    gap: 4px;
+  }
+
   .product-nav > a {
     font-size: 0.76rem;
   }
@@ -1443,7 +1481,13 @@ h1 {
   }
 
   .header-release {
+    width: 100%;
     margin-top: 6px;
+    flex-direction: column;
+  }
+
+  .header-release .button {
+    width: 100%;
   }
 
   .hero-intro,
@@ -1568,6 +1612,10 @@ h1 {
   .hero-actions .button-pending,
   .hero-actions > span {
     width: 100%;
+  }
+
+  .hero-actions .install-actions {
+    flex-direction: column;
   }
 
   .editorial-heading {

@@ -6,15 +6,16 @@ The ReadBooster pages deploy with the rest of `inspiringsource.github.io` direct
 website repository's `main` branch. There is no site build step and no ReadBooster release workflow
 has been enabled yet.
 
-Mutable public values live in one file:
+Runtime public values live in one file:
 
 ```text
 ReadBooster/assets/config.js
 ```
 
-The Chrome Web Store value remains deliberately `null`, and no public Firefox Add-ons URL is
-configured. The site converts that state into a non-clickable “Chrome release pending · Firefox
-release pending” status, so no invalid store URL can be published.
+The official Chrome Web Store and Firefox Add-ons listing URLs are configured. Chrome is available;
+the Firefox listing remains linked with a visible `Publication pending` status until Mozilla enables
+installation. Both HTML pages also contain matching accessible fallback links for visitors who load
+the page without JavaScript.
 
 ## Existing PWD Note pattern
 
@@ -49,7 +50,7 @@ The planned source metadata should contain only controlled public values such as
 - version;
 - release notes;
 - supported and planned platform status;
-- Chrome Web Store and Firefox Add-ons URLs, which may remain null; and
+- Chrome Web Store and Firefox Add-ons URLs, with a separate publication status where needed; and
 - other reviewed public release metadata.
 
 The updater should reject missing fields, unexpected types, unsupported platform states, non-HTTPS
@@ -75,12 +76,15 @@ Prefer an explicit release tag or manual trigger over every push.
 
 - GitHub Pages serves the checked-in static `ReadBooster/` directory from the website `main` branch.
 - The two pages read mutable values from the shared configuration file.
-- A null store URL always renders the safe pending state.
+- The shared renderer validates store URLs before replacing the accessible HTML fallback links.
+- Chrome links to its published Web Store listing.
+- Firefox links to its Add-ons listing and remains marked `Publication pending`.
 
 ## Still manual
 
 - ReadBooster release metadata is not yet copied from the extension repository.
-- The Chrome Web Store and Firefox Add-ons URLs must be added only after the real public URLs exist.
+- Firefox publication status must be updated after Mozilla enables installation.
+- Store URL changes must keep the shared configuration and both HTML fallback link sets synchronized.
 - Platform-status and release-note changes require a reviewed website update.
 - The source-repository updater and release workflow must be implemented in the ReadBooster
   repository when its public metadata contract is finalized.

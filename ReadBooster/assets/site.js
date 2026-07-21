@@ -48,29 +48,49 @@
   function renderInstallActions() {
     document.querySelectorAll("[data-install-container]").forEach(function (container) {
       var compact = container.hasAttribute("data-compact");
-      var element;
+      var links = [];
 
       if (isSafeHttpUrl(config.chromeWebStoreUrl)) {
-        element = document.createElement("a");
-        element.href = config.chromeWebStoreUrl;
-        element.target = "_blank";
-        element.rel = "noopener noreferrer";
-        element.className = "button button-primary" + (compact ? " button-small" : "");
-        element.textContent = "Install from the Chrome Web Store";
-        element.setAttribute("aria-label", "Install ReadBooster from the Chrome Web Store");
-      } else {
-        element = document.createElement("span");
-        element.className = "button-pending" + (compact ? " button-small" : "");
-        element.setAttribute("role", "status");
-
-        var dot = document.createElement("span");
-        dot.className = "pending-dot";
-        dot.setAttribute("aria-hidden", "true");
-        element.appendChild(dot);
-        element.appendChild(document.createTextNode(config.pendingReleaseLabel));
+        var chromeLink = document.createElement("a");
+        chromeLink.href = config.chromeWebStoreUrl;
+        chromeLink.target = "_blank";
+        chromeLink.rel = "noopener noreferrer";
+        chromeLink.className = "button button-primary" + (compact ? " button-small" : "");
+        chromeLink.textContent = "Get ReadBooster for Chrome";
+        chromeLink.setAttribute(
+          "aria-label",
+          "Get ReadBooster for Chrome from the Chrome Web Store (opens in a new tab)",
+        );
+        links.push(chromeLink);
       }
 
-      container.replaceChildren(element);
+      if (isSafeHttpUrl(config.firefoxAddonsUrl)) {
+        var firefoxLink = document.createElement("a");
+        firefoxLink.href = config.firefoxAddonsUrl;
+        firefoxLink.target = "_blank";
+        firefoxLink.rel = "noopener noreferrer";
+        firefoxLink.className =
+          "button button-publication-pending" + (compact ? " button-small" : "");
+        firefoxLink.setAttribute(
+          "aria-label",
+          "Get ReadBooster for Firefox from Firefox Add-ons; publication pending (opens in a new tab)",
+        );
+
+        var firefoxLabel = document.createElement("span");
+        firefoxLabel.textContent = "Get ReadBooster for Firefox";
+
+        var firefoxStatus = document.createElement("span");
+        firefoxStatus.className = "button-status";
+        firefoxStatus.textContent = config.firefoxPublicationStatus;
+
+        firefoxLink.append(firefoxLabel, firefoxStatus);
+        links.push(firefoxLink);
+      }
+
+      if (links.length > 0) {
+        container.classList.add("install-actions");
+        container.replaceChildren.apply(container, links);
+      }
     });
   }
 
