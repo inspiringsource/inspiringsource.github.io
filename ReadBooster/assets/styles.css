@@ -247,26 +247,15 @@ svg {
   color: #fff;
 }
 
-.button-publication-pending {
-  border-style: dashed;
+.button-secondary {
+  border: 1px solid var(--blue);
   background: var(--blue-pale);
   color: var(--blue-deep);
-  flex-direction: column;
-  gap: 2px;
 }
 
-.button-publication-pending:hover {
+.button-secondary:hover {
   background: var(--blue-soft);
   color: var(--blue-deep);
-}
-
-.button-status {
-  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: 0.6rem;
-  font-weight: 650;
-  letter-spacing: 0.04em;
-  opacity: 0.82;
-  text-transform: uppercase;
 }
 
 .install-actions {
@@ -708,6 +697,12 @@ h1 {
   box-shadow: 7px 8px 0 #274059;
 }
 
+.notes-shot img {
+  width: min(100%, 800px);
+  margin-inline: auto;
+  background: #182332;
+}
+
 .feature-shot figcaption {
   color: #b9c7d6;
 }
@@ -715,7 +710,7 @@ h1 {
 .product-sequence {
   display: grid;
   margin-top: clamp(80px, 10vw, 130px);
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   border-block: 1px solid #506176;
 }
 
@@ -1514,7 +1509,8 @@ h1 {
   }
 
   .workflow-steps li:nth-child(3),
-  .product-sequence a:nth-child(3) {
+  .product-sequence a:nth-child(3),
+  .product-sequence a:nth-child(5) {
     border-left: 0;
   }
 

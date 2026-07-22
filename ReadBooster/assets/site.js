@@ -69,21 +69,12 @@
         firefoxLink.href = config.firefoxAddonsUrl;
         firefoxLink.target = "_blank";
         firefoxLink.rel = "noopener noreferrer";
-        firefoxLink.className =
-          "button button-publication-pending" + (compact ? " button-small" : "");
+        firefoxLink.className = "button button-secondary" + (compact ? " button-small" : "");
+        firefoxLink.textContent = "Get ReadBooster for Firefox";
         firefoxLink.setAttribute(
           "aria-label",
-          "Get ReadBooster for Firefox from Firefox Add-ons; publication pending (opens in a new tab)",
+          "Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)",
         );
-
-        var firefoxLabel = document.createElement("span");
-        firefoxLabel.textContent = "Get ReadBooster for Firefox";
-
-        var firefoxStatus = document.createElement("span");
-        firefoxStatus.className = "button-status";
-        firefoxStatus.textContent = config.firefoxPublicationStatus;
-
-        firefoxLink.append(firefoxLabel, firefoxStatus);
         links.push(firefoxLink);
       }
 
@@ -176,7 +167,7 @@
       operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
       description:
-        "ReadBooster transforms ChatGPT, Google Gemini, and Mistral AI conversations into structured, continuous documents with clear navigation, improved tables, and adaptable reading controls.",
+        "ReadBooster transforms ChatGPT, Google Gemini, and Mistral AI conversations into structured, continuous documents with clear navigation, document notes, improved tables, and adaptable reading controls.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
@@ -185,6 +176,7 @@
         "Continuous Document Mode",
         "Focus Mode",
         "Grouped document outline",
+        "Document notes with directional navigation indicators",
         "Improved table modes",
         "Default, Serif, Dyslexia-friendly, and Fast Reading styles",
         "Copy and Print / Save as PDF",

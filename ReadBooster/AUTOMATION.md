@@ -12,10 +12,9 @@ Runtime public values live in one file:
 ReadBooster/assets/config.js
 ```
 
-The official Chrome Web Store and Firefox Add-ons listing URLs are configured. Chrome is available;
-the Firefox listing remains linked with a visible `Publication pending` status until Mozilla enables
-installation. Both HTML pages also contain matching accessible fallback links for visitors who load
-the page without JavaScript.
+The official Chrome Web Store and Firefox Add-ons listing URLs are configured, and both extensions
+are publicly available. Both HTML pages also contain matching accessible fallback links for visitors
+who load the page without JavaScript.
 
 ## Existing PWD Note pattern
 
@@ -78,12 +77,11 @@ Prefer an explicit release tag or manual trigger over every push.
 - The two pages read mutable values from the shared configuration file.
 - The shared renderer validates store URLs before replacing the accessible HTML fallback links.
 - Chrome links to its published Web Store listing.
-- Firefox links to its Add-ons listing and remains marked `Publication pending`.
+- Firefox links to its published Add-ons listing.
 
 ## Still manual
 
 - ReadBooster release metadata is not yet copied from the extension repository.
-- Firefox publication status must be updated after Mozilla enables installation.
 - Store URL changes must keep the shared configuration and both HTML fallback link sets synchronized.
 - Platform-status and release-note changes require a reviewed website update.
 - The source-repository updater and release workflow must be implemented in the ReadBooster

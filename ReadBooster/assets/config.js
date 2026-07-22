@@ -6,11 +6,10 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.6.2",
+  currentVersion: "0.6.7",
   chromeWebStoreUrl:
-    "https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd?utm_source=item-share-cb",
+    "https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd",
   firefoxAddonsUrl: "https://addons.mozilla.org/en-US/firefox/addon/readbooster/",
-  firefoxPublicationStatus: "Publication pending",
   feedbackUrl: "https://tally.so/r/QKWqjp",
   portfolioUrl: "https://inspiringsource.github.io/",
   supportedPlatforms: Object.freeze(["ChatGPT", "Google Gemini", "Mistral AI"]),
