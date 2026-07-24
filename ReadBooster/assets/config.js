@@ -6,7 +6,7 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.6.7",
+  currentVersion: "0.6.9",
   chromeWebStoreUrl:
     "https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd",
   firefoxAddonsUrl: "https://addons.mozilla.org/en-US/firefox/addon/readbooster/",
