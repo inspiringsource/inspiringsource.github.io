@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Iroh P2P Chat | Temporary Peer-to-Peer Rooms</title>
+    <meta
+      name="description"
+      content="Iroh P2P Chat is an engineering exploration of temporary peer-to-peer chat rooms built with Rust, Iroh, iroh-gossip, WebAssembly, and Ratatui."
+    />
+    <meta name="author" content="Abraham (Avi) Bobrovsky" />
+    <link rel="canonical" href="https://inspiringsource.github.io/IrohP2PChat/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Inspiring Source" />
+    <meta property="og:url" content="https://inspiringsource.github.io/IrohP2PChat/" />
+    <meta property="og:title" content="Iroh P2P Chat | Temporary Peer-to-Peer Rooms" />
+    <meta
+      property="og:description"
+      content="A Rust engineering project exploring temporary peer-to-peer chat without accounts, databases, permanent servers, or retained message history."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Iroh P2P Chat | Temporary Peer-to-Peer Rooms" />
+    <meta
+      name="twitter:description"
+      content="A Rust engineering project exploring temporary peer-to-peer chat without accounts, databases, permanent servers, or retained message history."
+    />
+
+    <link rel="icon" href="../favicon/favicon.ico" />
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      .project-container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 64px 24px 36px;
+        position: relative;
+        z-index: 1;
+        animation: pageFade 0.7s ease-out;
+      }
+
+      .project-hero {
+        max-width: 760px;
+        margin: 0 auto 64px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: var(--color-list-marker);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .project-hero h1 {
+        font-size: clamp(2.8rem, 8vw, 4.8rem);
+        margin-bottom: 18px;
+      }
+
+      .project-hero .subtitle {
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--color-h2);
+        font-size: clamp(1.12rem, 2.8vw, 1.45rem);
+        font-weight: 500;
+        line-height: 1.55;
+      }
+
+      .project-hero .positioning {
+        max-width: 670px;
+        margin: 22px auto 0;
+        color: var(--color-intro);
+        font-size: 1rem;
+      }
+
+      .project-actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 190px;
+        padding: 12px 22px;
+        border: 1px solid var(--color-logo-border);
+        border-radius: 12px;
+        color: var(--color-link);
+        background: var(--color-lang-switch-bg);
+        font-size: 0.96rem;
+        font-weight: 750;
+        text-decoration: none;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button-primary {
+        border-color: transparent;
+        color: #03060d;
+        background: var(--color-list-marker);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--color-logo-hover-border);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+      }
+
+      .button:focus-visible {
+        outline: 2px solid var(--color-section-hover-border);
+        outline-offset: 3px;
+      }
+
+      .button-pending {
+        color: var(--color-copyright);
+        cursor: default;
+      }
+
+      .button-pending:hover {
+        transform: none;
+        border-color: var(--color-logo-border);
+        box-shadow: none;
+      }
+
+      .project-section {
+        margin-top: 52px;
+      }
+
+      .project-section > h2 {
+        margin: 0 0 12px;
+        color: var(--color-h1);
+        font-size: 1.55rem;
+        letter-spacing: -0.01em;
+      }
+
+      .project-section > p {
+        max-width: 72ch;
+        color: var(--color-intro);
+        font-size: 1.02rem;
+      }
+
+      .project-section > p + p {
+        margin-top: 14px;
+      }
+
+      .principle {
+        margin-top: 22px;
+        padding: 22px 24px;
+        border: 1px solid var(--color-section-hover-border);
+        border-radius: 16px;
+        background: var(--color-section-hover-glow);
+        color: var(--color-h2);
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        font-weight: 650;
+        line-height: 1.6;
+      }
+
+      .requirement-list,
+      .detail-list {
+        margin: 18px 0 0;
+        padding-left: 1.25em;
+        color: var(--color-list);
+      }
+
+      .requirement-list li,
+      .detail-list li {
+        margin-bottom: 0.6em;
+        line-height: 1.65;
+      }
+
+      .requirement-list li::marker,
+      .detail-list li::marker {
+        color: var(--color-list-marker);
+      }
+
+      .architecture-card {
+        margin: 22px 0 20px;
+        padding: 28px 20px;
+        overflow-x: auto;
+        border: 1px solid var(--color-section-border);
+        border-radius: 18px;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(8, 12, 20, 0.88));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      }
+
+      html[data-theme="light"] .architecture-card {
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.07);
+      }
+
+      .architecture-diagram {
+        display: grid;
+        justify-items: center;
+        min-width: 320px;
+        color: var(--color-list);
+        font-family: "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+        font-size: 0.94rem;
+        line-height: 1.35;
+        text-align: center;
+      }
+
+      .architecture-node {
+        min-width: 210px;
+        padding: 11px 18px;
+        border: 1px solid var(--color-section-hover-border);
+        border-radius: 10px;
+        color: var(--color-h1);
+        background: var(--color-section-hover-glow);
+        font-weight: 700;
+      }
+
+      .architecture-connector {
+        padding: 9px 0;
+        color: var(--color-copyright);
+      }
+
+      .architecture-connector::before,
+      .architecture-connector::after {
+        display: block;
+        color: var(--color-list-marker);
+        content: "│";
+      }
+
+      .architecture-connector::after {
+        content: "▼";
+      }
+
+      .feature-grid,
+      .technology-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 14px;
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-grid li,
+      .technology-grid li {
+        padding: 16px 18px;
+        border: 1px solid var(--color-section-border);
+        border-radius: 14px;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.6), rgba(8, 12, 20, 0.78));
+        color: var(--color-list);
+        font-weight: 650;
+        line-height: 1.45;
+      }
+
+      html[data-theme="light"] .feature-grid li,
+      html[data-theme="light"] .technology-grid li {
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      }
+
+      .feature-grid li::before {
+        margin-right: 7px;
+        color: var(--color-list-marker);
+        content: "→";
+      }
+
+      .technology-grid li {
+        text-align: center;
+      }
+
+      .usage-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 22px;
+      }
+
+      .usage-card {
+        padding: 20px;
+        border: 1px solid var(--color-section-border);
+        border-radius: 16px;
+        background: rgba(8, 12, 20, 0.38);
+      }
+
+      html[data-theme="light"] .usage-card {
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .usage-card h3 {
+        margin: 0 0 14px;
+        color: var(--color-h2);
+        font-size: 1rem;
+      }
+
+      pre.code {
+        margin: 0;
+        padding: 16px 18px;
+        overflow-x: auto;
+        border: 1px solid var(--color-section-border);
+        border-radius: 12px;
+        background: rgba(3, 6, 13, 0.7);
+        color: var(--color-list);
+        font-family: "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      html[data-theme="light"] pre.code {
+        background: rgba(15, 23, 42, 0.04);
+        color: #1e293b;
+      }
+
+      .prompt {
+        color: var(--color-list-marker);
+        user-select: none;
+      }
+
+      .guest-step {
+        color: var(--color-intro);
+        line-height: 1.7;
+      }
+
+      .scope-note {
+        margin-top: 26px;
+        padding: 16px 18px;
+        border-left: 3px solid var(--color-list-marker);
+        border-radius: 0 12px 12px 0;
+        background: var(--color-section-hover-glow);
+        color: var(--color-intro);
+        line-height: 1.65;
+      }
+
+      .project-footer {
+        margin-top: 70px;
+        padding-top: 24px;
+        border-top: 1px solid var(--color-section-border);
+        color: var(--color-copyright);
+        font-size: 0.94rem;
+        text-align: center;
+      }
+
+      .project-footer a {
+        color: var(--color-link);
+        text-decoration: none;
+      }
+
+      .project-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .page-theme-toggle {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 2;
+      }
+
+      @media (max-width: 640px) {
+        .project-container {
+          padding: 42px 18px 26px;
+        }
+
+        .project-hero {
+          margin-bottom: 52px;
+        }
+
+        .button {
+          width: 100%;
+          max-width: 330px;
+        }
+
+        .usage-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <button
+      id="theme-toggle"
+      class="theme-toggle page-theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+      aria-pressed="false"
+    >
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+
+    <main class="project-container">
+      <header class="project-hero">
+        <span class="eyebrow">Engineering portfolio project</span>
+        <h1>Iroh P2P Chat</h1>
+        <p class="subtitle">
+          Temporary peer-to-peer rooms with a native terminal host and browser-based guests.
+        </p>
+        <p class="positioning">
+          This is a focused architecture experiment, not a replacement for Mattermost, Slack, or
+          enterprise collaboration platforms.
+        </p>
+        <div class="project-actions" aria-label="Project links">
+          <a
+            class="button button-primary"
+            href="https://github.com/inspiringsource/iroh-p2p-chat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub repository</a>
+          <span class="button button-pending" aria-label="Live browser client, publication pending">
+            Browser client · publication pending
+          </span>
+        </div>
+      </header>
+
+      <section class="project-section" aria-labelledby="overview-heading">
+        <h2 id="overview-heading">Overview</h2>
+        <p>
+          Iroh P2P Chat creates a temporary peer-to-peer chat room where a host runs the application
+          locally and participants join through a browser invitation. The host process owns the room,
+          while browser guests connect without installing the native client.
+        </p>
+        <blockquote class="principle">
+          “Exploring how far a chat system can be simplified when accounts, databases, permanent
+          servers, and message history are removed.”
+        </blockquote>
+      </section>
+
+      <section class="project-section" aria-labelledby="motivation-heading">
+        <h2 id="motivation-heading">Problem / Motivation</h2>
+        <p>Traditional messaging systems often depend on several long-running components:</p>
+        <ul class="requirement-list">
+          <li>Application servers</li>
+          <li>Databases</li>
+          <li>Authentication systems</li>
+          <li>Persistent infrastructure</li>
+        </ul>
+        <p>
+          Those components support important capabilities such as administration, retention,
+          integrations, and reliable long-term availability. This project explores a different design
+          space: what the system can become when the session itself is temporary and those durable
+          requirements are deliberately removed.
+        </p>
+      </section>
+
+      <section class="project-section" aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <div class="architecture-card" role="img" aria-label="A browser guest connects through an encrypted Iroh connection to the host process, which participates in an iroh-gossip room.">
+          <div class="architecture-diagram">
+            <div class="architecture-node">Browser Guest</div>
+            <div class="architecture-connector">Iroh encrypted connection</div>
+            <div class="architecture-node">Host Process</div>
+            <div class="architecture-connector">iroh-gossip room</div>
+            <div class="architecture-node">Temporary Room</div>
+          </div>
+        </div>
+        <p>
+          The native client and browser client share a Rust protocol core. It handles ticket parsing,
+          message structures, signing, and verification; the browser build compiles that same core to
+          WebAssembly instead of recreating the protocol in TypeScript.
+        </p>
+        <p>
+          GitHub Pages only distributes the static browser client: HTML, CSS, JavaScript, and
+          WebAssembly. It does not host the room, store messages, or keep the chat session alive. Once
+          loaded, the browser connects through Iroh to the locally running host process.
+        </p>
+      </section>
+
+      <section class="project-section" aria-labelledby="features-heading">
+        <h2 id="features-heading">Features</h2>
+        <ul class="feature-grid">
+          <li>Rust + Iroh</li>
+          <li>Ratatui terminal interface</li>
+          <li>Browser client via WebAssembly</li>
+          <li>Signed messages</li>
+          <li>Temporary identities</li>
+          <li>Memory-only sessions</li>
+          <li>Invitation-based joining</li>
+          <li>Owner-controlled lifecycle</li>
+          <li>No accounts or database</li>
+          <li>No persistent message history</li>
+        </ul>
+      </section>
+
+      <section class="project-section" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">Demo / Usage</h2>
+        <p>
+          The owner starts a room from the native terminal application. Guests receive the generated
+          invitation link and join with an ordinary browser.
+        </p>
+        <div class="usage-grid">
+          <article class="usage-card">
+            <h3>Host</h3>
+            <pre class="code"><code><span class="prompt">$ </span>iroh-p2p-chat host --name Alice</code></pre>
+          </article>
+          <article class="usage-card">
+            <h3>Guest</h3>
+            <p class="guest-step">Open the invitation link in a browser, choose a nickname, and join the temporary room.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="technology-heading">
+        <h2 id="technology-heading">Technology</h2>
+        <ul class="technology-grid">
+          <li>Rust</li>
+          <li>Tokio</li>
+          <li>Iroh</li>
+          <li>iroh-gossip</li>
+          <li>WebAssembly</li>
+          <li>React / Vite</li>
+          <li>Ratatui</li>
+        </ul>
+        <p class="scope-note">
+          Iroh P2P Chat is an experimental portfolio project. It does not claim anonymity, guaranteed
+          deletion, or production readiness. Invitations can be forwarded, and content may still be
+          copied or retained by participants or their devices.
+        </p>
+      </section>
+
+      <section class="project-section" aria-labelledby="links-heading">
+        <h2 id="links-heading">Links</h2>
+        <div class="project-actions" style="justify-content: flex-start; margin-top: 18px">
+          <a
+            class="button button-primary"
+            href="https://github.com/inspiringsource/iroh-p2p-chat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub repository</a>
+          <span class="button button-pending" aria-label="Live browser client, publication pending">
+            Live browser client · once available
+          </span>
+        </div>
+      </section>
+
+      <footer class="project-footer">
+        Built by Avi ·
+        <a href="../">Portfolio home</a> ·
+        <a
+          href="https://github.com/inspiringsource/iroh-p2p-chat"
+          target="_blank"
+          rel="noopener noreferrer"
+        >GitHub</a>
+      </footer>
+    </main>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Iroh P2P Chat",
+        "description": "An experimental Rust project exploring temporary peer-to-peer chat rooms without accounts, databases, permanent application servers, or retained message history.",
+        "url": "https://inspiringsource.github.io/IrohP2PChat/",
+        "codeRepository": "https://github.com/inspiringsource/iroh-p2p-chat",
+        "programmingLanguage": ["Rust", "TypeScript"],
+        "author": {
+          "@type": "Person",
+          "name": "Abraham Bobrovsky",
+          "alternateName": "Avi Bobrovsky",
+          "url": "https://inspiringsource.github.io/"
+        }
+      }
+    </script>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.getElementById("theme-toggle");
+
+        function setTheme(theme) {
+          root.dataset.theme = theme;
+          try {
+            localStorage.setItem("theme", theme);
+          } catch (error) {}
+
+          var isLight = theme === "light";
+          button.setAttribute("aria-pressed", String(isLight));
+          button.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+          button.querySelector(".theme-icon").textContent = isLight ? "☀️" : "🌙";
+        }
+
+        var savedTheme;
+        try {
+          savedTheme = localStorage.getItem("theme");
+        } catch (error) {}
+
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+        button.addEventListener("click", function () {
+          setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>
