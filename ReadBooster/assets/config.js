@@ -13,16 +13,18 @@ window.READBOOSTER_CONFIG = Object.freeze({
   feedbackUrl: "https://tally.so/r/QKWqjp",
   portfolioUrl: "https://inspiringsource.github.io/",
   aviCloudUrl: "https://avicloud.ch/",
-  openSourceLaunchEnabled: false,
+  openSourceLaunchEnabled: true,
   repositoryUrl: "https://github.com/inspiringsource/ReadBooster",
   issuesUrl: "https://github.com/inspiringsource/ReadBooster/issues",
-  platformRequestUrl:
-    "https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml",
+  issueChooserUrl: "https://github.com/inspiringsource/ReadBooster/issues/new/choose",
   contributingUrl:
     "https://github.com/inspiringsource/ReadBooster/blob/main/CONTRIBUTING.md",
   addingPlatformUrl:
     "https://github.com/inspiringsource/ReadBooster/blob/main/docs/adding-a-platform.md",
   licenseUrl: "https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE",
+  securityUrl: "https://github.com/inspiringsource/ReadBooster/blob/main/SECURITY.md",
+  storeReviewTimingNote:
+    "Chrome and Firefox review and publish updates independently, so a new ReadBooster version may become available in one store before the other.",
   supportedPlatforms: Object.freeze([
     "ChatGPT",
     "Google Gemini",

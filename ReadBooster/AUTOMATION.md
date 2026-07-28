@@ -13,8 +13,9 @@ ReadBooster/assets/config.js
 ```
 
 The same file contains `openSourceLaunchEnabled`, the single launch gate for public GitHub calls to
-action and source metadata. It must remain `false` while the repository is private. After the
-repository is public and its routes are checked, set it to `true` in the reviewed deployment change.
+action and source metadata. The repository and its public source, issue, contribution, adapter,
+security, and licence routes have been verified, so the reviewed website configuration now keeps
+this gate enabled.
 
 The official Chrome Web Store and Firefox Add-ons listing URLs are configured, and both extensions
 are publicly available. Both HTML pages also contain matching accessible fallback links for visitors
@@ -81,6 +82,7 @@ Prefer an explicit release tag or manual trigger over every push.
 - GitHub Pages serves the checked-in static `ReadBooster/` directory from the website `main` branch.
 - The two pages read mutable values from the shared configuration file.
 - The shared renderer validates store URLs before replacing the accessible HTML fallback links.
+- Public GitHub, issue, contribution, adapter, security, and MPL 2.0 licence links are enabled.
 - Chrome links to its published Web Store listing.
 - Firefox links to its published Add-ons listing.
 

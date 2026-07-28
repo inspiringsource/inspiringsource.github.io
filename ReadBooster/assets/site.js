@@ -208,7 +208,11 @@
     if (config.openSourceLaunchEnabled && isSafeHttpUrl(config.repositoryUrl)) {
       application.codeRepository = config.repositoryUrl;
       application.license = config.licenseUrl;
-      application.sameAs = [config.repositoryUrl];
+      application.sameAs = [
+        config.repositoryUrl,
+        config.chromeWebStoreUrl,
+        config.firefoxAddonsUrl,
+      ].filter(isSafeHttpUrl);
     }
     appendStructuredData(application);
 
@@ -239,6 +243,7 @@
   setText("[data-current-version]", config.currentVersion);
   setText("[data-supported-list]", formatList(config.supportedPlatforms));
   setText("[data-planned-list]", formatList(config.plannedPlatforms));
+  setText("[data-store-review-note]", config.storeReviewTimingNote);
   setText("[data-copyright-year]", String(new Date().getFullYear()));
   setConfiguredLinks();
   renderOpenSourceLaunch();
