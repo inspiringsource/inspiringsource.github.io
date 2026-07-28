@@ -54,7 +54,7 @@
       document.querySelectorAll("meta[data-open-source-description]").forEach(function (element) {
         element.setAttribute(
           "content",
-          "ReadBooster is an open-source browser extension that turns conversations from ChatGPT, Google Gemini, Mistral AI, and Claude into readable, navigable documents.",
+          "ReadBooster is an open-source product maintained by AviCloud that turns conversations from ChatGPT, Google Gemini, Mistral AI, and Claude into readable, navigable documents.",
         );
       });
     }
@@ -182,7 +182,7 @@
       operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
       description: config.openSourceLaunchEnabled
-        ? "ReadBooster is an open-source browser extension that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents."
+        ? "ReadBooster is an open-source product maintained by AviCloud that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents."
         : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:

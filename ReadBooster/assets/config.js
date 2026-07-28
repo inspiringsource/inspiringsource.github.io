@@ -17,6 +17,12 @@ window.READBOOSTER_CONFIG = Object.freeze({
   repositoryUrl: "https://github.com/inspiringsource/ReadBooster",
   issuesUrl: "https://github.com/inspiringsource/ReadBooster/issues",
   issueChooserUrl: "https://github.com/inspiringsource/ReadBooster/issues/new/choose",
+  bugReportUrl:
+    "https://github.com/inspiringsource/ReadBooster/issues/new?template=bug_report.yml",
+  featureRequestUrl:
+    "https://github.com/inspiringsource/ReadBooster/issues/new?template=feature_request.yml",
+  platformRequestUrl:
+    "https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml",
   contributingUrl:
     "https://github.com/inspiringsource/ReadBooster/blob/main/CONTRIBUTING.md",
   addingPlatformUrl:

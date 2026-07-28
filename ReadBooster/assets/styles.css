@@ -1159,12 +1159,14 @@ h1 {
 .open-source-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
-  align-items: center;
+  align-items: start;
   gap: clamp(55px, 9vw, 125px);
 }
 
 .open-source-copy > p:first-child,
-.adapter-card > p:first-child {
+.community-stewardship-card > p:first-child,
+.community-paths > header > p,
+.community-card > p:first-child {
   margin: 0;
   color: var(--blue-dark);
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
@@ -1199,54 +1201,139 @@ h1 {
   gap: 9px;
 }
 
-.adapter-card {
+.community-stewardship-card {
   padding: clamp(28px, 4vw, 44px);
   border: 1px solid var(--rule-strong);
   background: var(--paper);
   box-shadow: 8px 9px 0 var(--blue-soft);
 }
 
-.adapter-card ol {
-  margin: 24px 0;
-  padding: 0;
-  list-style: none;
+.community-stewardship-card h3 {
+  margin: 16px 0 0;
+  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
-.adapter-card li {
-  position: relative;
-  padding: 11px 14px;
-  border: 1px solid var(--rule);
-  color: var(--ink-2);
+.community-stewardship-card > p:not(:first-child) {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.community-stewardship-card dl {
+  margin: 24px 0 0;
+}
+
+.community-stewardship-card dt {
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  color: var(--blue-deep);
   font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-align: center;
+  font-size: 0.66rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.adapter-card li + li {
-  margin-top: 20px;
-}
-
-.adapter-card li + li::before {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  content: "↓";
-  color: var(--blue);
-  transform: translateX(-50%);
-}
-
-.adapter-card > p:not(:first-child) {
-  margin: 0;
+.community-stewardship-card dd {
+  margin: 5px 0 0;
+  padding-bottom: 14px;
   color: var(--muted);
   font-size: 0.75rem;
+  overflow-wrap: anywhere;
 }
 
-.adapter-card > a {
-  display: inline-block;
+.community-paths {
+  margin-top: clamp(58px, 8vw, 92px);
+}
+
+.community-paths > header {
+  max-width: 760px;
+}
+
+.community-paths > header h3 {
+  margin: 15px 0 0;
+  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.65rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.03;
+}
+
+.community-paths > header > span {
+  display: block;
   margin-top: 18px;
-  font-size: 0.76rem;
-  font-weight: 750;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.community-card-grid {
+  display: grid;
+  margin-top: 32px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.community-card {
+  display: flex;
+  min-width: 0;
+  min-height: 330px;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  flex-direction: column;
+}
+
+.community-card h4 {
+  margin: 15px 0 0;
+  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.community-card > p:not(:first-child) {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.community-card .button {
+  max-width: 100%;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.community-card-detail {
+  margin-top: 13px;
+  align-self: flex-start;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.community-notes {
+  display: grid;
+  margin-top: 42px;
+  padding-top: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 70px);
+  border-top: 1px solid var(--rule-strong);
+}
+
+.community-notes p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.community-notes strong {
+  color: var(--blue-deep);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .local-section {
@@ -1885,6 +1972,43 @@ h1 {
     width: 100%;
   }
 
+  .open-source-copy h2,
+  .community-paths > header h3 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-wrap: wrap;
+  }
+
+  .open-source-copy h2 {
+    font-size: 2.15rem;
+  }
+
+  .community-paths > header h3 {
+    font-size: 1.85rem;
+  }
+
+  .open-source-copy,
+  .community-stewardship-card,
+  .community-paths,
+  .community-card,
+  .community-notes {
+    min-width: 0;
+  }
+
+  .community-card-grid,
+  .community-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .community-card {
+    min-height: 0;
+  }
+
+  .community-card .button {
+    width: 100%;
+    margin-top: 28px;
+  }
+
   .feature-sequence-heading {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -2014,6 +2138,7 @@ h1 {
   .product-hero,
   .product-features,
   .platform-section,
+  .open-source-section,
   .local-section,
   .faq-section,
   .policy-hero {
