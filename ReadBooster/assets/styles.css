@@ -1157,14 +1157,10 @@ h1 {
 }
 
 .open-source-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
-  align-items: start;
-  gap: clamp(55px, 9vw, 125px);
+  max-width: 920px;
 }
 
 .open-source-copy > p:first-child,
-.community-stewardship-card > p:first-child,
 .community-paths > header > p,
 .community-card > p:first-child {
   margin: 0;
@@ -1196,53 +1192,31 @@ h1 {
 
 .open-source-actions {
   display: flex;
-  margin-top: 30px;
+  margin-top: 18px;
   flex-wrap: wrap;
   gap: 9px;
 }
 
-.community-stewardship-card {
-  padding: clamp(28px, 4vw, 44px);
-  border: 1px solid var(--rule-strong);
-  background: var(--paper);
-  box-shadow: 8px 9px 0 var(--blue-soft);
+.community-maintainer-note {
+  max-width: 840px;
+  margin-top: 30px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--blue);
+  background: var(--blue-soft);
 }
 
-.community-stewardship-card h3 {
-  margin: 16px 0 0;
-  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
-  font-size: clamp(1.75rem, 3vw, 2.45rem);
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-}
-
-.community-stewardship-card > p:not(:first-child) {
-  margin: 22px 0 0;
+.community-maintainer-note p {
+  margin: 0;
   color: var(--muted);
   font-size: 0.82rem;
+  line-height: 1.65;
 }
 
-.community-stewardship-card dl {
-  margin: 24px 0 0;
-}
-
-.community-stewardship-card dt {
-  padding-top: 14px;
-  border-top: 1px solid var(--rule);
-  color: var(--blue-deep);
-  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: 0.66rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.community-stewardship-card dd {
-  margin: 5px 0 0;
-  padding-bottom: 14px;
-  color: var(--muted);
-  font-size: 0.75rem;
-  overflow-wrap: anywhere;
+.open-source-copy > .github-introduction {
+  margin-top: 26px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 .community-paths {
@@ -1988,7 +1962,7 @@ h1 {
   }
 
   .open-source-copy,
-  .community-stewardship-card,
+  .community-maintainer-note,
   .community-paths,
   .community-card,
   .community-notes {
