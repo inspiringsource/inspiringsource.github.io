@@ -45,6 +45,21 @@
     });
   }
 
+  function renderOpenSourceLaunch() {
+    document.querySelectorAll("[data-open-source-only]").forEach(function (element) {
+      element.hidden = !config.openSourceLaunchEnabled;
+    });
+
+    if (config.openSourceLaunchEnabled) {
+      document.querySelectorAll("meta[data-open-source-description]").forEach(function (element) {
+        element.setAttribute(
+          "content",
+          "ReadBooster is an open-source browser extension that turns conversations from ChatGPT, Google Gemini, Mistral AI, and Claude into readable, navigable documents.",
+        );
+      });
+    }
+  }
+
   function renderInstallActions() {
     document.querySelectorAll("[data-install-container]").forEach(function (container) {
       var compact = container.hasAttribute("data-compact");
@@ -166,8 +181,9 @@
       applicationCategory: "BrowserApplication",
       operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
-      description:
-        "ReadBooster transforms ChatGPT, Google Gemini, and Mistral AI conversations into structured, continuous documents with clear navigation, document notes, improved tables, and adaptable reading controls.",
+      description: config.openSourceLaunchEnabled
+        ? "ReadBooster is an open-source browser extension that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents."
+        : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
@@ -176,8 +192,12 @@
         "Continuous Document Mode",
         "Focus Mode",
         "Grouped document outline",
-        "Document notes with directional navigation indicators",
+        "Custom section titles and local Stickers",
         "Improved table modes",
+        "Syntax-aware code presentation and copying",
+        "Static document blocks",
+        "Conversation refresh",
+        "Responsive Optimize Reading control",
         "Default, Serif, Dyslexia-friendly, and Fast Reading styles",
         "Copy and Print / Save as PDF",
         "Local-first conversation formatting",
@@ -185,9 +205,14 @@
     };
 
     if (isSafeHttpUrl(config.chromeWebStoreUrl)) application.installUrl = config.chromeWebStoreUrl;
+    if (config.openSourceLaunchEnabled && isSafeHttpUrl(config.repositoryUrl)) {
+      application.codeRepository = config.repositoryUrl;
+      application.license = config.licenseUrl;
+      application.sameAs = [config.repositoryUrl];
+    }
     appendStructuredData(application);
 
-    var faqEntries = Array.from(document.querySelectorAll(".faq-item"))
+    var faqEntries = Array.from(document.querySelectorAll(".faq-item:not([hidden])"))
       .map(function (item) {
         var question = item.querySelector("summary");
         var answer = item.querySelector(".faq-answer");
@@ -216,6 +241,7 @@
   setText("[data-planned-list]", formatList(config.plannedPlatforms));
   setText("[data-copyright-year]", String(new Date().getFullYear()));
   setConfiguredLinks();
+  renderOpenSourceLaunch();
   renderInstallActions();
   renderPlatforms();
   setupNavigation();

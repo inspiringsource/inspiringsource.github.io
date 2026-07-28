@@ -12,6 +12,10 @@ Runtime public values live in one file:
 ReadBooster/assets/config.js
 ```
 
+The same file contains `openSourceLaunchEnabled`, the single launch gate for public GitHub calls to
+action and source metadata. It must remain `false` while the repository is private. After the
+repository is public and its routes are checked, set it to `true` in the reviewed deployment change.
+
 The official Chrome Web Store and Firefox Add-ons listing URLs are configured, and both extensions
 are publicly available. Both HTML pages also contain matching accessible fallback links for visitors
 who load the page without JavaScript.
@@ -49,6 +53,7 @@ The planned source metadata should contain only controlled public values such as
 - version;
 - release notes;
 - supported and planned platform status;
+- open-source launch visibility and reviewed repository routes;
 - Chrome Web Store and Firefox Add-ons URLs, with a separate publication status where needed; and
 - other reviewed public release metadata.
 

@@ -6,19 +6,36 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.6.9",
+  currentVersion: "0.7.1",
   chromeWebStoreUrl:
     "https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd",
   firefoxAddonsUrl: "https://addons.mozilla.org/en-US/firefox/addon/readbooster/",
   feedbackUrl: "https://tally.so/r/QKWqjp",
   portfolioUrl: "https://inspiringsource.github.io/",
-  supportedPlatforms: Object.freeze(["ChatGPT", "Google Gemini", "Mistral AI"]),
+  aviCloudUrl: "https://avicloud.ch/",
+  openSourceLaunchEnabled: false,
+  repositoryUrl: "https://github.com/inspiringsource/ReadBooster",
+  issuesUrl: "https://github.com/inspiringsource/ReadBooster/issues",
+  platformRequestUrl:
+    "https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml",
+  contributingUrl:
+    "https://github.com/inspiringsource/ReadBooster/blob/main/CONTRIBUTING.md",
+  addingPlatformUrl:
+    "https://github.com/inspiringsource/ReadBooster/blob/main/docs/adding-a-platform.md",
+  licenseUrl: "https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE",
+  supportedPlatforms: Object.freeze([
+    "ChatGPT",
+    "Google Gemini",
+    "Mistral AI",
+    "Claude",
+  ]),
   supportedPlatformMilestones: Object.freeze({
     "Mistral AI": "0.6 milestone",
-  }),
-  plannedPlatforms: Object.freeze(["Claude", "Perplexity"]),
-  plannedPlatformMilestones: Object.freeze({
     Claude: "0.7 milestone",
+  }),
+  plannedPlatforms: Object.freeze(["Perplexity", "Kimi"]),
+  plannedPlatformMilestones: Object.freeze({
     Perplexity: "0.8 milestone",
+    Kimi: "0.9 milestone",
   }),
 });
