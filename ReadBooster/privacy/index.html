@@ -359,10 +359,80 @@
     </main>
 
     <footer class="product-footer">
-      <div class="page-width footer-row">
-        <a class="footer-brand" href="../"><img src="../assets/icons/readbooster-32.png" width="32" height="32" alt="" /><span data-config-name>ReadBooster</span></a>
-        <nav aria-label="Footer navigation"><a href="../">Product</a><a href="./" aria-current="page">Privacy</a><a data-config-link="chromeWebStoreUrl" target="_blank" rel="noopener noreferrer">Chrome Web Store</a><a data-config-link="firefoxAddonsUrl" target="_blank" rel="noopener noreferrer">Firefox Add-ons</a><a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Feedback</a><a href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" data-open-source-only target="_blank" rel="noopener noreferrer">Explore on GitHub</a><a href="https://github.com/inspiringsource/ReadBooster/issues/new?template=bug_report.yml" data-config-link="bugReportUrl" data-open-source-only target="_blank" rel="noopener noreferrer">Report a problem</a></nav>
-        <div class="footer-meta"><p>Started by Avi and maintained as part of <a data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a>.<span data-open-source-only> Open-source software licensed under <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0</a>.</span></p><p>Independent and not endorsed by OpenAI, Google, Mistral AI, or Anthropic. © <span data-copyright-year>2026</span> ReadBooster</p></div>
+      <div class="page-width footer-main">
+        <div class="footer-brand-column">
+          <a class="footer-brand" href="../">
+            <img src="../assets/icons/readbooster-32.png" width="32" height="32" alt="" />
+            <span data-config-name>ReadBooster</span>
+          </a>
+          <p class="footer-description">Turn AI conversations into readable documents.</p>
+        </div>
+
+        <nav class="footer-column footer-project-links" aria-labelledby="footer-project-heading">
+          <h2 id="footer-project-heading">Project</h2>
+          <ul>
+            <li><a href="../">Product</a></li>
+            <li data-open-source-only>
+              <a
+                href="https://github.com/inspiringsource/ReadBooster"
+                data-config-link="repositoryUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Explore on GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://tally.so/r/QKWqjp"
+                data-config-link="feedbackUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Feedback</a
+              >
+            </li>
+            <li data-open-source-only>
+              <a
+                href="https://github.com/inspiringsource/ReadBooster/issues/new?template=bug_report.yml"
+                data-config-link="bugReportUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Report a problem</a
+              >
+            </li>
+            <li><a href="./" aria-current="page">Privacy</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-column footer-ownership" aria-labelledby="footer-source-heading">
+          <h2 id="footer-source-heading">Open source</h2>
+          <p>
+            Started by Avi and maintained as part of
+            <a
+              href="https://avicloud.ch/"
+              data-config-link="aviCloudUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >AviCloud</a
+            >.
+          </p>
+          <p data-open-source-only>
+            Licensed under the
+            <a
+              href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE"
+              data-config-link="licenseUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Mozilla Public License 2.0 (MPL 2.0)</a
+            >.
+          </p>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="page-width footer-bottom-row">
+          <p>Independent and not endorsed by OpenAI, Google, Mistral AI, or Anthropic.</p>
+          <p>© <span data-copyright-year>2026</span> ReadBooster</p>
+        </div>
       </div>
     </footer>
   </body>

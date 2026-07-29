@@ -1767,54 +1767,116 @@ div.store-release-status {
 }
 
 .product-footer {
-  padding: 25px 0;
   border-top: 1px solid #314359;
   background: var(--ink);
   color: #b8c4d0;
 }
 
-.footer-row {
+.footer-main {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 36px;
+  padding-block: clamp(54px, 6vw, 78px);
+  grid-template-columns: minmax(230px, 1.1fr) minmax(180px, 0.75fr) minmax(250px, 1fr);
+  align-items: start;
+  gap: clamp(44px, 7vw, 96px);
 }
 
-.footer-meta {
-  max-width: 390px;
-  text-align: right;
-}
-
-.footer-meta p + p {
-  margin-top: 4px;
-  color: #91a2b4;
-}
-
-.footer-meta a {
-  color: #d7e7f7;
+.footer-brand-column,
+.footer-column {
+  min-width: 0;
 }
 
 .footer-brand {
   color: #fff;
   font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: 1.08rem;
   font-weight: 600;
 }
 
-.product-footer nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+.footer-description {
+  max-width: 300px;
+  margin: 18px 0 0;
+  color: #aab9c8;
+  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: 0.94rem;
+  line-height: 1.65;
 }
 
-.product-footer nav a {
-  color: #c8d3dd;
-  font-size: 0.72rem;
+.footer-column h2 {
+  margin: 0 0 18px;
+  color: #8fafd0;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
-.product-footer p {
+.footer-project-links ul {
+  display: grid;
   margin: 0;
-  font-size: 0.67rem;
+  padding: 0;
+  gap: 5px;
+  list-style: none;
+}
+
+.footer-project-links a {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.footer-ownership p {
+  max-width: 340px;
+  margin: 0;
+  color: #b8c4d0;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.footer-ownership p + p {
+  margin-top: 12px;
+}
+
+.product-footer a {
+  color: #d7e7f7;
+  text-decoration: none;
+}
+
+.product-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.product-footer a:visited {
+  color: #d7e7f7;
+}
+
+.product-footer a:visited:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #314359;
+}
+
+.footer-bottom-row {
+  display: flex;
+  padding-block: 19px 23px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #91a2b4;
+  font-size: 0.65rem;
+  line-height: 1.6;
 }
 
 /* Privacy policy document */
@@ -2102,6 +2164,16 @@ div.store-release-status {
     max-width: 620px;
   }
 
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 64px;
+    row-gap: 46px;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
   .comparison-spread {
     grid-template-columns: 1fr;
     border-block: 0;
@@ -2340,18 +2412,24 @@ div.store-release-status {
     flex-direction: column;
   }
 
-  .footer-row {
+  .footer-main {
     grid-template-columns: 1fr;
-    gap: 20px;
+    padding-block: 48px;
+    gap: 38px;
   }
 
-  .footer-meta {
-    max-width: none;
-    text-align: left;
+  .footer-brand-column {
+    grid-column: auto;
   }
 
-  .product-footer nav {
-    justify-content: flex-start;
+  .footer-project-links a {
+    min-height: 40px;
+  }
+
+  .footer-bottom-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .policy-hero-grid {
