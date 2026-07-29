@@ -110,24 +110,44 @@
           <a href="./privacy/">Privacy</a>
           <a href="#open-source" data-open-source-only>Community</a>
           <a href="#faq">FAQ</a>
-          <span class="header-release install-actions" data-install-container data-compact>
+          <span
+            class="header-release install-actions"
+            data-install-container
+            data-install-variant="compact"
+            role="group"
+            aria-label="Install ReadBooster"
+          >
             <a
-              class="button button-primary button-small"
-              href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get ReadBooster for Chrome from the Chrome Web Store (opens in a new tab)"
-            >
-              Get ReadBooster for Chrome
-            </a>
-            <a
-              class="button button-secondary button-small"
+              class="browser-store-control browser-store-control-firefox"
               href="https://addons.mozilla.org/en-US/firefox/addon/readbooster/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)"
             >
-              Get ReadBooster for Firefox
+              <img
+                src="./assets/store-badges/firefox.svg"
+                width="20"
+                height="20"
+                alt=""
+                aria-hidden="true"
+              />
+              <span>Firefox</span>
+            </a>
+            <a
+              class="browser-store-control browser-store-control-chrome"
+              href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View ReadBooster in the Chrome Web Store (opens in a new tab)"
+            >
+              <img
+                src="./assets/store-badges/chrome.svg"
+                width="20"
+                height="20"
+                alt=""
+                aria-hidden="true"
+              />
+              <span>Chrome</span>
             </a>
           </span>
         </nav>
@@ -154,27 +174,65 @@
                 structured documents that are easier to read, navigate, highlight, revisit, print,
                 and copy.
               </p>
-              <div class="hero-actions">
-                <span class="install-actions" data-install-container>
+              <div
+                class="hero-install"
+                role="group"
+                aria-labelledby="hero-install-label"
+              >
+                <p id="hero-install-label" class="hero-install-label">
+                  Available for Firefox and Chrome
+                </p>
+                <span
+                  class="install-actions store-badge-actions"
+                  data-install-container
+                  data-install-variant="badge"
+                >
                   <a
-                    class="button button-primary"
-                    href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Get ReadBooster for Chrome from the Chrome Web Store (opens in a new tab)"
-                  >
-                    Get ReadBooster for Chrome
-                  </a>
-                  <a
-                    class="button button-secondary"
+                    class="store-badge-link store-badge-firefox"
                     href="https://addons.mozilla.org/en-US/firefox/addon/readbooster/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)"
                   >
-                    Get ReadBooster for Firefox
+                    <img
+                      src="./assets/store-badges/firefox-addons.png"
+                      width="172"
+                      height="60"
+                      alt="Get ReadBooster from Firefox Add-ons"
+                    />
+                  </a>
+                  <a
+                    class="store-badge-link store-badge-chrome"
+                    href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View ReadBooster in the Chrome Web Store (opens in a new tab)"
+                  >
+                    <img
+                      src="./assets/store-badges/chrome-web-store.png"
+                      width="340"
+                      height="96"
+                      alt="View ReadBooster in the Chrome Web Store"
+                    />
                   </a>
                 </span>
+                <div class="hero-store-status" aria-label="Current browser store versions">
+                  <p>
+                    <img src="./assets/store-badges/firefox.svg" width="16" height="16" alt="" />
+                    <strong>Firefox</strong>
+                    <span data-firefox-release-status>Version 0.7.2 available</span>
+                  </p>
+                  <p>
+                    <img src="./assets/store-badges/chrome.svg" width="16" height="16" alt="" />
+                    <strong>Chrome</strong>
+                    <span class="hero-store-status-copy">
+                      <span data-chrome-current-status>Version 0.7.1 available</span>;
+                      <span data-chrome-update-status>Version 0.7.2 update awaiting review</span>
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="hero-actions">
                 <a
                   class="button button-tertiary"
                   data-config-link="repositoryUrl"
@@ -187,10 +245,6 @@
                 >
                 <a class="text-action" href="#transformation">See the transformation <span aria-hidden="true">↓</span></a>
               </div>
-              <p class="index-footnote store-status-summary" data-store-status-summary>
-                ReadBooster 0.7.2 is available on Firefox. Chrome remains on version 0.7.1 while the
-                0.7.2 update is awaiting Chrome Web Store review.
-              </p>
             </div>
 
             <aside class="product-index" aria-label="Current ReadBooster release information">
@@ -198,7 +252,7 @@
               <dl>
                 <dt>Release</dt><dd>v<span data-current-version>0.7.2</span></dd>
                 <dt>Firefox</dt><dd><span data-firefox-version>0.7.2</span> available</dd>
-                <dt>Chrome</dt><dd><span data-chrome-version>0.7.1</span> · update pending</dd>
+                <dt>Chrome</dt><dd data-chrome-release-summary>0.7.1 available; 0.7.2 awaiting review</dd>
                 <dt>Platforms</dt><dd data-supported-list>ChatGPT, Google Gemini, Mistral AI, and Claude</dd>
                 <dt>Processing</dt><dd>Local in your browser</dd>
                 <dt>Reading modes</dt><dd>Document + Focus</dd>
@@ -410,22 +464,17 @@
                 <li>Recolour or remove a highlight when it no longer fits.</li>
               </ul>
             </div>
-            <figure class="highlight-preview" aria-labelledby="highlight-preview-caption">
-              <div class="highlight-preview-toolbar" aria-hidden="true">
-                <span>Highlights overview</span>
-                <span>Saved locally</span>
-              </div>
-              <blockquote>
-                Long AI conversations become easier to revisit when
-                <mark class="highlight-yellow">the passages that matter remain visible</mark>
-                inside the document. Use the overview to return to a saved passage, then
-                <mark class="highlight-blue">move between highlights without losing your place</mark>.
-              </blockquote>
-              <div class="highlight-preview-controls" aria-hidden="true">
-                <span>Previous</span><span>2 of 3</span><span>Next</span>
-              </div>
-              <figcaption id="highlight-preview-caption">
-                An illustration of locally saved highlights and their navigation controls.
+            <figure class="product-shot feature-shot highlight-shot">
+              <img
+                src="/ReadBooster/Screenshots/highlight_screenshot.png"
+                width="1722"
+                height="871"
+                alt="ReadBooster document view showing highlighted passages, the highlight colour picker, document outline, and highlight navigation indicator"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                Highlight a passage and choose its colour without leaving the ReadBooster document.
               </figcaption>
             </figure>
           </article>
@@ -512,21 +561,62 @@
             <p>Browser stores</p>
             <div>
               <h2 id="download-heading">Choose your browser.</h2>
-              <p class="section-intro">Firefox has the latest release. The existing Chrome listing remains available while its 0.7.2 update completes a separate store review.</p>
+              <p class="section-intro">
+                Install ReadBooster from your browser’s official extension store. Firefox currently
+                has version 0.7.2, while the Chrome Web Store offers 0.7.1 and is reviewing the
+                latest update.
+              </p>
             </div>
           </header>
           <div class="store-grid">
-            <article class="store-card">
-              <p class="store-name">Firefox</p>
+            <article class="store-card store-card-firefox">
+              <div class="store-card-browser">
+                <img src="./assets/store-badges/firefox.svg" width="44" height="44" alt="" />
+                <p class="store-name">Firefox</p>
+              </div>
               <h3>ReadBooster for Firefox</h3>
-              <p class="store-release-status status-available" data-firefox-release-status>Version 0.7.2 available</p>
-              <a class="button button-primary" href="https://addons.mozilla.org/en-US/firefox/addon/readbooster/" data-config-link="firefoxAddonsUrl" target="_blank" rel="noopener noreferrer" aria-label="Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)">Get ReadBooster for Firefox</a>
+              <p class="store-release-status status-available" data-firefox-release-status>
+                Version 0.7.2 available
+              </p>
+              <p class="store-description">
+                Install the latest release with persistent highlights, Document and Focus views,
+                Stickers, navigation, and local processing.
+              </p>
+              <a
+                class="button button-primary"
+                href="https://addons.mozilla.org/en-US/firefox/addon/readbooster/"
+                data-config-link="firefoxAddonsUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)"
+              >
+                Get ReadBooster for Firefox
+              </a>
             </article>
-            <article class="store-card">
-              <p class="store-name">Chrome</p>
+            <article class="store-card store-card-chrome">
+              <div class="store-card-browser">
+                <img src="./assets/store-badges/chrome.svg" width="44" height="44" alt="" />
+                <p class="store-name">Chrome</p>
+              </div>
               <h3>ReadBooster for Chrome</h3>
-              <p class="store-release-status status-review" data-chrome-release-status>Version 0.7.1 available · 0.7.2 update pending review</p>
-              <a class="button button-secondary" href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd" data-config-link="chromeWebStoreUrl" target="_blank" rel="noopener noreferrer" aria-label="View ReadBooster in the Chrome Web Store (opens in a new tab)">View ReadBooster in the Chrome Web Store</a>
+              <div class="store-release-status status-review">
+                <span data-chrome-current-status>Version 0.7.1 available</span>
+                <span data-chrome-update-status>Version 0.7.2 update awaiting review</span>
+              </div>
+              <p class="store-description">
+                Install the current published release now. The latest ReadBooster update will follow
+                after Chrome Web Store review.
+              </p>
+              <a
+                class="button button-secondary"
+                href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
+                data-config-link="chromeWebStoreUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View ReadBooster in the Chrome Web Store (opens in a new tab)"
+              >
+                View ReadBooster in the Chrome Web Store
+              </a>
             </article>
           </div>
           <p class="store-review-note" data-store-review-note>Chrome and Firefox review and publish updates independently, so a new ReadBooster version may become available in one store before the other.</p>

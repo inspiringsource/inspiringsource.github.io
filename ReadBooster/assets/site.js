@@ -61,37 +61,69 @@
   }
 
   function renderInstallActions() {
+    var stores = [
+      {
+        browser: "firefox",
+        urlKey: "firefoxAddonsUrl",
+        shortLabel: "Firefox",
+        accessibleLabel: "Get ReadBooster for Firefox from Firefox Add-ons",
+        iconUrl: "/ReadBooster/assets/store-badges/firefox.svg",
+        badgeUrl: "/ReadBooster/assets/store-badges/firefox-addons.png",
+        badgeWidth: 172,
+        badgeHeight: 60,
+        badgeAlt: "Get ReadBooster from Firefox Add-ons",
+      },
+      {
+        browser: "chrome",
+        urlKey: "chromeWebStoreUrl",
+        shortLabel: "Chrome",
+        accessibleLabel: "View ReadBooster in the Chrome Web Store",
+        iconUrl: "/ReadBooster/assets/store-badges/chrome.svg",
+        badgeUrl: "/ReadBooster/assets/store-badges/chrome-web-store.png",
+        badgeWidth: 340,
+        badgeHeight: 96,
+        badgeAlt: "View ReadBooster in the Chrome Web Store",
+      },
+    ];
+
     document.querySelectorAll("[data-install-container]").forEach(function (container) {
-      var compact = container.hasAttribute("data-compact");
+      var variant = container.getAttribute("data-install-variant") || "compact";
       var links = [];
 
-      if (isSafeHttpUrl(config.chromeWebStoreUrl)) {
-        var chromeLink = document.createElement("a");
-        chromeLink.href = config.chromeWebStoreUrl;
-        chromeLink.target = "_blank";
-        chromeLink.rel = "noopener noreferrer";
-        chromeLink.className = "button button-primary" + (compact ? " button-small" : "");
-        chromeLink.textContent = "Get ReadBooster for Chrome";
-        chromeLink.setAttribute(
-          "aria-label",
-          "Get ReadBooster for Chrome from the Chrome Web Store (opens in a new tab)",
-        );
-        links.push(chromeLink);
-      }
+      stores.forEach(function (store) {
+        var href = config[store.urlKey];
+        if (!isSafeHttpUrl(href)) return;
 
-      if (isSafeHttpUrl(config.firefoxAddonsUrl)) {
-        var firefoxLink = document.createElement("a");
-        firefoxLink.href = config.firefoxAddonsUrl;
-        firefoxLink.target = "_blank";
-        firefoxLink.rel = "noopener noreferrer";
-        firefoxLink.className = "button button-secondary" + (compact ? " button-small" : "");
-        firefoxLink.textContent = "Get ReadBooster for Firefox";
-        firefoxLink.setAttribute(
-          "aria-label",
-          "Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)",
-        );
-        links.push(firefoxLink);
-      }
+        var link = document.createElement("a");
+        link.href = href;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", store.accessibleLabel + " (opens in a new tab)");
+
+        var image = document.createElement("img");
+        if (variant === "badge") {
+          link.className = "store-badge-link store-badge-" + store.browser;
+          image.src = store.badgeUrl;
+          image.width = store.badgeWidth;
+          image.height = store.badgeHeight;
+          image.alt = store.badgeAlt;
+          link.appendChild(image);
+        } else {
+          link.className =
+            "browser-store-control browser-store-control-" + store.browser;
+          image.src = store.iconUrl;
+          image.width = 20;
+          image.height = 20;
+          image.alt = "";
+          image.setAttribute("aria-hidden", "true");
+
+          var label = document.createElement("span");
+          label.textContent = store.shortLabel;
+          link.append(image, label);
+        }
+
+        links.push(link);
+      });
 
       if (links.length > 0) {
         container.classList.add("install-actions");
@@ -188,8 +220,7 @@
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
       browserRequirements: "Requires Google Chrome or Mozilla Firefox",
-      releaseNotes:
-        "Version 0.7.2 with persistent highlights is available on Firefox. The Chrome listing remains on version 0.7.1 while the 0.7.2 update is awaiting review.",
+      releaseNotes: config.storeStatusSummary,
       featureList: [
         "Continuous Document Mode",
         "Focus Mode",
@@ -245,7 +276,10 @@
   setText("[data-config-name]", config.name);
   setText("[data-current-version]", config.currentVersion);
   setText("[data-chrome-version]", config.chromeCurrentVersion);
+  setText("[data-chrome-current-status]", config.chromeCurrentStatus);
+  setText("[data-chrome-update-status]", config.chromeUpdateStatus);
   setText("[data-chrome-release-status]", config.chromeReleaseStatus);
+  setText("[data-chrome-release-summary]", config.chromeReleaseSummary);
   setText("[data-firefox-version]", config.firefoxCurrentVersion);
   setText("[data-firefox-release-status]", config.firefoxReleaseStatus);
   setText("[data-supported-list]", formatList(config.supportedPlatforms));

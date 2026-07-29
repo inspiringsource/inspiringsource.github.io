@@ -8,7 +8,11 @@ window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
   currentVersion: "0.7.2",
   chromeCurrentVersion: "0.7.1",
-  chromeReleaseStatus: "Version 0.7.1 available · 0.7.2 update pending review",
+  chromeCurrentStatus: "Version 0.7.1 available",
+  chromeUpdateStatus: "Version 0.7.2 update awaiting review",
+  chromeReleaseStatus:
+    "Version 0.7.1 available · Version 0.7.2 update awaiting review",
+  chromeReleaseSummary: "0.7.1 available; 0.7.2 awaiting review",
   firefoxCurrentVersion: "0.7.2",
   firefoxReleaseStatus: "Version 0.7.2 available",
   chromeWebStoreUrl:

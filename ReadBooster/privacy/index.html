@@ -94,24 +94,44 @@
           <a href="./" aria-current="page">Privacy</a>
           <a href="../#open-source" data-open-source-only>Community</a>
           <a href="../#faq">FAQ</a>
-          <span class="header-release install-actions" data-install-container data-compact>
+          <span
+            class="header-release install-actions"
+            data-install-container
+            data-install-variant="compact"
+            role="group"
+            aria-label="Install ReadBooster"
+          >
             <a
-              class="button button-primary button-small"
-              href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get ReadBooster for Chrome from the Chrome Web Store (opens in a new tab)"
-            >
-              Get ReadBooster for Chrome
-            </a>
-            <a
-              class="button button-secondary button-small"
+              class="browser-store-control browser-store-control-firefox"
               href="https://addons.mozilla.org/en-US/firefox/addon/readbooster/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)"
             >
-              Get ReadBooster for Firefox
+              <img
+                src="../assets/store-badges/firefox.svg"
+                width="20"
+                height="20"
+                alt=""
+                aria-hidden="true"
+              />
+              <span>Firefox</span>
+            </a>
+            <a
+              class="browser-store-control browser-store-control-chrome"
+              href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View ReadBooster in the Chrome Web Store (opens in a new tab)"
+            >
+              <img
+                src="../assets/store-badges/chrome.svg"
+                width="20"
+                height="20"
+                alt=""
+                aria-hidden="true"
+              />
+              <span>Chrome</span>
             </a>
           </span>
         </nav>

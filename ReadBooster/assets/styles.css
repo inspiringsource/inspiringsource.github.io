@@ -281,6 +281,52 @@ svg {
   gap: 8px;
 }
 
+.header-release {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+
+.browser-store-control {
+  display: inline-flex;
+  min-height: 38px;
+  padding: 7px 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink-2);
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    transform 140ms ease;
+}
+
+.browser-store-control img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.browser-store-control-firefox {
+  border-color: var(--blue);
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+}
+
+.browser-store-control:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+  transform: translateY(-1px);
+}
+
 .button-pending {
   border-style: dashed;
   background: var(--blue-pale);
@@ -370,9 +416,79 @@ h1 {
   line-height: 1.62;
 }
 
+.hero-install {
+  margin-top: 34px;
+}
+
+.hero-install-label {
+  margin: 0;
+  color: var(--blue-dark);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.store-badge-actions {
+  margin-top: 13px;
+  align-items: center;
+  gap: 13px;
+}
+
+.store-badge-link {
+  display: inline-flex;
+  min-height: 60px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 140ms ease;
+}
+
+.store-badge-link:hover {
+  transform: translateY(-2px);
+}
+
+.store-badge-link img {
+  display: block;
+  width: auto;
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.hero-store-status {
+  display: grid;
+  max-width: 700px;
+  margin-top: 14px;
+  gap: 5px;
+}
+
+.hero-store-status p {
+  display: flex;
+  margin: 0;
+  align-items: flex-start;
+  gap: 7px;
+  color: var(--quiet);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.hero-store-status img {
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  flex: 0 0 auto;
+}
+
+.hero-store-status strong {
+  min-width: 48px;
+  color: var(--ink-2);
+}
+
 .hero-actions {
   display: flex;
-  margin-top: 34px;
+  margin-top: 24px;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
@@ -734,68 +850,8 @@ h1 {
   background: #f3d36a;
 }
 
-.highlight-preview {
-  min-width: 0;
-  margin: 0;
-  border: 1px solid #506176;
-  background: #f9fbfd;
-  color: var(--ink);
-  box-shadow: 7px 8px 0 #274059;
-}
-
-.highlight-preview-toolbar,
-.highlight-preview-controls {
-  display: flex;
-  padding: 14px 18px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  color: #456078;
-  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: 0.61rem;
-  font-weight: 750;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.highlight-preview-toolbar {
-  border-bottom: 1px solid #c4d0dc;
-}
-
-.highlight-preview blockquote {
-  margin: 0;
-  padding: clamp(34px, 6vw, 70px);
-  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
-  font-size: clamp(1.35rem, 2.7vw, 2.25rem);
-  line-height: 1.55;
-}
-
-.highlight-preview mark {
-  padding: 0.05em 0.1em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  color: #17283a;
-}
-
-.highlight-yellow {
-  background: #f5da72;
-}
-
-.highlight-blue {
-  background: #b8dcf5;
-}
-
-.highlight-preview-controls {
-  border-top: 1px solid #c4d0dc;
-}
-
-.highlight-preview figcaption {
-  padding: 12px 18px;
-  border-top: 1px solid #d5dde5;
-  color: #5f7080;
-  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  font-size: 0.61rem;
-  line-height: 1.5;
+.highlight-shot img {
+  object-fit: contain;
 }
 
 .feature-distinction {
@@ -986,11 +1042,27 @@ h1 {
 .store-card {
   display: flex;
   min-width: 0;
-  min-height: 285px;
+  min-height: 360px;
   padding: clamp(25px, 4vw, 42px);
   border: 1px solid var(--rule-strong);
   background: var(--paper-warm);
   flex-direction: column;
+}
+
+.store-card-firefox {
+  border-color: var(--blue);
+}
+
+.store-card-browser {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.store-card-browser img {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
 }
 
 .store-name {
@@ -1014,12 +1086,17 @@ h1 {
 
 .store-release-status {
   position: relative;
-  margin: 20px 0 28px;
+  margin: 20px 0 16px;
   padding-left: 18px;
   color: var(--ink-2);
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.5;
+}
+
+div.store-release-status {
+  display: grid;
+  gap: 2px;
 }
 
 .store-release-status::before {
@@ -1040,6 +1117,14 @@ h1 {
 
 .status-review::before {
   background: transparent;
+}
+
+.store-description {
+  max-width: 540px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 0.77rem;
+  line-height: 1.65;
 }
 
 .store-card .button {
@@ -1905,13 +1990,12 @@ h1 {
     gap: 14px;
   }
 
-  .header-release {
-    flex-direction: column;
-    gap: 4px;
-  }
-
   .product-nav > a {
     font-size: 0.76rem;
+  }
+
+  .browser-store-control {
+    padding-inline: 8px;
   }
 
   .continuous-layout,
@@ -1956,11 +2040,11 @@ h1 {
   .header-release {
     width: 100%;
     margin-top: 6px;
-    flex-direction: column;
   }
 
-  .header-release .button {
-    width: 100%;
+  .header-release .browser-store-control {
+    min-height: 44px;
+    flex: 1 1 0;
   }
 
   .hero-intro,
@@ -2103,6 +2187,25 @@ h1 {
 
   .hero-actions .install-actions {
     flex-direction: column;
+  }
+
+  .store-badge-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .store-badge-link {
+    justify-content: flex-start;
+  }
+
+  .hero-store-status p {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 3px 7px;
+  }
+
+  .hero-store-status p > span {
+    grid-column: 2;
   }
 
   .store-card {
@@ -2297,6 +2400,7 @@ h1 {
 @media print {
   .product-header,
   .skip-link,
+  .hero-install,
   .hero-actions,
   .product-footer,
   .policy-index {
