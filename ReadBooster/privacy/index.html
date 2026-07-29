@@ -7,7 +7,7 @@
     <title>Privacy Policy – ReadBooster</title>
     <meta
       name="description"
-      content="Read how ReadBooster processes supported AI conversations locally, uses browser storage, and handles optional feedback submitted through Tally."
+      content="Read how ReadBooster processes supported AI conversations locally, stores highlights and settings in the browser, and handles optional feedback submitted through Tally."
     />
     <meta name="author" content="Abraham (Avi) Bobrovsky" />
     <meta name="theme-color" content="#ffffff" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Privacy Policy – ReadBooster" />
     <meta
       property="og:description"
-      content="How ReadBooster processes conversation pages locally and handles optional feedback."
+      content="How ReadBooster processes conversation pages locally, stores highlights in the browser, and handles optional feedback."
     />
     <meta
       property="og:image"
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="Privacy Policy – ReadBooster" />
     <meta
       name="twitter:description"
-      content="How ReadBooster processes conversation pages locally and handles optional feedback."
+      content="How ReadBooster processes conversation pages locally, stores highlights in the browser, and handles optional feedback."
     />
     <meta
       name="twitter:image"
@@ -56,13 +56,13 @@
         "@type": "WebPage",
         "name": "ReadBooster Privacy Policy",
         "url": "https://inspiringsource.github.io/ReadBooster/privacy/",
-        "description": "Privacy information for the ReadBooster browser extension and website.",
+        "description": "Privacy information for local conversation processing, browser-stored highlights, and the ReadBooster website.",
         "isPartOf": {
           "@type": "WebSite",
           "name": "ReadBooster",
           "url": "https://inspiringsource.github.io/ReadBooster/"
         },
-        "dateModified": "2026-07-27"
+        "dateModified": "2026-07-29"
       }
     </script>
   </head>
@@ -134,7 +134,7 @@
               What ReadBooster accesses, how conversation content is processed, what may be stored
               locally, and what happens when you choose to send feedback.
             </p>
-            <span class="effective-date">Effective date — 27 July 2026</span>
+            <span class="effective-date">Effective date — 29 July 2026</span>
           </div>
         </div>
       </header>
@@ -146,6 +146,7 @@
           <a href="#page-data">Page data</a>
           <a href="#local-processing">Local processing</a>
           <a href="#settings">Settings</a>
+          <a href="#highlights">Highlights</a>
           <a href="#permissions">Permissions</a>
           <a href="#feedback">Tally feedback</a>
           <a href="#screenshots">Screenshots</a>
@@ -165,10 +166,15 @@
               readable document views.
             </p>
             <p>
-              The current project version, <span data-current-version>0.7.1</span>, supports ChatGPT,
+              The current project version, <span data-current-version>0.7.2</span>, supports ChatGPT,
               Google Gemini, Mistral AI, and Claude.
               The extension operates only on those supported AI websites and does not require a
               ReadBooster account.
+            </p>
+            <p>
+              Version 0.7.2 is available through Firefox Add-ons. The public Chrome listing remains
+              available on version 0.7.1 while the corresponding 0.7.2 update awaits Chrome Web Store
+              review.
             </p>
             <div class="policy-note">
               <p>
@@ -231,8 +237,26 @@
               conversation on the AI platform or synchronize to other devices.
             </p>
             <p>
-              ReadBooster does not use this storage to retain complete conversation bodies or full
-              conversation HTML.
+              Apart from selected text and limited context saved for highlights, ReadBooster does not
+              use this storage to retain complete conversation bodies or full conversation HTML.
+            </p>
+          </section>
+
+          <section id="highlights" class="policy-section" aria-labelledby="highlights-heading">
+            <h2 id="highlights-heading">Saved highlights</h2>
+            <p>
+              When you create a highlight, ReadBooster stores the selected text and limited context
+              needed to find the passage again. That context may include a short prefix or suffix,
+              character offsets, or structural information about the conversation section.
+            </p>
+            <p>
+              Highlight colour and restoration information are stored locally in browser-provided
+              storage. They are not sent to ReadBooster servers. ReadBooster does not provide an
+              account, cloud synchronization, or cross-device synchronization for highlights.
+            </p>
+            <p>
+              Deleting ReadBooster’s browser storage can remove saved highlights. Uninstalling the
+              extension may also remove locally stored data, depending on the browser’s behaviour.
             </p>
           </section>
 
@@ -302,8 +326,8 @@
             <h2 id="contact-heading">Contact</h2>
             <p>
               For a privacy question or correction, use the ReadBooster feedback form and identify the
-              message as a privacy request. ReadBooster is maintained by AviCloud, which can be reached
-              through its public website.
+              message as a privacy request. Avi started ReadBooster and currently maintains it as part
+              of AviCloud, which can be reached through its public website.
             </p>
             <p>
               <a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">ReadBooster feedback form</a>
@@ -318,7 +342,7 @@
       <div class="page-width footer-row">
         <a class="footer-brand" href="../"><img src="../assets/icons/readbooster-32.png" width="32" height="32" alt="" /><span data-config-name>ReadBooster</span></a>
         <nav aria-label="Footer navigation"><a href="../">Product</a><a href="./" aria-current="page">Privacy</a><a data-config-link="chromeWebStoreUrl" target="_blank" rel="noopener noreferrer">Chrome Web Store</a><a data-config-link="firefoxAddonsUrl" target="_blank" rel="noopener noreferrer">Firefox Add-ons</a><a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Feedback</a><a href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" data-open-source-only target="_blank" rel="noopener noreferrer">Explore on GitHub</a><a href="https://github.com/inspiringsource/ReadBooster/issues/new?template=bug_report.yml" data-config-link="bugReportUrl" data-open-source-only target="_blank" rel="noopener noreferrer">Report a problem</a></nav>
-        <div class="footer-meta"><p>ReadBooster is maintained by <a data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a>.<span data-open-source-only> Open-source software licensed under <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0</a>.</span></p><p>Independent and not endorsed by OpenAI, Google, Mistral AI, or Anthropic. © <span data-copyright-year>2026</span> ReadBooster</p></div>
+        <div class="footer-meta"><p>Started by Avi and maintained as part of <a data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a>.<span data-open-source-only> Open-source software licensed under <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0</a>.</span></p><p>Independent and not endorsed by OpenAI, Google, Mistral AI, or Anthropic. © <span data-copyright-year>2026</span> ReadBooster</p></div>
       </div>
     </footer>
   </body>

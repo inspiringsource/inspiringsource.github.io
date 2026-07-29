@@ -6,7 +6,11 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.7.1",
+  currentVersion: "0.7.2",
+  chromeCurrentVersion: "0.7.1",
+  chromeReleaseStatus: "Version 0.7.1 available · 0.7.2 update pending review",
+  firefoxCurrentVersion: "0.7.2",
+  firefoxReleaseStatus: "Version 0.7.2 available",
   chromeWebStoreUrl:
     "https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd",
   firefoxAddonsUrl: "https://addons.mozilla.org/en-US/firefox/addon/readbooster/",
@@ -31,6 +35,8 @@ window.READBOOSTER_CONFIG = Object.freeze({
   securityUrl: "https://github.com/inspiringsource/ReadBooster/blob/main/SECURITY.md",
   storeReviewTimingNote:
     "Chrome and Firefox review and publish updates independently, so a new ReadBooster version may become available in one store before the other.",
+  storeStatusSummary:
+    "ReadBooster 0.7.2 is available on Firefox. Chrome remains on version 0.7.1 while the 0.7.2 update is awaiting Chrome Web Store review.",
   supportedPlatforms: Object.freeze([
     "ChatGPT",
     "Google Gemini",

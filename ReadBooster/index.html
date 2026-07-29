@@ -8,7 +8,7 @@
     <meta
       name="description"
       data-open-source-description
-      content="ReadBooster turns conversations from ChatGPT, Google Gemini, Mistral AI, and Claude into readable, navigable documents."
+      content="ReadBooster is an open-source browser extension that turns ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, tables, code tools, and print support."
     />
     <meta name="author" content="Abraham (Avi) Bobrovsky" />
     <meta name="theme-color" content="#ffffff" />
@@ -21,7 +21,7 @@
     <meta
       property="og:description"
       data-open-source-description
-      content="Turn ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents."
+      content="Turn ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and print support."
     />
     <meta
       property="og:image"
@@ -36,7 +36,7 @@
     <meta
       name="twitter:description"
       data-open-source-description
-      content="Turn ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents."
+      content="Turn ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and print support."
     />
     <meta
       name="twitter:image"
@@ -59,7 +59,7 @@
         "@type": "WebSite",
         "name": "ReadBooster",
         "url": "https://inspiringsource.github.io/ReadBooster/",
-        "description": "A browser extension that turns AI conversations into structured, readable documents.",
+        "description": "An open-source browser extension that turns AI conversations into structured, readable documents with navigation, highlights, notes, and print support.",
         "sameAs": [
           "https://github.com/inspiringsource/ReadBooster",
           "https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd",
@@ -151,7 +151,8 @@
               <h1 id="hero-heading">Turn AI conversations into readable documents.</h1>
               <p class="hero-summary">
                 Transform long conversations from ChatGPT, Google Gemini, Mistral AI, and Claude into
-                a structured reading experience with clear navigation and adaptable controls.
+                structured documents that are easier to read, navigate, highlight, revisit, print,
+                and copy.
               </p>
               <div class="hero-actions">
                 <span class="install-actions" data-install-container>
@@ -186,21 +187,23 @@
                 >
                 <a class="text-action" href="#transformation">See the transformation <span aria-hidden="true">↓</span></a>
               </div>
-              <p class="index-footnote" data-store-review-note>
-                Chrome and Firefox review and publish updates independently, so a new ReadBooster
-                version may become available in one store before the other.
+              <p class="index-footnote store-status-summary" data-store-status-summary>
+                ReadBooster 0.7.2 is available on Firefox. Chrome remains on version 0.7.1 while the
+                0.7.2 update is awaiting Chrome Web Store review.
               </p>
             </div>
 
             <aside class="product-index" aria-label="Current ReadBooster release information">
               <p class="index-label">Release note</p>
               <dl>
-                <dt>Version</dt><dd>v<span data-current-version>0.7.1</span></dd>
+                <dt>Release</dt><dd>v<span data-current-version>0.7.2</span></dd>
+                <dt>Firefox</dt><dd><span data-firefox-version>0.7.2</span> available</dd>
+                <dt>Chrome</dt><dd><span data-chrome-version>0.7.1</span> · update pending</dd>
                 <dt>Platforms</dt><dd data-supported-list>ChatGPT, Google Gemini, Mistral AI, and Claude</dd>
                 <dt>Processing</dt><dd>Local in your browser</dd>
                 <dt>Reading modes</dt><dd>Document + Focus</dd>
               </dl>
-              <p class="index-release-detail">Adds Claude support and a responsive Optimize Reading control that adapts to crowded conversation layouts.</p>
+              <p class="index-release-detail">Adds persistent local highlights with an overview, colour controls, and previous or next navigation in Document and Focus views.</p>
             </aside>
           </div>
 
@@ -391,13 +394,53 @@
             </figure>
           </article>
 
+          <article id="highlights" class="feature-editorial">
+            <div class="feature-copy">
+              <p class="feature-number">05 / Highlights</p>
+              <h3>Mark important passages and find them again.</h3>
+              <p class="feature-description">
+                Select and highlight text while you read, then return to it later. Highlights stay
+                with the conversation in ReadBooster and remain available in both Continuous
+                Document and Focus views.
+              </p>
+              <ul class="highlight-feature-list">
+                <li>Choose from several accessible highlight colours.</li>
+                <li>Review saved passages in the highlights overview.</li>
+                <li>Move to the previous or next highlight.</li>
+                <li>Recolour or remove a highlight when it no longer fits.</li>
+              </ul>
+            </div>
+            <figure class="highlight-preview" aria-labelledby="highlight-preview-caption">
+              <div class="highlight-preview-toolbar" aria-hidden="true">
+                <span>Highlights overview</span>
+                <span>Saved locally</span>
+              </div>
+              <blockquote>
+                Long AI conversations become easier to revisit when
+                <mark class="highlight-yellow">the passages that matter remain visible</mark>
+                inside the document. Use the overview to return to a saved passage, then
+                <mark class="highlight-blue">move between highlights without losing your place</mark>.
+              </blockquote>
+              <div class="highlight-preview-controls" aria-hidden="true">
+                <span>Previous</span><span>2 of 3</span><span>Next</span>
+              </div>
+              <figcaption id="highlight-preview-caption">
+                An illustration of locally saved highlights and their navigation controls.
+              </figcaption>
+            </figure>
+          </article>
+
           <article id="document-notes" class="feature-editorial">
             <div class="feature-copy">
-              <p class="feature-number">05 / Stickers</p>
+              <p class="feature-number">06 / Stickers</p>
               <h3>Local notes that remain connected to the document.</h3>
               <p class="feature-description">
                 Attach local Stickers to relevant sections, move or collapse them, and use directional
                 indicators to find saved notes above or below your current position.
+              </p>
+              <p class="feature-distinction">
+                Highlight a passage when the text itself matters. Add a Sticker when you want to leave
+                your own note for a section.
               </p>
             </div>
             <figure class="product-shot feature-shot notes-shot">
@@ -418,20 +461,17 @@
             <a href="#hero-heading"><span>02</span><b>Continuous Document Mode</b><small>Open the complete structured reading workspace.</small></a>
             <a href="#tables"><span>03</span><b>Adaptable tables</b><small>Fit wide information to the reading task.</small></a>
             <a href="#reading-settings"><span>04</span><b>Reading settings</b><small>Adjust reading style, text size, spacing, and appearance.</small></a>
-            <a href="#document-notes"><span>05</span><b>Local Stickers</b><small>Add notes and follow directional indicators back to their sections.</small></a>
+            <a href="#highlights"><span>05</span><b>Persistent highlights</b><small>Mark passages and return through the highlights overview.</small></a>
+            <a href="#document-notes"><span>06</span><b>Local Stickers</b><small>Add your own note to a section and find it again.</small></a>
           </nav>
 
           <div class="capability-ledger" aria-label="ReadBooster feature summary">
             <header><p>Feature ledger</p><h3>A complete reading workspace.</h3></header>
             <ul>
-              <li><b>Document and Focus views</b><span>Read the full conversation continuously or concentrate on one response.</span></li>
-              <li><b>Outline and heading navigation</b><span>Move through sections and headings without returning to the chat layout.</span></li>
-              <li><b>Collapsible prompts and custom titles</b><span>Keep context available and rename sections for easier return visits.</span></li>
-              <li><b>Typography and width controls</b><span>Choose Default, Serif, Dyslexia-friendly, or Fast Reading and adjust the layout.</span></li>
-              <li><b>Tables, code, and document blocks</b><span>Use adaptable table modes, syntax-aware code presentation and copying, and static document content.</span></li>
-              <li><b>Copy, Print, and Save as PDF</b><span>Take the structured document into your preferred review or archive workflow.</span></li>
-              <li><b>Conversation refresh</b><span>Update the Reader when the source conversation changes.</span></li>
-              <li><b>Local-first processing</b><span>Build the reading view in your browser without a ReadBooster account or backend.</span></li>
+              <li><b>Read comfortably</b><span>Use Continuous Document or Focus view, responsive layouts, adjustable typography and spacing, and four reading styles.</span></li>
+              <li><b>Navigate long conversations</b><span>Follow the grouped outline, section headings, previous and next response controls, and custom section titles.</span></li>
+              <li><b>Mark what matters</b><span>Highlight existing text, review and navigate saved passages, or attach your own section note with a Sticker.</span></li>
+              <li><b>Handle complex content</b><span>Adapt tables, code, images, and document blocks, then copy, print, or save the complete document as PDF.</span></li>
             </ul>
           </div>
         </div>
@@ -440,29 +480,56 @@
       <section id="release" class="release-section" aria-labelledby="release-heading">
         <div class="page-width">
           <header class="editorial-heading">
-            <p>Version 0.7.1</p>
+            <p>Version 0.7.2</p>
             <div>
-              <h2 id="release-heading">A broader, more adaptable ReadBooster.</h2>
-              <p class="section-intro">This release expands platform support and keeps the injected control out of the way when conversation layouts become narrow or crowded.</p>
+              <h2 id="release-heading">What’s new in 0.7.2</h2>
+              <p class="section-intro">ReadBooster now keeps important passages close at hand, with persistent local highlights and clearer contributor-facing project guidance.</p>
             </div>
           </header>
           <div class="release-grid">
             <article>
               <span>01</span>
-              <h3>Claude support</h3>
-              <p>Transform Claude conversations into Continuous Document or Focus view with section and heading navigation, refresh, custom titles, Stickers, and preservation of supported headings, lists, tables, links, code, and associated document-style content.</p>
+              <h3>Persistent highlighting</h3>
+              <p>Select important text in the Reader and keep it available when you reopen the conversation. Choose an accessible colour, recolour the passage, or remove the highlight later.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>A responsive control</h3>
-              <p>Optimize Reading uses its full icon-and-text form when space permits and a compact icon-only form in narrow layouts, helping it avoid native composer controls across supported platforms.</p>
+              <h3>Overview and navigation</h3>
+              <p>Review saved passages from the highlights overview and move directly to the previous or next highlight in Continuous Document and Focus views.</p>
             </article>
-            <article data-open-source-only>
+            <article>
               <span>03</span>
-              <h3>Open-source foundation</h3>
-              <p>ReadBooster is licensed under MPL 2.0 and maintained by AviCloud, with documented platform adapters and contribution guidance for public collaboration.</p>
+              <h3>Local by design</h3>
+              <p>Highlighted text and the limited context needed to find it again stay in browser storage and are not sent to ReadBooster servers.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section id="download" class="download-section" aria-labelledby="download-heading">
+        <div class="page-width">
+          <header class="editorial-heading">
+            <p>Browser stores</p>
+            <div>
+              <h2 id="download-heading">Choose your browser.</h2>
+              <p class="section-intro">Firefox has the latest release. The existing Chrome listing remains available while its 0.7.2 update completes a separate store review.</p>
+            </div>
+          </header>
+          <div class="store-grid">
+            <article class="store-card">
+              <p class="store-name">Firefox</p>
+              <h3>ReadBooster for Firefox</h3>
+              <p class="store-release-status status-available" data-firefox-release-status>Version 0.7.2 available</p>
+              <a class="button button-primary" href="https://addons.mozilla.org/en-US/firefox/addon/readbooster/" data-config-link="firefoxAddonsUrl" target="_blank" rel="noopener noreferrer" aria-label="Get ReadBooster for Firefox from Firefox Add-ons (opens in a new tab)">Get ReadBooster for Firefox</a>
+            </article>
+            <article class="store-card">
+              <p class="store-name">Chrome</p>
+              <h3>ReadBooster for Chrome</h3>
+              <p class="store-release-status status-review" data-chrome-release-status>Version 0.7.1 available · 0.7.2 update pending review</p>
+              <a class="button button-secondary" href="https://chromewebstore.google.com/detail/dgkgecgijplbfllnhcolplieaejjnmhd" data-config-link="chromeWebStoreUrl" target="_blank" rel="noopener noreferrer" aria-label="View ReadBooster in the Chrome Web Store (opens in a new tab)">View ReadBooster in the Chrome Web Store</a>
+            </article>
+          </div>
+          <p class="store-review-note" data-store-review-note>Chrome and Firefox review and publish updates independently, so a new ReadBooster version may become available in one store before the other.</p>
         </div>
       </section>
 
@@ -494,17 +561,18 @@
               <li>No ReadBooster backend</li>
               <li>No conversation uploads</li>
               <li>No analytics or advertising</li>
-              <li>Preferences, custom section titles, and Stickers stored locally</li>
+              <li>Highlights, Stickers, titles, and preferences stored locally</li>
             </ul>
           </aside>
           <div class="local-copy">
             <p>Privacy by design</p>
             <h2 id="local-heading">The document is built where the conversation already is.</h2>
-            <p>ReadBooster accesses page content locally to render the document view. It does not automatically send your chat content to a ReadBooster server.</p>
+            <p>ReadBooster accesses page content locally to render the document view. It does not upload your conversation content to a ReadBooster server.</p>
             <ul>
               <li>Conversation formatting happens locally in the browser.</li>
               <li>Reading fonts, including Fast Reading, are bundled locally with the extension.</li>
-              <li>Preferences, custom section titles, and Stickers are stored locally in your browser.</li>
+              <li>Highlights are stored locally with the selected text and limited context needed to find the passage again.</li>
+              <li>Preferences, custom section titles, and Stickers are also stored locally in your browser.</li>
               <li>No ReadBooster account is required, and the only general browser permission is storage.</li>
               <li>Feedback is sent only when you deliberately submit the Tally form.</li>
               <li>You decide what text or screenshots you include.</li>
@@ -520,14 +588,15 @@
             <div class="open-source-copy">
               <p>Open source · Community</p>
               <h2 id="open-source-heading">Help shape ReadBooster.</h2>
-              <p>ReadBooster is an open-source product shaped by feedback from the people who use it.</p>
-              <p>Different AI platforms, conversations, devices, and accessibility needs reveal new opportunities to improve the reading experience. Whether you discover a problem, have an idea, want support for another AI platform, or would like to contribute code, your input can help ReadBooster grow.</p>
+              <p>ReadBooster was started by Avi after repeatedly running into the same problem: useful AI conversations become difficult to read, navigate, and revisit as they grow.</p>
+              <p>It is maintained and released as an open-source AviCloud project, with ideas, fixes, testing, documentation, and contributions welcome from the community.</p>
               <aside class="community-maintainer-note" aria-label="ReadBooster maintainer note">
-                <p><a href="https://avicloud.ch/" data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a> maintains ReadBooster, reviews contributions, looks after security and quality, and publishes official releases. Feedback, testing, ideas, documentation, and code contributions all help shape what ReadBooster improves next.</p>
+                <p>Avi currently maintains ReadBooster as part of <a href="https://avicloud.ch/" data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a>, reviews contributions, looks after security and quality, and publishes official releases.</p>
               </aside>
-              <p class="github-introduction">Explore the source and follow ReadBooster’s development on GitHub.</p>
+              <p class="github-introduction">The aim is not simply to support the largest number of AI platforms or add features for their own sake. ReadBooster focuses on making real conversations easier to read, navigate, annotate, print, and reuse.</p>
               <div class="open-source-actions">
-                <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer" aria-label="Explore the ReadBooster project on GitHub (opens in a new tab)">Explore the project on GitHub</a>
+                <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer" aria-label="View the ReadBooster source code on GitHub (opens in a new tab)">View the source code</a>
+                <a class="button button-tertiary" href="https://github.com/inspiringsource/ReadBooster/issues/new/choose" data-config-link="issueChooserUrl" target="_blank" rel="noopener noreferrer" aria-label="Choose a ReadBooster issue type on GitHub (opens in a new tab)">Choose an issue type</a>
               </div>
             </div>
           </div>
@@ -536,14 +605,14 @@
             <header>
               <p>Ways to take part</p>
               <h3 id="community-paths-heading">Choose how you would like to help.</h3>
-              <span>You do not need to be a developer to make a useful contribution.</span>
+              <span>You do not need to understand the whole extension before getting involved. A clear bug report, a screenshot without private information, or an explanation of a reading problem can already be useful.</span>
             </header>
             <div class="community-card-grid">
               <article class="community-card">
                 <p>01 / Feedback</p>
                 <h4>Report a problem</h4>
                 <p>Found something that does not work correctly?</p>
-                <p>Help improve ReadBooster by reporting issues. Screenshots, examples, and details about your workflow are always helpful.</p>
+                <p>Explain what you expected and what happened instead. Screenshots and examples help when they contain no private information.</p>
                 <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster/issues/new?template=bug_report.yml" data-config-link="bugReportUrl" target="_blank" rel="noopener noreferrer" aria-label="Report a ReadBooster problem on GitHub (opens in a new tab)">Report a problem</a>
               </article>
 
@@ -559,23 +628,23 @@
                 <p>03 / Platforms</p>
                 <h4>Request an AI platform</h4>
                 <p>Want ReadBooster to support another AI service?</p>
-                <p>Platform requests help show which services people would find useful and can guide future milestones.</p>
-                <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml" data-config-link="platformRequestUrl" target="_blank" rel="noopener noreferrer" aria-label="Request ReadBooster support for an AI platform on GitHub (opens in a new tab)">Request a platform</a>
+                <p>Explain which service you use, what kinds of conversations you read there, and where ReadBooster could help. Requests guide priorities but do not guarantee implementation.</p>
+                <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml" data-config-link="platformRequestUrl" target="_blank" rel="noopener noreferrer" aria-label="Request ReadBooster support for an AI platform on GitHub (opens in a new tab)">Request an AI platform</a>
               </article>
 
               <article class="community-card">
                 <p>04 / Contribute</p>
                 <h4>Contribute</h4>
-                <p>Developers and technical contributors are welcome.</p>
-                <p>You can improve documentation, tests, accessibility, platform adapters, or help fix issues. The contributor guide explains how to get started.</p>
-                <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster/blob/main/CONTRIBUTING.md" data-config-link="contributingUrl" target="_blank" rel="noopener noreferrer" aria-label="Read the ReadBooster contributor guide on GitHub (opens in a new tab)">Start contributing</a>
+                <p>Documentation, testing, accessibility work, fixes, and platform adapters are all welcome.</p>
+                <p>Before starting a larger feature or adapter, open an issue so ideas can be compared and duplicated work avoided.</p>
+                <a class="button button-secondary" href="https://github.com/inspiringsource/ReadBooster/blob/main/CONTRIBUTING.md" data-config-link="contributingUrl" target="_blank" rel="noopener noreferrer" aria-label="Read the ReadBooster contribution guide on GitHub (opens in a new tab)">Read the contribution guide</a>
                 <a class="community-card-detail" href="https://github.com/inspiringsource/ReadBooster/blob/main/docs/adding-a-platform.md" data-config-link="addingPlatformUrl" target="_blank" rel="noopener noreferrer">Read the platform adapter guide</a>
               </article>
             </div>
           </div>
 
           <div class="community-notes">
-            <p><strong>Long-term vision</strong> We want ReadBooster to grow openly and carefully, with ideas and contributions that make the reading experience better for everyone.</p>
+            <p><strong>Project direction</strong> Useful improvements matter more than feature count. Ideas are considered for how well they improve real reading, navigation, annotation, printing, and reuse.</p>
             <p><strong>Before sharing</strong> Remove private conversation content and other sensitive details from screenshots or examples. Report security concerns through <a href="https://github.com/inspiringsource/ReadBooster/blob/main/SECURITY.md" data-config-link="securityUrl" target="_blank" rel="noopener noreferrer">SECURITY.md</a>, not through a public issue.</p>
           </div>
         </div>
@@ -585,17 +654,20 @@
         <div class="page-width faq-layout">
           <header><p>Reference</p><h2 id="faq-heading">ReadBooster FAQ</h2></header>
           <div class="faq-list">
-            <details class="faq-item"><summary>What does ReadBooster do?</summary><div class="faq-answer"><p>ReadBooster transforms AI conversations into structured documents that are easier to read, navigate, review, annotate with Stickers, and revisit. It provides Continuous Document and Focus views, an outline, heading navigation, clearer sections, table and code controls, and adaptable reading settings.</p></div></details>
-            <details class="faq-item"><summary>Can I take notes inside a ReadBooster document?</summary><div class="faq-answer"><p>Yes. Local Stickers attach notes to relevant sections. When a Sticker is outside the visible area, directional indicators show whether it is above or below your current position so that you can return to it more easily.</p></div></details>
+            <details class="faq-item"><summary>What does ReadBooster do?</summary><div class="faq-answer"><p>ReadBooster transforms AI conversations into structured documents that are easier to read, navigate, highlight, annotate with Stickers, print, copy, and revisit. It provides Continuous Document and Focus views, an outline, heading navigation, clearer sections, table and code controls, and adaptable reading settings.</p></div></details>
+            <details class="faq-item"><summary>What is the difference between highlights and Stickers?</summary><div class="faq-answer"><p>Highlights mark text that already exists in the conversation. Stickers attach a note you write to a section. Both are stored locally in your browser.</p></div></details>
+            <details class="faq-item"><summary>Are highlights sent anywhere?</summary><div class="faq-answer"><p>No. Highlighted text and the limited context needed to restore it are stored locally in your browser and are not sent to ReadBooster servers.</p></div></details>
+            <details class="faq-item"><summary>Do highlights sync between devices?</summary><div class="faq-answer"><p>No. ReadBooster 0.7.2 stores highlights locally. Account-based or cross-device synchronisation is not currently included.</p></div></details>
             <details class="faq-item"><summary>Which AI platforms are supported?</summary><div class="faq-answer"><p><span data-supported-list>ChatGPT, Google Gemini, Mistral AI, and Claude</span> are supported in the current release.</p></div></details>
+            <details class="faq-item"><summary>Why is Firefox on a newer version than Chrome?</summary><div class="faq-answer"><p>Browser stores review updates independently. Version 0.7.2 is live on Firefox, while the corresponding Chrome update is still awaiting review. The public Chrome listing remains available on version 0.7.1.</p></div></details>
             <details class="faq-item"><summary>What reading styles does ReadBooster offer?</summary><div class="faq-answer"><p>ReadBooster offers Default, Serif, Dyslexia-friendly, and Fast Reading styles. Fast Reading uses fixation-guided letter emphasis, while text size and spacing can be adjusted independently. These settings change only the local document view and do not modify the original conversation.</p></div></details>
             <details class="faq-item"><summary>Does ReadBooster upload my conversations?</summary><div class="faq-answer"><p>No. ReadBooster processes supported conversation pages locally to render its document view and does not send full conversation content to a ReadBooster server. Feedback is separate and opens an external Tally form only after you explicitly choose it.</p></div></details>
             <details class="faq-item"><summary>Is it free?</summary><div class="faq-answer"><p>The current testing release is free. This is not a permanent pricing commitment, and later availability may change.</p></div></details>
             <details class="faq-item"><summary>Does it modify the original AI conversation?</summary><div class="faq-answer"><p>No. ReadBooster creates a separate reading presentation in the browser. Display choices such as section renaming apply to the ReadBooster view, not to the source conversation.</p></div></details>
             <details class="faq-item"><summary>Can I print or save the document?</summary><div class="faq-answer"><p>Yes. ReadBooster includes Print support, which can also be used with the browser’s Save as PDF option.</p></div></details>
             <details class="faq-item"><summary>Is ReadBooster affiliated with the supported AI providers?</summary><div class="faq-answer"><p>No. ReadBooster is an independent browser extension and is not affiliated with or endorsed by OpenAI, Google, Mistral AI, or Anthropic.</p></div></details>
-            <details class="faq-item" data-open-source-only><summary>Is ReadBooster open source?</summary><div class="faq-answer"><p>Yes. ReadBooster is an open-source product maintained by AviCloud and licensed under the Mozilla Public License 2.0. You can <a href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer">explore the project on GitHub</a> and read the complete <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0 licence text</a>.</p></div></details>
-            <details class="faq-item" data-open-source-only><summary>Can I request support for another AI platform?</summary><div class="faq-answer"><p>Yes. Search <a href="https://github.com/inspiringsource/ReadBooster/issues" data-config-link="issuesUrl" target="_blank" rel="noopener noreferrer">existing issues</a>, then use the <a href="https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml" data-config-link="platformRequestUrl" target="_blank" rel="noopener noreferrer">platform request form</a>. Community requests help guide priorities, but do not guarantee that a platform will be implemented.</p></div></details>
+            <details class="faq-item" data-open-source-only><summary>Is ReadBooster open source?</summary><div class="faq-answer"><p>Yes. Avi started ReadBooster and currently maintains it as an open-source AviCloud project licensed under the Mozilla Public License 2.0. You can <a href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" target="_blank" rel="noopener noreferrer">explore the project on GitHub</a> and read the complete <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0 licence text</a>.</p></div></details>
+            <details class="faq-item" data-open-source-only><summary>Can I request support for another AI platform?</summary><div class="faq-answer"><p>Yes. Search <a href="https://github.com/inspiringsource/ReadBooster/issues" data-config-link="issuesUrl" target="_blank" rel="noopener noreferrer">existing issues</a>, then use the <a href="https://github.com/inspiringsource/ReadBooster/issues/new?template=platform_support.yml" data-config-link="platformRequestUrl" target="_blank" rel="noopener noreferrer">platform request form</a>. Explain which service you use, what kinds of conversations you read there, and where ReadBooster could help. Requests guide priorities but do not guarantee implementation.</p></div></details>
             <details class="faq-item" data-open-source-only><summary>Can I contribute?</summary><div class="faq-answer"><p>Yes. You can help by reporting problems, sharing ideas, testing changes, improving documentation, or contributing code. Developers and technical contributors can also work on accessibility, tests, fixes, and platform adapters. The <a href="https://github.com/inspiringsource/ReadBooster/blob/main/CONTRIBUTING.md" data-config-link="contributingUrl" target="_blank" rel="noopener noreferrer">contributor guide</a> explains how to get started.</p></div></details>
           </div>
         </div>
@@ -606,7 +678,7 @@
       <div class="page-width footer-row">
         <a class="footer-brand" href="./"><img src="./assets/icons/readbooster-32.png" width="32" height="32" alt="" /><span data-config-name>ReadBooster</span></a>
         <nav aria-label="Footer navigation"><a href="./privacy/">Privacy</a><a data-config-link="chromeWebStoreUrl" target="_blank" rel="noopener noreferrer">Chrome Web Store</a><a data-config-link="firefoxAddonsUrl" target="_blank" rel="noopener noreferrer">Firefox Add-ons</a><a data-config-link="feedbackUrl" target="_blank" rel="noopener noreferrer">Feedback</a><a href="https://github.com/inspiringsource/ReadBooster" data-config-link="repositoryUrl" data-open-source-only target="_blank" rel="noopener noreferrer">Explore on GitHub</a><a href="https://github.com/inspiringsource/ReadBooster/issues/new?template=bug_report.yml" data-config-link="bugReportUrl" data-open-source-only target="_blank" rel="noopener noreferrer">Report a problem</a></nav>
-        <div class="footer-meta"><p>ReadBooster is maintained by <a data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a>.<span data-open-source-only> Open-source software licensed under <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0</a>.</span></p><p>Independent and not endorsed by OpenAI, Google, Mistral AI, or Anthropic. © <span data-copyright-year>2026</span> ReadBooster</p></div>
+        <div class="footer-meta"><p>Started by Avi and maintained as part of <a data-config-link="aviCloudUrl" target="_blank" rel="noopener noreferrer">AviCloud</a>.<span data-open-source-only> Open-source software licensed under <a href="https://github.com/inspiringsource/ReadBooster/blob/main/LICENSE" data-config-link="licenseUrl" target="_blank" rel="noopener noreferrer">MPL 2.0</a>.</span></p><p>Independent and not endorsed by OpenAI, Google, Mistral AI, or Anthropic. © <span data-copyright-year>2026</span> ReadBooster</p></div>
       </div>
     </footer>
   </body>

@@ -708,6 +708,105 @@ h1 {
   color: #b9d9f7;
 }
 
+.highlight-feature-list {
+  display: grid;
+  margin: 24px 0 0;
+  padding: 0;
+  gap: 9px;
+  list-style: none;
+}
+
+.highlight-feature-list li {
+  position: relative;
+  padding-left: 18px;
+  color: #c7d3df;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.highlight-feature-list li::before {
+  position: absolute;
+  top: 0.66em;
+  left: 0;
+  width: 8px;
+  height: 3px;
+  content: "";
+  background: #f3d36a;
+}
+
+.highlight-preview {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #506176;
+  background: #f9fbfd;
+  color: var(--ink);
+  box-shadow: 7px 8px 0 #274059;
+}
+
+.highlight-preview-toolbar,
+.highlight-preview-controls {
+  display: flex;
+  padding: 14px 18px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #456078;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.61rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.highlight-preview-toolbar {
+  border-bottom: 1px solid #c4d0dc;
+}
+
+.highlight-preview blockquote {
+  margin: 0;
+  padding: clamp(34px, 6vw, 70px);
+  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(1.35rem, 2.7vw, 2.25rem);
+  line-height: 1.55;
+}
+
+.highlight-preview mark {
+  padding: 0.05em 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  color: #17283a;
+}
+
+.highlight-yellow {
+  background: #f5da72;
+}
+
+.highlight-blue {
+  background: #b8dcf5;
+}
+
+.highlight-preview-controls {
+  border-top: 1px solid #c4d0dc;
+}
+
+.highlight-preview figcaption {
+  padding: 12px 18px;
+  border-top: 1px solid #d5dde5;
+  color: #5f7080;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.61rem;
+  line-height: 1.5;
+}
+
+.feature-distinction {
+  margin: 20px 0 0;
+  padding-left: 16px;
+  border-left: 2px solid #73afe9;
+  color: #d8e3ee;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
 .feature-shot img {
   border-color: #506176;
   box-shadow: 7px 8px 0 #274059;
@@ -726,7 +825,7 @@ h1 {
 .product-sequence {
   display: grid;
   margin-top: clamp(80px, 10vw, 130px);
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   border-block: 1px solid #506176;
 }
 
@@ -870,6 +969,91 @@ h1 {
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.7;
+}
+
+.download-section {
+  padding: clamp(82px, 10vw, 140px) 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.store-card {
+  display: flex;
+  min-width: 0;
+  min-height: 285px;
+  padding: clamp(25px, 4vw, 42px);
+  border: 1px solid var(--rule-strong);
+  background: var(--paper-warm);
+  flex-direction: column;
+}
+
+.store-name {
+  margin: 0;
+  color: var(--blue-dark);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.store-card h3 {
+  margin: 16px 0 0;
+  font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.store-release-status {
+  position: relative;
+  margin: 20px 0 28px;
+  padding-left: 18px;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.store-release-status::before {
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  content: "";
+}
+
+.status-available::before {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.status-review::before {
+  background: transparent;
+}
+
+.store-card .button {
+  max-width: 100%;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.store-review-note {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--quiet);
+  font-size: 0.74rem;
+  line-height: 1.55;
 }
 
 .transformation {
@@ -1807,14 +1991,17 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .store-grid {
+    grid-template-columns: 1fr;
+  }
+
   .release-grid article + article {
     border-top: 1px solid var(--rule);
     border-left: 0;
   }
 
   .workflow-steps li:nth-child(3),
-  .product-sequence a:nth-child(3),
-  .product-sequence a:nth-child(5) {
+  .product-sequence a:nth-child(odd) {
     border-left: 0;
   }
 
@@ -1916,6 +2103,14 @@ h1 {
 
   .hero-actions .install-actions {
     flex-direction: column;
+  }
+
+  .store-card {
+    min-height: 0;
+  }
+
+  .store-card .button {
+    width: 100%;
   }
 
   .editorial-heading {
@@ -2111,6 +2306,7 @@ h1 {
   body,
   .product-hero,
   .product-features,
+  .download-section,
   .platform-section,
   .open-source-section,
   .local-section,

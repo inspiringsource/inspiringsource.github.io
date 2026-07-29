@@ -54,7 +54,7 @@
       document.querySelectorAll("meta[data-open-source-description]").forEach(function (element) {
         element.setAttribute(
           "content",
-          "ReadBooster is an open-source product maintained by AviCloud that turns conversations from ChatGPT, Google Gemini, Mistral AI, and Claude into readable, navigable documents.",
+          "ReadBooster is an open-source browser extension that turns ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, tables, code tools, and print support.",
         );
       });
     }
@@ -182,16 +182,19 @@
       operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
       description: config.openSourceLaunchEnabled
-        ? "ReadBooster is an open-source product maintained by AviCloud that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents."
-        : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable, navigable documents.",
+        ? "ReadBooster is an open-source browser extension maintained as part of AviCloud that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and print support."
+        : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and print support.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
       browserRequirements: "Requires Google Chrome or Mozilla Firefox",
+      releaseNotes:
+        "Version 0.7.2 with persistent highlights is available on Firefox. The Chrome listing remains on version 0.7.1 while the 0.7.2 update is awaiting review.",
       featureList: [
         "Continuous Document Mode",
         "Focus Mode",
         "Grouped document outline",
+        "Persistent local highlights with overview and navigation",
         "Custom section titles and local Stickers",
         "Improved table modes",
         "Syntax-aware code presentation and copying",
@@ -204,7 +207,7 @@
       ],
     };
 
-    if (isSafeHttpUrl(config.chromeWebStoreUrl)) application.installUrl = config.chromeWebStoreUrl;
+    if (isSafeHttpUrl(config.firefoxAddonsUrl)) application.installUrl = config.firefoxAddonsUrl;
     if (config.openSourceLaunchEnabled && isSafeHttpUrl(config.repositoryUrl)) {
       application.codeRepository = config.repositoryUrl;
       application.license = config.licenseUrl;
@@ -241,9 +244,14 @@
 
   setText("[data-config-name]", config.name);
   setText("[data-current-version]", config.currentVersion);
+  setText("[data-chrome-version]", config.chromeCurrentVersion);
+  setText("[data-chrome-release-status]", config.chromeReleaseStatus);
+  setText("[data-firefox-version]", config.firefoxCurrentVersion);
+  setText("[data-firefox-release-status]", config.firefoxReleaseStatus);
   setText("[data-supported-list]", formatList(config.supportedPlatforms));
   setText("[data-planned-list]", formatList(config.plannedPlatforms));
   setText("[data-store-review-note]", config.storeReviewTimingNote);
+  setText("[data-store-status-summary]", config.storeStatusSummary);
   setText("[data-copyright-year]", String(new Date().getFullYear()));
   setConfiguredLinks();
   renderOpenSourceLaunch();
