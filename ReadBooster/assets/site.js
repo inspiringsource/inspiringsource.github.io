@@ -77,12 +77,12 @@
         browser: "chrome",
         urlKey: "chromeWebStoreUrl",
         shortLabel: "Chrome",
-        accessibleLabel: "View ReadBooster in the Chrome Web Store",
+        accessibleLabel: "Get ReadBooster for Chrome from the Chrome Web Store",
         iconUrl: "/ReadBooster/assets/store-badges/chrome.svg",
         badgeUrl: "/ReadBooster/assets/store-badges/chrome-web-store.png",
         badgeWidth: 340,
         badgeHeight: 96,
-        badgeAlt: "View ReadBooster in the Chrome Web Store",
+        badgeAlt: "Get ReadBooster from the Chrome Web Store",
       },
     ];
 
