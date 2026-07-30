@@ -18,8 +18,8 @@ platform-request, contribution, adapter, security, and licence routes have been 
 reviewed website configuration now keeps this gate enabled.
 
 The official Chrome Web Store and Firefox Add-ons listing URLs are configured, and both listings are
-publicly available. Firefox Add-ons has published ReadBooster 0.7.2. The Chrome Web Store listing
-remains available on 0.7.1 while the 0.7.2 update is awaiting review. Both HTML pages also contain
+publicly available. Firefox Add-ons has published ReadBooster 0.7.3. The Chrome Web Store listing
+currently offers 0.6.9, and 0.7.3 is not yet available there. Both HTML pages also contain
 matching accessible fallback links for visitors who load the page without JavaScript.
 
 ## Existing PWD Note pattern
@@ -85,9 +85,9 @@ Prefer an explicit release tag or manual trigger over every push.
 - The shared renderer validates store URLs before replacing the accessible HTML fallback links.
 - Public GitHub, bug-report, feature-request, platform-request, contribution, adapter, security, and
   MPL 2.0 licence links are enabled.
-- Chrome links to its published Web Store listing, currently on 0.7.1 with the 0.7.2 update awaiting
-  review.
-- Firefox links to its published Add-ons listing, with 0.7.2 available.
+- Chrome links to its published Web Store listing, currently on 0.6.9; version 0.7.3 is not yet
+  available there.
+- Firefox links to its published Add-ons listing, with 0.7.3 available.
 
 ## Still manual
 

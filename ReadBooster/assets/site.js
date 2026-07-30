@@ -54,7 +54,7 @@
       document.querySelectorAll("meta[data-open-source-description]").forEach(function (element) {
         element.setAttribute(
           "content",
-          "ReadBooster is an open-source browser extension that turns ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, tables, code tools, and print support.",
+          "ReadBooster is an open-source browser extension that turns ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, tables, code tools, and Print Studio.",
         );
       });
     }
@@ -214,8 +214,8 @@
       operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
       description: config.openSourceLaunchEnabled
-        ? "ReadBooster is an open-source browser extension maintained as part of AviCloud that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and print support."
-        : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and print support.",
+        ? "ReadBooster is an open-source browser extension maintained as part of AviCloud that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and Print Studio."
+        : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and Print Studio.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
@@ -233,7 +233,7 @@
         "Conversation refresh",
         "Responsive Optimize Reading control",
         "Default, Serif, Dyslexia-friendly, and Fast Reading styles",
-        "Copy and Print / Save as PDF",
+        "Print Studio for customizable print and PDF layouts",
         "Local-first conversation formatting",
       ],
     };
