@@ -90,55 +90,61 @@ const gbFlag = '<img src="flags/gb.svg" alt="" aria-hidden="true">';
 const translations = {
   de: {
     name: "Avi Bobrovsky",
-    fullSubtitle: "Informatikstudent | IT-Systeme & Cloud Support",
-    mobileSubtitle: "IT-Systeme & Cloud Support",
+    fullSubtitle: "Informatikstudent | Python, Backend & Cloud",
+    mobileSubtitle: "Python, Backend & Cloud",
     paragraph1:
-      "Ich bin Informatikstudent an der FHNW mit praktischer Erfahrung im Betrieb von IT-Systemen, der Fehleranalyse sowie der Unterstützung von Anwendern in Cloud- und Benutzerumgebungen.",
+      "Ich bin Informatikstudent an der FHNW mit praktischer Erfahrung in der Python-, Backend- und Webentwicklung sowie im Betrieb cloudbasierter Systeme. Mein Fokus liegt auf APIs, Datenverarbeitung, zuverlässigen Anwendungen und strukturiertem Problemlösen.",
     whatI_do_heading: "Was ich mache",
-    whatI_do_item1: "Support und Wartung cloudbasierter Systeme",
-    whatI_do_item2:
-      "Fehleranalyse bei Deployment-, Infrastruktur- und Benutzerproblemen",
-    whatI_do_item3: "Ursachenanalyse und strukturiertes Problemlösen",
-    whatI_do_item4:
-      "Technische Dokumentation, Betriebsabläufe und Incident Response",
+    whatI_do_item1: "Python- und Backend-Entwicklung",
+    whatI_do_item2: "Integration von APIs und strukturierten Datenquellen",
+    whatI_do_item3: "Datenverarbeitung, SQL und SQLite",
+    whatI_do_item4: "Testing, CI/CD und Codequalität",
     whatI_do_item5: "Website- und Full-Stack-Anwendungsentwicklung",
-    whatI_do_item6: "Hosting, DNS, Domains und E-Mail-Konfiguration",
-    whatI_do_item7: "Fokus auf stabile, sichere und zuverlässige Systeme",
+    whatI_do_item6:
+      "Betrieb cloudbasierter Systeme und technische Fehleranalyse",
+    whatI_do_item7: "Hosting, DNS, Domains und E-Mail-Konfiguration",
     selected_work_heading: "Ausgewählte Arbeiten",
     selected_work_item1:
-      "PasteGuard – Local-first Tool zur Erkennung und Reduktion sensibler Daten beim Copy-Paste",
+      "Swiss Job Radar – Privates Local-first Python-CLI für API-Integration, Datennormalisierung, Deduplizierung, SQLite und automatisierte Tests",
     selected_work_item2:
-      "AI Context Map – CLI-Tool zur Navigation in Codebasen mittels strukturierter Kontext- und Planungslogik",
+      "pwdNote – Python-CLI für verschlüsselte, projektbezogene Notizen mit VS-Code-Erweiterung",
     selected_work_item3:
-      "Azure DevOps Service Starter – Wiederverwendbare Vorlage für CI/CD, Docker, Azure-Infrastruktur (Bicep), Betriebsdokumentation, Incident Management und IT-Operations-Workflows",
+      "PasteGuard – Local-first Tool zur Erkennung und Reduktion sensibler Daten beim Copy-Paste",
     selected_work_item4:
+      "AI Context Map – CLI-Tool zur Navigation in Codebasen mittels strukturierter Kontext- und Planungslogik",
+    selected_work_item5:
+      "Azure DevOps Service Starter – Wiederverwendbare Vorlage für CI/CD, Docker, Azure-Infrastruktur (Bicep), Betriebsdokumentation, Incident Management und IT-Operations-Workflows",
+    selected_work_item6:
       "AviCloud – Kundenportal für Anfrageverfolgung, Projektdokumentation und laufenden IT-/Web-Support",
     client_portal: "AviCloud Portal",
   },
   en: {
     name: "Avi Bobrovsky",
-    fullSubtitle: "Computer Science Student | IT Systems & Cloud Support",
-    mobileSubtitle: "IT Systems & Cloud Support",
+    fullSubtitle: "Computer Science Student | Python, Backend & Cloud",
+    mobileSubtitle: "Python, Backend & Cloud",
     paragraph1:
-      "I'm a Computer Science student at FHNW with hands-on experience supporting IT systems, troubleshooting cloud and user environments, and documenting operational processes.",
+      "I'm a Computer Science student at FHNW with hands-on experience in Python, backend and web development, as well as operating cloud-based systems. I focus on APIs, data processing, reliable applications and structured problem solving.",
     whatI_do_heading: "What I do",
-    whatI_do_item1: "Support and maintenance of cloud-based systems",
-    whatI_do_item2:
-      "Troubleshooting deployment, infrastructure, and user issues",
-    whatI_do_item3: "Root-cause analysis and structured problem solving",
-    whatI_do_item4:
-      "Technical documentation, operational procedures, and incident response",
+    whatI_do_item1: "Python and backend development",
+    whatI_do_item2: "Integration of APIs and structured data sources",
+    whatI_do_item3: "Data processing, SQL and SQLite",
+    whatI_do_item4: "Testing, CI/CD and code quality",
     whatI_do_item5: "Website and full-stack application development",
-    whatI_do_item6: "Hosting, DNS, domains, and email configuration",
-    whatI_do_item7: "Focus on stable, secure, and reliable systems",
+    whatI_do_item6:
+      "Operation of cloud-based systems and technical troubleshooting",
+    whatI_do_item7: "Hosting, DNS, domains, and email configuration",
     selected_work_heading: "Selected work",
     selected_work_item1:
-      "PasteGuard – Local-first tool that detects and redacts sensitive data during copy-paste",
+      "Swiss Job Radar – Private, local-first Python CLI for API integration, data normalization, deduplication, SQLite and automated tests",
     selected_work_item2:
-      "AI Context Map – CLI tool that helps developers and AI agents navigate codebases using structured memory and task-aware planning",
+      "pwdNote – Python CLI for encrypted, project-local notes with a VS Code extension",
     selected_work_item3:
-      "Azure DevOps Service Starter – Reusable template for CI/CD, Docker, Azure infrastructure (Bicep), operational runbooks, incident management, and IT operations workflows",
+      "PasteGuard – Local-first tool that detects and redacts sensitive data during copy-paste",
     selected_work_item4:
+      "AI Context Map – CLI tool that helps developers and AI agents navigate codebases using structured memory and task-aware planning",
+    selected_work_item5:
+      "Azure DevOps Service Starter – Reusable template for CI/CD, Docker, Azure infrastructure (Bicep), operational runbooks, incident management, and IT operations workflows",
+    selected_work_item6:
       "AviCloud – Client portal for request tracking, project documentation and ongoing IT/web support",
     client_portal: "AviCloud Portal",
   },
