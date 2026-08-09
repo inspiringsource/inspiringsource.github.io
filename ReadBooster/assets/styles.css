@@ -3,7 +3,7 @@
   --ink: #142235;
   --ink-2: #26384d;
   --muted: #58687a;
-  --quiet: #758397;
+  --quiet: #627286;
   --paper: #ffffff;
   --paper-warm: #fcfcfa;
   --canvas: #f3f6f9;
@@ -484,6 +484,15 @@ h1 {
 .hero-store-status strong {
   min-width: 48px;
   color: var(--ink-2);
+}
+
+.hero-trust {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.55;
 }
 
 .hero-actions {
@@ -1401,6 +1410,14 @@ div.store-release-status {
   color: #6f7780;
 }
 
+.status-experimental {
+  color: #6f7780;
+}
+
+.status-experimental::before {
+  background: currentColor;
+}
+
 .planned-note {
   display: grid;
   margin-top: 42px;
@@ -1489,7 +1506,7 @@ div.store-release-status {
 }
 
 .community-paths {
-  margin-top: clamp(58px, 8vw, 92px);
+  margin-top: clamp(38px, 6vw, 64px);
 }
 
 .community-paths > header {
@@ -1522,14 +1539,14 @@ div.store-release-status {
 .community-card {
   display: flex;
   min-width: 0;
-  min-height: 330px;
+  min-height: 290px;
   padding: clamp(24px, 3vw, 34px);
   border: 1px solid var(--rule-strong);
   background: var(--paper);
   flex-direction: column;
 }
 
-.community-card h4 {
+.community-card h3 {
   margin: 15px 0 0;
   font-family: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
   font-size: 1.65rem;

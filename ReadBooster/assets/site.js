@@ -54,7 +54,7 @@
       document.querySelectorAll("meta[data-open-source-description]").forEach(function (element) {
         element.setAttribute(
           "content",
-          "ReadBooster is an open-source browser extension that turns ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, tables, code tools, and Print Studio.",
+          "ReadBooster is an open-source, local-first reading workspace for long AI conversations, with Document and Focus views, Guided Reading, Highlights, Stickers, and Print Studio.",
         );
       });
     }
@@ -157,6 +157,15 @@
         makePlatformRow(name, "Supported", config.supportedPlatformMilestones[name]),
       );
     });
+    (config.experimentalSources || []).forEach(function (name) {
+      fragment.appendChild(
+        makePlatformRow(
+          name,
+          "Experimental",
+          config.experimentalSourceMilestones[name],
+        ),
+      );
+    });
     config.plannedPlatforms.forEach(function (name) {
       fragment.appendChild(
         makePlatformRow(name, "Planned", config.plannedPlatformMilestones[name]),
@@ -214,8 +223,8 @@
       operatingSystem: "Chrome, Firefox",
       softwareVersion: config.currentVersion,
       description: config.openSourceLaunchEnabled
-        ? "ReadBooster is an open-source browser extension maintained as part of AviCloud that transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and Print Studio."
-        : "ReadBooster transforms ChatGPT, Google Gemini, Mistral AI, and Claude conversations into readable documents with navigation, highlights, notes, and Print Studio.",
+        ? "ReadBooster is an open-source, local-first reading workspace maintained as part of AviCloud for long AI conversations, with experimental support for GitHub Discussions."
+        : "ReadBooster is a local-first reading workspace for long AI conversations, with experimental support for GitHub Discussions.",
       url: "https://inspiringsource.github.io/ReadBooster/",
       image:
         "https://inspiringsource.github.io/ReadBooster/Screenshots/Screenshot1.jpg",
@@ -224,6 +233,7 @@
       featureList: [
         "Continuous Document Mode",
         "Focus Mode",
+        "Guided Reading",
         "Grouped document outline",
         "Persistent local highlights with overview and navigation",
         "Custom section titles and local Stickers",
@@ -233,7 +243,7 @@
         "Conversation refresh",
         "Responsive Optimize Reading control",
         "Default, Serif, Dyslexia-friendly, and Fast Reading styles",
-        "Print Studio for customizable print and PDF layouts",
+        "Print Studio for section selection, page layout, printing, and PDF preparation",
         "Local-first conversation formatting",
       ],
     };
@@ -283,6 +293,7 @@
   setText("[data-firefox-version]", config.firefoxCurrentVersion);
   setText("[data-firefox-release-status]", config.firefoxReleaseStatus);
   setText("[data-supported-list]", formatList(config.supportedPlatforms));
+  setText("[data-experimental-list]", formatList(config.experimentalSources || []));
   setText("[data-planned-list]", formatList(config.plannedPlatforms));
   setText("[data-store-review-note]", config.storeReviewTimingNote);
   setText("[data-store-status-summary]", config.storeStatusSummary);

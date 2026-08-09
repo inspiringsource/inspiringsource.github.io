@@ -6,7 +6,7 @@
  */
 window.READBOOSTER_CONFIG = Object.freeze({
   name: "ReadBooster",
-  currentVersion: "0.7.3",
+  currentVersion: "0.7.5",
   chromeCurrentVersion: "0.7.1",
   chromeCurrentStatus: "Version 0.7.1 available",
   chromeUpdateStatus: "0.7.3 update awaiting review",
@@ -48,12 +48,15 @@ window.READBOOSTER_CONFIG = Object.freeze({
     "Claude",
   ]),
   supportedPlatformMilestones: Object.freeze({
-    "Mistral AI": "0.6 milestone",
-    Claude: "0.7 milestone",
+    ChatGPT: "AI conversations",
+    "Google Gemini": "AI conversations",
+    "Mistral AI": "AI conversations",
+    Claude: "AI conversations",
   }),
-  plannedPlatforms: Object.freeze(["Perplexity", "Kimi"]),
-  plannedPlatformMilestones: Object.freeze({
-    Perplexity: "0.8 milestone",
-    Kimi: "0.9 milestone",
+  experimentalSources: Object.freeze(["GitHub Discussions"]),
+  experimentalSourceMilestones: Object.freeze({
+    "GitHub Discussions": "0.7.5",
   }),
+  plannedPlatforms: Object.freeze([]),
+  plannedPlatformMilestones: Object.freeze({}),
 });
