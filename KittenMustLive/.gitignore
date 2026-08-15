@@ -1,0 +1,5 @@
+.DS_Store
+
+# Local source recordings; the optimized web copies live beside them.
+images/*.mov
+images/short-intro-v0_85

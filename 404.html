@@ -121,6 +121,9 @@
             case "/readbooster/privacy":
             case "/readbooster/privacy/":
               return "/ReadBooster/privacy/";
+            case "/kittenmustlive":
+            case "/kittenmustlive/":
+              return "/KittenMustLive/";
             default:
               return null;
           }
@@ -146,15 +149,19 @@
         refresh.content = "0;url=" + destination.href;
         document.head.appendChild(refresh);
 
-        document.title = "Redirecting to ReadBooster";
-        document.getElementById("page-status").textContent = "ReadBooster";
+        var productName = destinationPath === "/KittenMustLive/"
+          ? "Kitten Must Live"
+          : "ReadBooster";
+
+        document.title = "Redirecting to " + productName;
+        document.getElementById("page-status").textContent = productName;
         document.getElementById("page-title").textContent = "Redirecting…";
         document.getElementById("page-message").textContent =
-          "This lowercase compatibility address now points to the canonical ReadBooster page.";
+          "This lowercase compatibility address now points to the canonical " + productName + " page.";
 
         var fallbackLink = document.getElementById("page-link");
         fallbackLink.href = destination.href;
-        fallbackLink.textContent = "Continue to ReadBooster";
+        fallbackLink.textContent = "Continue to " + productName;
 
         window.location.replace(destination.href);
       })();

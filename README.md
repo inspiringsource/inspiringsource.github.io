@@ -18,6 +18,7 @@ Minimalist personal website — hosted on GitHub Pages.
 ├── logo/               # GitHub and LeetCode logo images
 ├── pwdnote/             # pwdNote static product page
 ├── ReadBooster/         # ReadBooster product and privacy pages
+├── KittenMustLive/      # Kitten Must Live promotional site
 ├── Rocket.html         # Standalone rocket animation page
 ├── sitemap.xml          # Public route discovery
 ├── robots.txt           # Search crawler policy
@@ -40,6 +41,7 @@ Then open:
 - `http://localhost:8000/pwdnote/`
 - `http://localhost:8000/ReadBooster/`
 - `http://localhost:8000/ReadBooster/privacy/`
+- `http://localhost:8000/KittenMustLive/`
 
 ReadBooster release metadata and future cross-repository automation are documented in
 [`ReadBooster/AUTOMATION.md`](ReadBooster/AUTOMATION.md).
