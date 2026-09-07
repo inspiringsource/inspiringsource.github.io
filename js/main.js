@@ -105,7 +105,7 @@ const translations = {
     whatI_do_item7: "Hosting, DNS, Domains und E-Mail-Konfiguration",
     selected_work_heading: "Ausgewählte Arbeiten",
     selected_work_item1:
-      "Swiss Job Radar – Privates Local-first Python-CLI für API-Integration, Datennormalisierung, Deduplizierung, SQLite und automatisierte Tests",
+      "Priverna – Projekt zum Schutz sensibler Informationen beim Austausch zwischen Menschen, Cloud-Diensten und KI-Tools",
     selected_work_item2:
       "pwdNote – Python-CLI für verschlüsselte, projektbezogene Notizen mit VS-Code-Erweiterung",
     selected_work_item3:
@@ -135,7 +135,7 @@ const translations = {
     whatI_do_item7: "Hosting, DNS, domains, and email configuration",
     selected_work_heading: "Selected work",
     selected_work_item1:
-      "Swiss Job Radar – Private, local-first Python CLI for API integration, data normalization, deduplication, SQLite and automated tests",
+      "Priverna – Project exploring ways to protect sensitive information shared between people, cloud services and AI tools",
     selected_work_item2:
       "pwdNote – Python CLI for encrypted, project-local notes with a VS Code extension",
     selected_work_item3:
