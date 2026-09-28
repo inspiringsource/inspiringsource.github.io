@@ -93,16 +93,19 @@ const translations = {
     fullSubtitle: "Informatikstudent | Python, Backend & Cloud",
     mobileSubtitle: "Python, Backend & Cloud",
     paragraph1:
-      "Ich bin Informatikstudent an der FHNW mit praktischer Erfahrung in der Python-, Backend- und Webentwicklung sowie im Betrieb cloudbasierter Systeme. Mein Fokus liegt auf APIs, Datenverarbeitung, zuverlässigen Anwendungen und strukturiertem Problemlösen.",
+      "Ich bin Informatikstudent an der FHNW mit praktischer Erfahrung in Python-, Backend- und Webentwicklung sowie im Betrieb cloudbasierter Systeme. Ich entwickle praktische Tools, automatisiere Arbeitsabläufe und integriere KI-APIs in zuverlässige Anwendungen.",
     whatI_do_heading: "Was ich mache",
-    whatI_do_item1: "Python- und Backend-Entwicklung",
-    whatI_do_item2: "Integration von APIs und strukturierten Datenquellen",
-    whatI_do_item3: "Datenverarbeitung, SQL und SQLite",
-    whatI_do_item4: "Testing, CI/CD und Codequalität",
-    whatI_do_item5: "Website- und Full-Stack-Anwendungsentwicklung",
-    whatI_do_item6:
-      "Betrieb cloudbasierter Systeme und technische Fehleranalyse",
-    whatI_do_item7: "Hosting, DNS, Domains und E-Mail-Konfiguration",
+    whatI_do_item1: "Python- und Backend-Entwicklung, inklusive APIs und Datenverarbeitung",
+    whatI_do_item2:
+      "Integration von KI-APIs wie Gemini, mit strukturierten Ausgaben und menschlicher Prüfung",
+    whatI_do_item3:
+      "Entwicklertools und Kommandozeilenanwendungen, die den Arbeitsalltag vereinfachen",
+    whatI_do_item4: "Automatisierung von Arbeitsabläufen mit Python und Shell-Skripten",
+    whatI_do_item5: "SQL, SQLite und Integration strukturierter Datenquellen",
+    whatI_do_item6: "Website- und Full-Stack-Anwendungsentwicklung",
+    whatI_do_item7: "Testing, CI/CD und wartbarer Code",
+    whatI_do_item8: "Cloud-Deployment, Betrieb und Fehleranalyse",
+    whatI_do_item9: "Hosting, DNS, Domains und professionelle E-Mail-Konfiguration",
     selected_work_heading: "Ausgewählte Arbeiten",
     selected_work_item1:
       "Priverna – Projekt zum Schutz sensibler Informationen beim Austausch zwischen Menschen, Cloud-Diensten und KI-Tools",
@@ -114,25 +117,26 @@ const translations = {
       "AI Context Map – CLI-Tool zur Navigation in Codebasen mittels strukturierter Kontext- und Planungslogik",
     selected_work_item5:
       "Azure DevOps Service Starter – Wiederverwendbare Vorlage für CI/CD, Docker, Azure-Infrastruktur (Bicep), Betriebsdokumentation, Incident Management und IT-Operations-Workflows",
-    selected_work_item6:
-      "AviCloud – Kundenportal für Anfrageverfolgung, Projektdokumentation und laufenden IT-/Web-Support",
-    client_portal: "AviCloud Portal",
+    client_portal: "AviCloud",
   },
   en: {
     name: "Avi Bobrovsky",
     fullSubtitle: "Computer Science Student | Python, Backend & Cloud",
     mobileSubtitle: "Python, Backend & Cloud",
     paragraph1:
-      "I'm a Computer Science student at FHNW with hands-on experience in Python, backend and web development, as well as operating cloud-based systems. I focus on APIs, data processing, reliable applications and structured problem solving.",
+      "I'm a Computer Science student at FHNW with hands-on experience in Python, backend and web development, as well as operating cloud-based systems. I build practical tools, automate workflows and integrate AI APIs into reliable applications.",
     whatI_do_heading: "What I do",
-    whatI_do_item1: "Python and backend development",
-    whatI_do_item2: "Integration of APIs and structured data sources",
-    whatI_do_item3: "Data processing, SQL and SQLite",
-    whatI_do_item4: "Testing, CI/CD and code quality",
-    whatI_do_item5: "Website and full-stack application development",
-    whatI_do_item6:
-      "Operation of cloud-based systems and technical troubleshooting",
-    whatI_do_item7: "Hosting, DNS, domains, and email configuration",
+    whatI_do_item1: "Python and backend development, including APIs and data processing",
+    whatI_do_item2:
+      "AI API integration",
+    whatI_do_item3:
+      "Developer tools and command-line applications that simplify everyday work",
+    whatI_do_item4: "Workflow automation with Python and shell scripts",
+    whatI_do_item5: "SQL, SQLite and integration of structured data sources",
+    whatI_do_item6: "Website and full-stack application development",
+    whatI_do_item7: "Testing, CI/CD and maintainable code",
+    whatI_do_item8: "Cloud deployment, operation and troubleshooting",
+    whatI_do_item9: "Hosting, DNS, domains and professional email configuration",
     selected_work_heading: "Selected work",
     selected_work_item1:
       "Priverna – Project exploring ways to protect sensitive information shared between people, cloud services and AI tools",
@@ -144,9 +148,7 @@ const translations = {
       "AI Context Map – CLI tool that helps developers and AI agents navigate codebases using structured memory and task-aware planning",
     selected_work_item5:
       "Azure DevOps Service Starter – Reusable template for CI/CD, Docker, Azure infrastructure (Bicep), operational runbooks, incident management, and IT operations workflows",
-    selected_work_item6:
-      "AviCloud – Client portal for request tracking, project documentation and ongoing IT/web support",
-    client_portal: "AviCloud Portal",
+    client_portal: "AviCloud",
   },
 };
 
